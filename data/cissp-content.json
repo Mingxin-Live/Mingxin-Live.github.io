@@ -1,0 +1,405 @@
+{
+ "source": "OSG 10th Ed (en) + OSG 9th Ed (zh)",
+ "updated": "2026-08-12",
+ "chapters": [
+  {
+   "no": 1,
+   "titleEn": "Security Governance Through Principles and Policies",
+   "titleZh": "实现安全治理的原则和策略",
+   "domain": 1,
+   "domainName": "安全与风险管理",
+   "sections": [
+    "Security 101",
+    "Understand and Apply Security Concepts",
+    "Security Boundaries",
+    "Evaluate and Apply Security Governance Principles",
+    "Manage the Security Function",
+    "Security Policy, Standards, Procedures, and Guidelines",
+    "Threat Modeling",
+    "Supply Chain Risk Management",
+    "Written Lab",
+    "Review Questions"
+   ],
+   "essentials": ""
+  },
+  {
+   "no": 2,
+   "titleEn": "Personnel Security and Risk Management Concepts",
+   "titleZh": "人员安全和风险管理的概念",
+   "domain": 1,
+   "domainName": "安全与风险管理",
+   "sections": [
+    "Personnel Security Policies and Procedures",
+    "Understand and Apply Risk Management Concepts",
+    "Social Engineering",
+    "Establish and Maintain a Security Awareness, Education, and",
+    "Written Lab",
+    "Review Questions"
+   ],
+   "essentials": ""
+  },
+  {
+   "no": 3,
+   "titleEn": "Business Continuity Planning",
+   "titleZh": "业务连续性计划",
+   "domain": 1,
+   "domainName": "安全与风险管理",
+   "sections": [
+    "Planning for Business Continuity",
+    "Project Scope and Planning",
+    "Business Impact Analysis",
+    "Continuity Planning",
+    "Plan Approval and Implementation",
+    "Written Lab",
+    "Review Questions"
+   ],
+   "essentials": ""
+  },
+  {
+   "no": 4,
+   "titleEn": "Laws, Regulations, and Compliance",
+   "titleZh": "法律、法规和合规",
+   "domain": 1,
+   "domainName": "安全与风险管理",
+   "sections": [
+    "Categories of Laws",
+    "Laws",
+    "State Privacy Laws",
+    "Compliance",
+    "Contracting and Procurement",
+    "Written Lab",
+    "Review Questions"
+   ],
+   "essentials": ""
+  },
+  {
+   "no": 5,
+   "titleEn": "Protecting Security of Assets",
+   "titleZh": "保护资产安全",
+   "domain": 2,
+   "domainName": "资产安全",
+   "sections": [
+    "Identifying and Classifying Information and Assets",
+    "Establishing Information and Asset Handling Requirements",
+    "Data Protection Methods",
+    "Understanding Data Roles",
+    "Using Security Baselines",
+    "Written Lab",
+    "Review Questions"
+   ],
+   "essentials": ""
+  },
+  {
+   "no": 6,
+   "titleEn": "Cryptography and Symmetric Key Algorithms",
+   "titleZh": "密码学和对称密钥算法",
+   "domain": 3,
+   "domainName": "安全架构与工程",
+   "sections": [
+    "Cryptographic Foundations",
+    "Modern Cryptography",
+    "Symmetric Cryptography",
+    "Cryptographic Life Cycle",
+    "Written Lab",
+    "Review Questions"
+   ],
+   "essentials": ""
+  },
+  {
+   "no": 7,
+   "titleEn": "PKI and Cryptographic Applications",
+   "titleZh": "PKI 和密码应用",
+   "domain": 3,
+   "domainName": "安全架构与工程",
+   "sections": [
+    "Asymmetric Cryptography",
+    "Hash Functions",
+    "Digital Signatures",
+    "Public Key Infrastructure",
+    "Asymmetric Key Management",
+    "Hybrid Cryptography",
+    "Applied Cryptography",
+    "Cryptographic Attacks",
+    "Written Lab",
+    "Review Questions"
+   ],
+   "essentials": ""
+  },
+  {
+   "no": 8,
+   "titleEn": "Principles of Security Models, Design, and Capabilities",
+   "titleZh": "安全模型、设计和能力的原则",
+   "domain": 3,
+   "domainName": "安全架构与工程",
+   "sections": [
+    "Secure Design Principles",
+    "Techniques for Ensuring CIA",
+    "Understand the Fundamental Concepts of Security Models",
+    "Select Controls Based on Systems Security Requirements",
+    "Understand Security Capabilities of Information Systems",
+    "Written Lab",
+    "Review Questions"
+   ],
+   "essentials": ""
+  },
+  {
+   "no": 9,
+   "titleEn": "Security Vulnerabilities, Threats, and",
+   "titleZh": "安全漏洞、威胁和对策",
+   "domain": 3,
+   "domainName": "安全架构与工程",
+   "sections": [
+    "Shared Responsibility",
+    "Data Localization and Data Sovereignty",
+    "Assess and Mitigate the Vulnerabilities of Security",
+    "Client-Based Systems",
+    "Server-Based Systems",
+    "Industrial Control Systems",
+    "Distributed Systems",
+    "High-Performance Computing (HPC) Systems",
+    "Real-Time Operating Systems",
+    "Internet of Things",
+    "Edge and Fog Computing",
+    "Embedded Devices and Cyber-Physical Systems",
+    "Microservices",
+    "Infrastructure as Code",
+    "Immutable Architecture",
+    "Virtualized Systems",
+    "Containerization",
+    "Mobile Devices",
+    "Essential Security Protection Mechanisms",
+    "Common Security Architecture Flaws and Issues",
+    "Written Lab",
+    "Review Questions"
+   ],
+   "essentials": ""
+  },
+  {
+   "no": 10,
+   "titleEn": "Physical Security Requirements",
+   "titleZh": "物理安全要求",
+   "domain": 4,
+   "domainName": "通信与网络安全",
+   "sections": [
+    "Apply Security Principles to Site and Facility Design",
+    "Implement Site and Facility Security Controls",
+    "Implement and Manage Physical Security",
+    "Written Lab",
+    "Review Questions"
+   ],
+   "essentials": ""
+  },
+  {
+   "no": 11,
+   "titleEn": "Secure Network Architecture and Components",
+   "titleZh": "安全网络架构和组件",
+   "domain": 4,
+   "domainName": "通信与网络安全",
+   "sections": [
+    "OSI Model",
+    "TCP/IP Model",
+    "Analyzing Network Traffic",
+    "Common Application Layer Protocols",
+    "Transport Layer Protocols",
+    "Domain Name System",
+    "Internet Protocol (IP) Networking",
+    "ARP Concerns",
+    "Secure Communication Protocols",
+    "Implications of Multilayer Protocols",
+    "Segmentation",
+    "Edge Networks",
+    "Wireless Networks",
+    "Satellite Communications",
+    "Cellular Networks",
+    "Content Distribution Networks (CDNs)",
+    "Secure Network Components",
+    "Written Lab",
+    "Review Questions"
+   ],
+   "essentials": ""
+  },
+  {
+   "no": 12,
+   "titleEn": "Secure Communications and Network Attacks",
+   "titleZh": "安全通信和网络攻击",
+   "domain": 4,
+   "domainName": "通信与网络安全",
+   "sections": [
+    "Protocol Security Mechanisms",
+    "Secure Voice Communications",
+    "Remote Access Security Management",
+    "Multimedia Collaboration",
+    "Monitoring and Management",
+    "Load Balancing",
+    "Manage Email Security",
+    "Virtual Private Network",
+    "Switching and Virtual LANs",
+    "Network Address Translation",
+    "Third-Party Connectivity",
+    "Switching Technologies",
+    "WAN Technologies",
+    "Fiber-Optic Links",
+    "Prevent or Mitigate Network Attacks",
+    "Written Lab",
+    "Review Questions"
+   ],
+   "essentials": ""
+  },
+  {
+   "no": 13,
+   "titleEn": "Managing Identity and Authentication",
+   "titleZh": "管理身份和认证",
+   "domain": 5,
+   "domainName": "身份与访问管理",
+   "sections": [
+    "Controlling Access to Assets",
+    "The AAA Model",
+    "Implementing Identity Management",
+    "Managing the Identity and Access Provisioning Life Cycle",
+    "Written Lab",
+    "Review Questions"
+   ],
+   "essentials": ""
+  },
+  {
+   "no": 14,
+   "titleEn": "Controlling and Monitoring Access",
+   "titleZh": "控制和监控访问",
+   "domain": 5,
+   "domainName": "身份与访问管理",
+   "sections": [
+    "Comparing Access Control Models",
+    "Implementing Authentication Systems",
+    "Zero-Trust Access Policy Enforcement",
+    "Understanding Access Control Attacks",
+    "Written Lab",
+    "Review Questions"
+   ],
+   "essentials": ""
+  },
+  {
+   "no": 15,
+   "titleEn": "Security Assessment and Testing",
+   "titleZh": "安全评估和测试",
+   "domain": 6,
+   "domainName": "安全评估与测试",
+   "sections": [
+    "Building a Security Assessment and Testing Program",
+    "Performing Vulnerability Assessments",
+    "Testing Your Software",
+    "Training and Exercises",
+    "Implementing Security Management Processes and Collecting",
+    "Exam Essentials",
+    "Written Lab",
+    "Review Questions"
+   ],
+   "essentials": ""
+  },
+  {
+   "no": 16,
+   "titleEn": "Managing Security Operations",
+   "titleZh": "管理安全运营",
+   "domain": 7,
+   "domainName": "安全运营",
+   "sections": [
+    "Apply Foundational Security Operations Concepts",
+    "Address Personnel Safety and Security",
+    "Provision Information and Assets Securely",
+    "Apply Resource Protection",
+    "Managed Services in the Cloud",
+    "Perform Configuration Management (CM)",
+    "Manage Change",
+    "Manage Patches and Reduce Vulnerabilities",
+    "Written Lab",
+    "Review Questions"
+   ],
+   "essentials": ""
+  },
+  {
+   "no": 17,
+   "titleEn": "Preventing and Responding to Incidents",
+   "titleZh": "预防和响应事件",
+   "domain": 7,
+   "domainName": "安全运营",
+   "sections": [
+    "Conducting Incident Management",
+    "Implementing Detection and Preventive Measures",
+    "Logging and Monitoring",
+    "Automating Incident Response",
+    "Written Lab",
+    "Review Questions"
+   ],
+   "essentials": ""
+  },
+  {
+   "no": 18,
+   "titleEn": "Disaster Recovery Planning",
+   "titleZh": "灾难恢复计划",
+   "domain": 7,
+   "domainName": "安全运营",
+   "sections": [
+    "The Nature of Disaster",
+    "Understand System Resilience, High Availability, and Fault",
+    "Recovery Strategy",
+    "Recovery Plan Development",
+    "Training, Awareness, and Documentation",
+    "Testing and Maintenance",
+    "Written Lab",
+    "Review Questions"
+   ],
+   "essentials": ""
+  },
+  {
+   "no": 19,
+   "titleEn": "Investigations and Ethics",
+   "titleZh": "调查和伦理",
+   "domain": 7,
+   "domainName": "安全运营",
+   "sections": [
+    "Investigations",
+    "Major Categories of Computer Crime",
+    "Ethics",
+    "Written Lab",
+    "Review Questions"
+   ],
+   "essentials": ""
+  },
+  {
+   "no": 20,
+   "titleEn": "Software Development Security",
+   "titleZh": "软件开发安全",
+   "domain": 8,
+   "domainName": "软件开发安全",
+   "sections": [
+    "Introducing Systems Development Controls",
+    "Establishing Databases and Data Warehousing",
+    "Storage Threats",
+    "Understanding Knowledge-Based Systems",
+    "Written Lab",
+    "Review Questions"
+   ],
+   "essentials": ""
+  },
+  {
+   "no": 21,
+   "titleEn": "Malicious Code and Application Attacks",
+   "titleZh": "恶意代码和应用攻击",
+   "domain": 8,
+   "domainName": "软件开发安全",
+   "sections": [
+    "Malware",
+    "Malware Prevention",
+    "Application Attacks",
+    "Injection Vulnerabilities",
+    "Exploiting Authorization Vulnerabilities",
+    "Exploiting Web Application Vulnerabilities",
+    "Application Security Controls",
+    "Secure Coding Practices",
+    "Written Lab",
+    "Review Questions",
+    "Appendix A: Answers to Review Questions"
+   ],
+   "essentials": ""
+  }
+ ]
+}
