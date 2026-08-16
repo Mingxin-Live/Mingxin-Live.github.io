@@ -1431,7 +1431,7 @@ function getTodayPlan(){
       var ac=AI_CARDS.find(function(x){return x.id===nextAICard});
       res.today.push({type:'ai',title:'AI 安全 · 今日课程：'+ac.title,sub:'深度讲解 + 图解 + 实战案例 → 学完自动打卡',badge:'学习内容',btn:'去学习',action:"openAI('"+nextAICard+"')"});
     }else{
-      res.today.push({type:'ai',title:'AI 安全 · '+th.name,sub:'14 张课程卡片已全部学完，可复习巩固',badge:'持续学习',btn:'去复习',action:"switchTab(2)"});
+      res.today.push({type:'ai',title:'AI 安全 · '+th.name,sub:'14 张课程卡片已全部学完，可复习巩固',badge:'持续学习',btn:'去复习',action:"switchTab('ai')"});
     }
   }
   var dLeft=daysBetween(TODAY,S.examDate);
@@ -4610,17 +4610,29 @@ function buildTabs(){
   btns[2].innerHTML=ic('gear');
 }
 function switchTab(id){
+  // 兼容数字 id（历史遗留：switchTab(1) 应切到 cissp）→ 映射为字符串，防止 '#page-1' 查无元素导致页面空白
+  if(typeof id==='number'){var TABID=['dash','cissp','ai','notes','mine'];id=TABID[id]||'dash'}
   curTab=id;
-  document.querySelectorAll('.page').forEach(function(p){p.classList.remove('on')});
-  $('#page-'+id).classList.add('on');
-  buildTabs();
-  if(id==='dash'){renderHero();renderToday();renderDash()}
-  if(id==='cissp'){renderCissp();renderExam()}
-  if(id==='ai'){renderAI();renderJobs()}
-  if(id==='notes')renderNotes();
-  if(id==='mine')renderMine();
-  window.scrollTo({top:0,behavior:'smooth'});
+  try{document.querySelectorAll('.page').forEach(function(p){p.classList.remove('on')})}catch(e){}
+  try{$('#page-'+id).classList.add('on')}catch(e){}
+  try{buildTabs()}catch(e){}
+  // 每页渲染独立保护：单个环节失败不影响页面切换与其他内容（杜绝空白页）
+  try{if(id==='dash'){renderHero();renderToday();renderDash()}}catch(e){errTip(e)}
+  try{if(id==='cissp'){renderCissp();renderExam()}}catch(e){errTip(e)}
+  try{if(id==='ai'){renderAI();renderJobs()}}catch(e){errTip(e)}
+  try{if(id==='notes')renderNotes()}catch(e){errTip(e)}
+  try{if(id==='mine')renderMine()}catch(e){errTip(e)}
+  try{window.scrollTo({top:0,behavior:'smooth'})}catch(e){}
 }
+/* 全局错误提示：页面渲染异常时 toast 具体原因，便于定位而非白屏 */
+function errTip(e){
+  var msg=(e&&e.message)?String(e.message).slice(0,80):'未知错误';
+  try{toast('⚠️ 页面渲染异常：'+msg)}catch(err){}
+}
+window.onerror=function(msg,src,line){
+  try{toast('⚠️ 脚本错误：'+String(msg).slice(0,80)+(line?' (行'+line+')':''))}catch(err){}
+  return false;
+};
 function secIcon(n,color){
   var map={green:['var(--green-l)','var(--green-d)'],blue:['var(--blue-l)','var(--blue)'],amber:['var(--amber-l)','var(--amber)'],purple:['var(--purple-l)','var(--purple)'],red:['var(--red-l)','var(--red)'],teal:['var(--teal-l)','var(--teal)']};
   var c=map[color]||map.green;
@@ -4783,11 +4795,23 @@ function renderAll(){
   renderMine();
 }
 function init(){
-  // 数据迁移与清洗：模考记录只保留完整模考（type==='exam'），清除旧版 quiz/无 type 演示数据
+  // 数据迁移与清洗：模考记录只保留完整模考（type==='exam'），清除旧版 quiz/无 type 演示数据；缺失字段兜底（防旧数据渲染崩溃）
   try{
     if(S.examHistory&&Array.isArray(S.examHistory))S.examHistory=S.examHistory.filter(function(x){return x&&x.type==='exam'});
     if(!S.quizHistory||!Array.isArray(S.quizHistory))S.quizHistory=[];
     if(!S.wrongSet||typeof S.wrongSet!=='object')S.wrongSet={};
+    if(!S.reviews||typeof S.reviews!=='object')S.reviews={};
+    if(!S.habits||typeof S.habits!=='object')S.habits={};
+    if(!S.logs||!Array.isArray(S.logs))S.logs=[];
+    if(!S.records||typeof S.records!=='object')S.records={};
+    if(!S.usedPool||typeof S.usedPool!=='object')S.usedPool={};
+    if(!S.guideCheck||typeof S.guideCheck!=='object')S.guideCheck={version:'未核查',lastCheck:null};
+    if(!S.examDate)S.examDate=addDays(TODAY,196);
+    if(typeof S.quizCount!=='number')S.quizCount=0;
+    if(typeof S.points!=='number')S.points=0;
+    if(!Array.isArray(S.achievements))S.achievements=[];
+    if(!S.aiCardsDone||typeof S.aiCardsDone!=='object')S.aiCardsDone={};
+    if(!S.lessonDone||typeof S.lessonDone!=='object')S.lessonDone={};
   }catch(e){}
   // FAB 图标内容
   if(S.darkMode)document.body.classList.add('dark');
