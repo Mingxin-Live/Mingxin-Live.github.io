@@ -4931,6 +4931,27 @@ function importNoteMd(){
   inp.click();
 }
 /* ============ 链接转笔记：HTML → Markdown ============ */
+function compressImageFile(file,maxW,cb){
+  if(!file||!cb)return;
+  var rd=new FileReader();
+  rd.onload=function(){
+    var img=new Image();
+    img.onload=function(){
+      try{
+        var w=img.width,h=img.height;
+        if(w>maxW){h=Math.round(h*maxW/w);w=maxW;}
+        var cv=document.createElement('canvas');cv.width=w;cv.height=h;
+        var ctx=cv.getContext('2d');
+        ctx.fillStyle='#fff';ctx.fillRect(0,0,w,h);
+        ctx.drawImage(img,0,0,w,h);
+        cb(cv.toDataURL('image/jpeg',0.82));
+      }catch(e){cb(rd.result);}
+    };
+    img.onerror=function(){cb(rd.result);};
+    img.src=rd.result;
+  };
+  rd.readAsDataURL(file);
+}
 function htmlToMd(html,baseUrl){
   if(!html)return '';
   var d=document.createElement('div');
@@ -5225,15 +5246,14 @@ function noteReplaceImg(wrap){
   var file=document.getElementById('nedFile');
   file.onchange=function(){
     var f=file.files&&file.files[0];if(!f)return;
-    var rd=new FileReader();
-    rd.onload=function(){
+    compressImageFile(f,1400,function(d){
       var img=wrap.querySelector('img');
-      if(img)img.src=rd.result;
+      if(img)img.src=d;
       var ta=document.getElementById('nedTa'),pv=document.getElementById('nedPrev');
       if(ta&&pv)ta.value=noteHtmlToMd(pv.innerHTML);
+      if(ta)ta.dispatchEvent(new Event('input',{bubbles:true}));
       toast('图片已替换');
-    };
-    rd.readAsDataURL(f);
+    });
     file.value='';
   };
   file.click();
@@ -5290,11 +5310,14 @@ function noteInsMd(id,md){
       range.deleteContents();
       var last=frag.lastChild;
       range.insertNode(frag);
-      var r=document.createRange();
-      r.setStart(last,0);r.collapse(true);
-      sel.removeAllRanges();sel.addRange(r);
+      // 手动同步渲染（不依赖 InputEvent，兼容移动端）
       ta.value=noteHtmlToMd(pv.innerHTML);
-      pv.dispatchEvent(new InputEvent('input',{bubbles:true,inputType:'insertText'}));
+      pv.innerHTML=mdToHtml(ta.value);
+      var n2=S.notes.filter(function(x){return x.id===id})[0];
+      var mask2=document.querySelector('.ned-mask');
+      if(n2&&mask2)noteApplyTheme(mask2,noteTheme(n2.theme||'spring'),n2.bg);
+      var r2=document.createRange();r2.selectNodeContents(pv);r2.collapse(false);
+      var s2=window.getSelection();s2.removeAllRanges();s2.addRange(r2);
     }
   }
 }
@@ -5520,17 +5543,13 @@ function openNoteEditor(id){
   document.getElementById('nedInsImg').onclick=function(){document.getElementById('nedFile').click();};
   document.getElementById('nedFile').addEventListener('change',function(){
     var f=this.files&&this.files[0];if(!f)return;
-    var rd=new FileReader();
-    rd.onload=function(){noteInsMd(n.id,'\n![]('+rd.result+')\n');};
-    rd.readAsDataURL(f);
+    compressImageFile(f,1400,function(d){noteInsMd(n.id,'\n![]('+d+')\n');});
     this.value='';
   });
   document.getElementById('nedBgBtn').onclick=function(){document.getElementById('nedBgFile').click();};
   document.getElementById('nedBgFile').addEventListener('change',function(){
     var f=this.files&&this.files[0];if(!f)return;
-    var rd=new FileReader();
-    rd.onload=function(){n.bg=rd.result;applyTheme();toast('已应用自定义背景（可在 🎨 面板清除）');};
-    rd.readAsDataURL(f);
+    compressImageFile(f,1600,function(d){n.bg=d;applyTheme();toast('已应用自定义背景（可在 🎨 面板清除）');});
     this.value='';
   });
   document.getElementById('nedInsTable').onclick=function(){noteInsTable(n.id);};
@@ -5541,9 +5560,7 @@ function openNoteEditor(id){
       if(items[i].type&&items[i].type.indexOf('image')===0){
         e.preventDefault();
         var f=items[i].getAsFile();
-        var rd=new FileReader();
-        rd.onload=function(){insertAtCursor(ta,'\n![]('+rd.result+')\n');upd();};
-        rd.readAsDataURL(f);
+        compressImageFile(f,1400,function(d){insertAtCursor(ta,'\n![]('+d+')\n');upd();});
         toast('图片已内嵌到笔记');
         return;
       }
@@ -6122,7 +6139,26 @@ function loadUserDataLocal(lu) {
           showUserBadge();
           loadUserData(t);
         } else {
+          // 后端不可达（如 GitHub Pages 线上版无后端）：内置用户自动恢复本地会话
+          var lu2 = null;
+          try {
+            var uu = JSON.parse(localStorage.getItem(USER_KEY) || 'null');
+            if (uu && uu.isLocal && uu.username) lu2 = window.wbLocalFind(uu.username);
+          } catch (e) {}
+          if (lu2) {
+            window.wbUser = { id: 'local_' + lu2.username, username: lu2.username, email: lu2.email, nickname: lu2.nick, isAdmin: 0, isLocal: true, expireAt: null };
+            setToken('local:' + lu2.username);
+            showUserBadge();
+            loadUserDataLocal(lu2);
+            return;
+          }
           clrToken(); showLogin();
+          if (r.msg && r.msg.indexOf('无法连接') >= 0) {
+            setTimeout(function () {
+              var m = document.querySelector('.wb-msg');
+              if (m) { m.style.display = 'block'; m.style.background = '#FFF7E6'; m.style.color = '#8a6116'; m.textContent = '当前为线上演示版（无后端服务），请使用内置账号登录：test1 ~ test5（初始密码 123456）'; }
+            }, 250);
+          }
         }
       });
     } else {
