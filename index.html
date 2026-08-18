@@ -632,6 +632,49 @@ main{max-width:1080px;margin:0 auto;padding:20px 18px calc(96px + var(--safe-bot
 .rs-dots i.on2{background:var(--green-d)}
 .rs-dots i.on3{background:var(--green)}
 .role-card .rc-prog{margin-top:11px;font-size:11px;color:var(--ink3);display:flex;justify-content:space-between}
+/* ---- 岗位推荐卡片 ---- */
+.job-recom-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:13px;margin-bottom:16px}
+.job-recom{background:var(--card);border:1.5px solid var(--line);border-radius:18px;padding:17px 18px;position:relative;transition:all .28s cubic-bezier(.3,1,.4,1);box-shadow:var(--shadow-sm);display:flex;flex-direction:column;gap:9px;animation:fadeUp .35s both}
+.job-recom:hover{transform:translateY(-4px);border-color:rgba(47,125,80,.45);box-shadow:var(--shadow)}
+.job-recom .jr-hot{position:absolute;top:14px;right:14px;background:linear-gradient(120deg,#E8A33D,#D97706);color:#fff;font-size:10px;font-weight:800;padding:2px 9px;border-radius:999px;letter-spacing:.5px}
+.job-recom .jr-title{font-size:16px;font-weight:800;padding-right:56px}
+.job-recom .jr-en{font-size:11.5px;color:var(--ink3);margin-top:1px}
+.job-recom .jr-meta{display:flex;gap:7px;flex-wrap:wrap;margin-top:2px}
+.job-recom .jr-meta span{font-size:11px;font-weight:700;padding:3px 10px;border-radius:999px;background:var(--green-l);color:var(--green-d)}
+.job-recom .jr-meta span.sal{background:rgba(217,119,6,.12);color:#B45309}
+.job-recom .jr-req{font-size:12.5px;color:var(--ink2);line-height:1.75;background:#FBFCF8;border:1px solid #E8EBE2;border-radius:11px;padding:9px 12px}
+.job-recom .jr-tags{display:flex;gap:6px;flex-wrap:wrap}
+.job-recom .jr-tags .pill{font-size:11px}
+.job-recom .jr-foot{display:flex;align-items:center;justify-content:space-between;font-size:11.5px;color:var(--ink3)}
+.job-recom .jr-match{font-weight:800;font-size:13px;color:var(--green-d)}
+.job-recom .jr-match b{font-size:16px}
+/* ---- 学习资源清单 ---- */
+.res-zone{margin-bottom:16px}
+.res-cat{border:1px solid var(--line);border-radius:16px;background:var(--card);padding:15px 16px;margin-bottom:12px;box-shadow:var(--shadow-sm)}
+.res-cat-head{display:flex;align-items:center;gap:9px;font-size:14.5px;font-weight:800;margin-bottom:11px;color:var(--ink)}
+.res-cat-head .c-ic{width:28px;height:28px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:14px}
+.res-item{display:flex;align-items:flex-start;gap:11px;padding:11px 12px;border:1px solid #E8EBE2;border-radius:12px;margin-bottom:8px;cursor:pointer;transition:all .2s;background:#FDFEFC;text-decoration:none;color:inherit}
+.res-item:last-child{margin-bottom:0}
+.res-item:hover{border-color:rgba(47,125,80,.45);transform:translateX(4px);box-shadow:0 6px 16px rgba(47,125,80,.09)}
+.res-item .ri-tag{font-size:10.5px;font-weight:800;padding:2px 9px;border-radius:999px;flex-shrink:0;background:var(--green-l);color:var(--green-d);margin-top:1px}
+.res-item .ri-body{flex:1;min-width:0}
+.res-item .ri-t{font-size:13.5px;font-weight:700;display:flex;align-items:center;gap:6px}
+.res-item .ri-t .ext{font-size:10.5px;color:var(--ink3);flex-shrink:0}
+.res-item .ri-d{font-size:12px;color:var(--ink2);line-height:1.65;margin-top:3px}
+/* 技能点总览：技能描述 */
+.skill-row{display:flex;align-items:flex-start;gap:10px;padding:9px 4px;border-bottom:1px dashed #EDF0E8}
+.skill-row:last-child{border-bottom:none}
+.skill-row .skill-name{flex:1;font-size:13px;font-weight:600;min-width:0}
+.skill-row .skill-desc{font-size:11.5px;color:var(--ink3);line-height:1.6;margin-top:2px}
+.skill-row .dots{flex-shrink:0;display:flex;gap:4px;margin-top:5px}
+.skill-row .dot{width:11px;height:11px;border-radius:50%;border:1.5px solid var(--line2);cursor:pointer;transition:all .2s;background:transparent}
+.skill-row .dot:hover{transform:scale(1.25)}
+.skill-row .dot.on{background:var(--green);border-color:var(--green);box-shadow:0 2px 6px rgba(47,125,80,.3)}
+.skill-cat{padding:14px 16px;border:1px solid var(--line);border-radius:16px;background:var(--card);margin-bottom:12px;box-shadow:var(--shadow-sm)}
+.skill-cat-head{display:flex;align-items:center;gap:11px;margin-bottom:6px}
+.skill-cat-head .c-ic{width:34px;height:34px;border-radius:11px;display:flex;align-items:center;justify-content:center}
+.skill-cat-head .c-name{font-size:14.5px;font-weight:800}
+.skill-cat-head .c-sub{font-size:11px;color:var(--ink3);margin-top:1px}
 .kb-item{display:flex;align-items:center;gap:10px;padding:10px 12px;border:1px solid var(--line);border-radius:12px;margin-bottom:7px;cursor:pointer;transition:all .22s cubic-bezier(.3,1,.4,1);background:var(--card)}
 .kb-item:hover{border-color:rgba(47,125,80,.4);transform:translateX(4px);box-shadow:0 6px 16px rgba(47,125,80,.1)}
 .kb-item .kb-type{font-size:10.5px;font-weight:800;padding:2px 9px;border-radius:999px;flex-shrink:0;background:var(--green-l);color:var(--green-d)}
@@ -1421,16 +1464,33 @@ function phaseOf(week){for(var i=0;i<PHASES.length;i++){var p=PHASES[i];if(week>
 /* AI 安全技能树：4 大方向 */
 var SKILL_TREE=[
  {id:'ai',name:'AI 安全基础',sub:'大模型原理 · 威胁面',color:'#10B981',skills:[
-   {n:'机器学习与神经网络基础',lv:2},{n:'LLM 原理与提示工程',lv:1},{n:'AI 威胁面全景（投毒/窃取/滥用）',lv:1},{n:'OWASP LLM Top 10',lv:0},{n:'AI 红队评估方法',lv:0}
+   {n:'机器学习与神经网络基础',lv:2,d:'掌握模型训练/推理原理，理解梯度、损失函数与过拟合等核心概念'},
+   {n:'LLM 原理与提示工程',lv:1,d:'了解 Transformer 架构、上下文窗口、RAG 与 Agent 工作流'},
+   {n:'AI 威胁面全景（投毒/窃取/滥用）',lv:1,d:'掌握数据投毒、模型窃取、恶意输出等 AI 特有攻击面'},
+   {n:'OWASP LLM Top 10',lv:0,d:'逐条理解 10 大 LLM 应用风险：提示注入、数据投毒、过度授权等'},
+   {n:'AI 红队评估方法',lv:0,d:'掌握 LLM 应用红队测试流程与报告输出规范'}
  ]},
  {id:'pen',name:'渗透测试',sub:'Web · 内网 · 实战靶场',color:'#E5484D',skills:[
-   {n:'网络基础与 Nmap 侦察',lv:2},{n:'OWASP Top 10 漏洞利用',lv:1},{n:'Burp Suite 实战',lv:1},{n:'内网渗透与横向移动',lv:0},{n:'LLM 提示注入与越狱',lv:0},{n:'靶场练习（DVWA/WebGoat）',lv:1}
+   {n:'网络基础与 Nmap 侦察',lv:2,d:'协议栈、端口扫描、服务识别与资产测绘'},
+   {n:'OWASP Top 10 漏洞利用',lv:1,d:'SQLi/XSS/SSRF/文件上传等经典漏洞原理与利用'},
+   {n:'Burp Suite 实战',lv:1,d:'代理抓包、Repeater/Intruder 自动化测试与扩展插件'},
+   {n:'内网渗透与横向移动',lv:0,d:'域渗透、口令喷洒、隧道搭建与权限维持'},
+   {n:'LLM 提示注入与越狱',lv:0,d:'直接/间接提示注入、越狱模板与防御绕过'},
+   {n:'靶场练习（DVWA/WebGoat）',lv:1,d:'经典靶场通关，夯实渗透基本功'}
  ]},
  {id:'vuln',name:'安全漏洞管理',sub:'扫描 · 生命周期 · SRC',color:'#D97706',skills:[
-   {n:'漏洞扫描（Nessus/OpenVAS）',lv:1},{n:'CVE 与 CVSS 评分体系',lv:1},{n:'漏洞生命周期管理流程',lv:1},{n:'Nuclei 自动化检测',lv:0},{n:'SRC 漏洞挖掘实践',lv:0}
+   {n:'漏洞扫描（Nessus/OpenVAS）',lv:1,d:'资产扫描、漏洞验证与误报排查'},
+   {n:'CVE 与 CVSS 评分体系',lv:1,d:'漏洞编号规范与 CVSS 3.1 评分要素'},
+   {n:'漏洞生命周期管理流程',lv:1,d:'发现-验证-修复-复测-关闭的闭环管理'},
+   {n:'Nuclei 自动化检测',lv:0,d:'模板化漏洞扫描与自定义 PoC 编写'},
+   {n:'SRC 漏洞挖掘实践',lv:0,d:'企业众测平台规则、报告撰写与赏金获取'}
  ]},
  {id:'ir',name:'应急响应',sub:'检测 · 处置 · 取证',color:'#2F7D50',skills:[
-   {n:'事件响应流程（NIST 6 步）',lv:1},{n:'日志分析（Splunk/ELK）',lv:1},{n:'威胁狩猎与 IOC 提取',lv:0},{n:'Windows/Linux 取证基础',lv:0},{n:'勒索软件应急实战',lv:0}
+   {n:'事件响应流程（NIST 6 步）',lv:1,d:'准备-检测-遏制-根除-恢复-复盘全流程'},
+   {n:'日志分析（Splunk/ELK）',lv:1,d:'日志检索、关联分析与异常模式识别'},
+   {n:'威胁狩猎与 IOC 提取',lv:0,d:'假设驱动狩猎、恶意指标提取与检测规则编写'},
+   {n:'Windows/Linux 取证基础',lv:0,d:'内存/磁盘取证、进程痕迹与持久化排查'},
+   {n:'勒索软件应急实战',lv:0,d:'勒索事件隔离、解密评估与业务恢复演练'}
  ]}
 ];
 /* 月度主题：6 个月持续学习规划 */
@@ -1452,6 +1512,43 @@ var DEFAULT_JOBS=[
  {id:'j1',title:'AI 安全工程师',src:'招聘平台示例 · 2026-07',tags:['LLM 安全','红队评估','提示注入防护','AI 合规'],note:'要求熟悉大模型攻击面、能开展 AI 红队测试，关注 OWASP LLM Top 10 与合规框架。',done:false},
  {id:'j2',title:'渗透测试工程师（红队）',src:'招聘平台示例 · 2026-07',tags:['Burp Suite','内网渗透','AD 域','编写 PoC'],note:'要求 Web/内网渗透经验、熟悉 ATT&CK 框架，有 CTF/SRC 战绩加分。',done:false},
  {id:'j3',title:'安全运营工程师（SOC）',src:'招聘平台示例 · 2026-07',tags:['SIEM','日志分析','事件响应','威胁狩猎'],note:'要求熟悉 Splunk/ELK、响应流程与威胁情报，能独立处置安全事件。',done:false}
+];
+/* AI 安全岗位推荐（薪资为一线城市月薪参考，随招聘市场波动） */
+var JOB_RECOMMEND=[
+ {id:'jr1',title:'AI 安全工程师',en:'AI Security Engineer',salary:'25-45K·15薪',exp:'3-5 年',company:'字节·阿里·腾讯·华为',req:'熟悉 LLM 攻击面（提示注入/越狱/数据投毒）与 OWASP LLM Top 10；能开展 AI 应用安全评估与红队测试，输出整改建议',skills:['LLM 安全','红队评估','提示注入防护','AI 合规'],sIdx:[[0,1],[0,3],[1,5],[2,4]],hot:true},
+ {id:'jr2',title:'大模型红队工程师',en:'LLM Red Team Engineer',salary:'30-60K·15薪',exp:'3-6 年',company:'大模型厂商·安全公司',req:'精通提示注入/越狱/对抗样本，熟练 garak、PyRIT 等红队工具，能独立完成 LLM 应用渗透与漏洞报告',skills:['提示注入','越狱','garak/PyRIT','对抗样本'],sIdx:[[1,5],[0,4],[3,2]],hot:true},
+ {id:'jr3',title:'AI 安全运营工程师',en:'AI SOC Analyst',salary:'15-30K·14薪',exp:'1-3 年',company:'银行·运营商·安全厂商',req:'熟悉 SIEM/日志分析，能监测 AI 应用异常与事件响应处置，了解 OWASP LLM Top 10 常见风险',skills:['SIEM','日志分析','事件响应','威胁狩猎'],sIdx:[[3,0],[3,1],[3,2]]},
+ {id:'jr4',title:'AI 安全架构师',en:'AI Security Architect',salary:'35-60K·16薪',exp:'5-8 年',company:'头部互联网·金融',req:'设计 AI 应用安全架构（RAG 防护/Agent 权限/供应链安全），熟悉 NIST AI RMF 与数据合规体系',skills:['安全架构','RAG 防护','Agent 安全','合规体系'],sIdx:[[0,0],[0,3],[2,2]],adv:true},
+ {id:'jr5',title:'大模型安全研究员',en:'AI Security Researcher',salary:'40-80K·15薪',exp:'硕士+·3年',company:'研究院·大厂安全实验室',req:'跟踪 Agentic AI/多模态前沿攻击面，产出高质量研究与工具，有攻防赛事/论文成果优先',skills:['前沿攻防','多模态安全','Agentic AI','安全研究'],sIdx:[[0,4],[1,3]],adv:true},
+ {id:'jr6',title:'AI 应用渗透测试工程师',en:'AI Pentester',salary:'20-40K·14薪',exp:'2-5 年',company:'安全服务商·乙方',req:'Web/API 渗透 + LLM 应用测试，熟练 Burp Suite，完成 PortSwigger AI 靶场，输出渗透报告',skills:['渗透测试','Burp Suite','API 安全','LLM 测试'],sIdx:[[1,0],[1,2],[1,5]]}
+];
+/* AI 安全精选学习资源清单（来源：权威官方文档/课程/靶场，抓取自 2026-08 在线资料） */
+var LEARN_RESOURCES=[
+ {cat:'官方标准与框架',icon:'shield',items:[
+   {t:'OWASP GenAI LLM Top 10 2026',d:'大模型应用十大安全风险权威清单：提示注入/数据投毒/过度授权等，2026 新版含 Agentic AI 风险',u:'https://genai.owasp.org/resource/owasp-genai-llm-top-10-2026/',tag:'必读'},
+   {t:'MITRE ATLAS™ AI 威胁矩阵',d:'AI 系统对抗性威胁知识库：16 大战术、178 项技术、68 个真实案例，ATT&CK 风格威胁建模',u:'https://atlas.mitre.org/',tag:'必读'},
+   {t:'NIST AI 风险管理框架',d:'美国 NIST 官方 AI RMF 1.0：识别-评估-管理-治理四环节，企业级 AI 风险治理标准',u:'https://www.nist.gov/itl/ai-risk-management-framework',tag:'框架'},
+   {t:'OWASP 机器学习安全标准',d:'MLSVS 机器学习安全验证标准：数据/模型/部署全生命周期安全要求与测试清单',u:'https://owasp.org/www-project-machine-learning-security-top-10/',tag:'标准'},
+   {t:'微软 Secure AI Framework',d:'微软 AI 安全实践框架：治理、攻击面分析、纵深防御与自动化安全评估',u:'https://www.microsoft.com/en-us/security/business/ai-machine-learning/secure-ai-framework',tag:'框架'}
+ ]},
+ {cat:'在线课程与文档',icon:'book',items:[
+   {t:'微软 AI 红队学习路径',d:'Microsoft Learn 官方课程：AI 系统安全设计 + 红队测试方法系统讲解',u:'https://learn.microsoft.com/en-us/security/ai-red-team',tag:'课程'},
+   {t:'Hugging Face 学习中心',d:'开源社区课程：LLM/NLP/Agent 实践，配套安全评估与红队实战内容',u:'https://huggingface.co/learn',tag:'课程'},
+   {t:'DeepLearning.AI 专项课程',d:'吴恩达团队 AI 应用安全系列：LLM 安全、RAG 安全与 Agent 安全',u:'https://www.deeplearning.ai/courses/',tag:'课程'},
+   {t:'OWASP LLM Top 10 v1.1 中文版',d:'2023 经典版本：LLM01-LLM10 详解与真实案例（含中文翻译）',u:'https://owasp.org/www-project-top-10-for-large-language-model-applications/',tag:'文档'}
+ ]},
+ {cat:'实战靶场与工具',icon:'bug',items:[
+   {t:'PortSwigger Web LLM Attacks 靶场',d:'Burp 官方 LLM 漏洞实验室：提示注入/越狱/过度授权/输出处理 7+ 关实战（Web Security Academy 免费）',u:'https://portswigger.net/web-security/all-labs#web-llm-attacks',tag:'靶场'},
+   {t:'garak · LLM 漏洞扫描器',d:'NVIDIA 开源 LLM 红队工具：自动检测提示注入/越狱/幻觉/数据泄露',u:'https://github.com/NVIDIA/garak',tag:'工具'},
+   {t:'PyRIT · AI 红队框架',d:'微软开源自动化 AI 红队框架：多策略攻击编排与评估',u:'https://github.com/Azure/PyRIT',tag:'工具'},
+   {t:'OWASP WebGoat · Web 靶场',d:'经典 Web 渗透训练靶场，夯实 SQLi/XSS/SSRF 基础',u:'https://owasp.org/www-project-webgoat/',tag:'靶场'}
+ ]},
+ {cat:'社区与持续跟踪',icon:'globe',items:[
+   {t:'OWASP GenAI 安全社区',d:'600+ 专家共建，Slack 频道 / 双周会议 / Newsletter 持续更新',u:'https://genai.owasp.org/',tag:'社区'},
+   {t:'FreeBuf 安全社区',d:'国内主流安全社区，AI 安全攻防一线文章与报告',u:'https://www.freebuf.com/',tag:'社区'},
+   {t:'先知社区',d:'阿里安全技术社区，大模型安全与红队实战经验沉淀',u:'https://xz.aliyun.com/',tag:'社区'},
+   {t:'HackTheBox',d:'综合渗透实战靶场（含 AI 方向），实战进阶与认证',u:'https://www.hackthebox.com/',tag:'靶场'}
+ ]}
 ];
 
 /*__SYLLABUS__*/
@@ -4396,6 +4493,8 @@ var ROLE_CARDS=[
 var selRole='all';
 function renderAI(){
   var h='';
+  h+=renderJobRecom();
+  h+=renderSkills();
   // 岗位技能分类方块（内部含技能树 ◉●○，点击筛选下方学习卡片）
   h+='<div class="sec-title">'+secIcon('briefcase','green')+'岗位技能分类 <span class="t-extra">点击方块筛选学习内容 · 圆点=技能掌握度</span></div>';
   h+='<div class="role-grid">';
@@ -4439,6 +4538,8 @@ function renderAI(){
       '<div class="aic-foot"><span class="aic-go">'+(cdone?'复习 →':'开始学习 →')+'</span></div></div>';
   }
   h+='</div>';
+  // 精选学习资料库（外部链接）
+  h+=renderResources();
   // 月度技术学习 Top10
   h+=monthlyTechHTML();
   // 个人知识库（KBAdapter）
@@ -4453,6 +4554,69 @@ function renderAI(){
   $('#aiBody').innerHTML=h;
 }
 function setRole(id){selRole=id;renderAI()}
+/* ---- AI 岗位推荐 ---- */
+function renderJobRecom(){
+  var h='<div class="sec-title">'+secIcon('briefcase','amber')+'AI 安全岗位推荐 <span class="t-extra">薪资为一线城市月薪参考 · 匹配度随技能掌握自动更新</span></div>';
+  h+='<div class="job-recom-grid">';
+  for(var i=0;i<JOB_RECOMMEND.length;i++){
+    var j=JOB_RECOMMEND[i];
+    var dn=0,tot=0;
+    (j.sIdx||[]).forEach(function(sk){dn+=skillLevel(sk[0],sk[1]);tot+=5});
+    var mt=tot?Math.min(99,Math.round(dn/tot*100)):0;
+    h+='<div class="job-recom" style="animation-delay:'+(i*60)+'ms">'+
+      (j.hot?'<span class="jr-hot">HOT 热门</span>':'')+
+      (j.adv?'<span class="jr-hot" style="background:linear-gradient(120deg,#7C5CF0,#6D5AE0)">进阶</span>':'')+
+      '<div class="jr-title">'+esc(j.title)+'</div>'+
+      '<div class="jr-en">'+esc(j.en||'')+'</div>'+
+      '<div class="jr-meta"><span class="sal">💰 '+esc(j.salary)+'</span><span>📅 '+esc(j.exp)+'</span><span>🏢 '+esc(j.company)+'</span></div>'+
+      '<div class="jr-req">🎯 '+esc(j.req)+'</div>'+
+      '<div class="jr-tags">'+j.skills.map(function(x){return '<span class="pill t">'+esc(x)+'</span>'}).join('')+'</div>'+
+      '<div class="jr-foot"><span>技能匹配度</span><span class="jr-match"><b>'+mt+'%</b></span></div></div>';
+  }
+  h+='</div>';
+  return h;
+}
+/* ---- AI 技能点总览（含描述） ---- */
+function renderSkills(){
+  var h='<div class="sec-title">'+secIcon('shield','purple')+'AI 安全技能点 <span class="t-extra">点击圆点提升掌握度 · 描述辅助规划学习</span></div>';
+  for(var c=0;c<SKILL_TREE.length;c++){
+    var cat=SKILL_TREE[c],done=0,total=cat.skills.length*5;
+    for(var s=0;s<cat.skills.length;s++)done+=skillLevel(c,s);
+    var pct=Math.round(done/total*100);
+    var icMap={ai:'spark',pen:'bug',vuln:'search',ir:'shield'};
+    h+='<div class="skill-cat"><div class="skill-cat-head">'+
+      '<div class="c-ic" style="background:'+cat.color+'22;color:'+cat.color+'">'+ic(icMap[cat.id]||'spark')+'</div>'+
+      '<div style="flex:1"><div class="c-name">'+cat.name+'</div><div class="c-sub">'+cat.sub+'</div></div>'+
+      '<div style="text-align:right;flex-shrink:0"><div style="font-weight:800;font-size:15px">'+pct+'%</div><div style="font-size:10.5px;color:var(--ink3)">'+done+'/'+total+'</div></div></div>';
+    for(var s2=0;s2<cat.skills.length;s2++){
+      var sk=cat.skills[s2],lv=skillLevel(c,s2);
+      var dots='';
+      for(var d=0;d<5;d++){dots+='<div class="dot'+(d<lv?' on':'')+'" style="'+(d<lv?'background:'+cat.color+';border-color:'+cat.color+';box-shadow:0 2px 6px '+cat.color+'55':'')+'" onclick="setSkill('+c+','+s2+','+(d+1===lv?0:d+1)+')"></div>'}
+      h+='<div class="skill-row"><div style="flex:1;min-width:0"><div class="skill-name">'+esc(sk.n)+'</div>'+(sk.d?'<div class="skill-desc">'+esc(sk.d)+'</div>':'')+'</div><div class="dots">'+dots+'</div></div>';
+    }
+    h+='</div>';
+  }
+  return h;
+}
+/* ---- 精选学习资料库（外部链接清单） ---- */
+function renderResources(){
+  var h='<div class="sec-title">'+secIcon('list','green')+'精选学习资料库 <span class="t-extra">官方文档 · 课程 · 靶场 · 社区 · 点击直达原网页</span></div>';
+  var icMap={shield:'shield',book:'book',bug:'bug',globe:'globe'};
+  h+='<div class="res-zone">';
+  for(var c=0;c<LEARN_RESOURCES.length;c++){
+    var rc=LEARN_RESOURCES[c];
+    h+='<div class="res-cat"><div class="res-cat-head"><span class="c-ic" style="background:rgba(47,125,80,.12);color:var(--green-d)">'+ic(icMap[rc.icon]||'book')+'</span>'+esc(rc.cat)+'<span class="t-extra" style="margin-left:auto">'+rc.items.length+' 项</span></div>';
+    for(var i=0;i<rc.items.length;i++){
+      var it=rc.items[i];
+      h+='<a class="res-item" href="'+esc(it.u)+'" target="_blank" rel="noopener">'+
+        '<span class="ri-tag">'+esc(it.tag)+'</span>'+
+        '<div class="ri-body"><div class="ri-t">'+esc(it.t)+'<span class="ext">↗ 打开</span></div><div class="ri-d">'+esc(it.d)+'</div></div></a>';
+    }
+    h+='</div>';
+  }
+  h+='</div>';
+  return h;
+}
 function monthlyTechHTML(){
   var items=AI_CARDS.map(function(c){
     var score=(c.hot?20:0)+(c.prio==='base'?15:(c.prio==='bonus'?10:5));
