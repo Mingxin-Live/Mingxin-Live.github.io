@@ -738,6 +738,54 @@ main{max-width:1080px;margin:0 auto;padding:20px 18px calc(96px + var(--safe-bot
 .com-card .com-name{font-size:13.5px;font-weight:800;color:var(--ink);display:flex;align-items:center;gap:6px}
 .com-card .com-name .ext{font-size:12px;color:var(--green-d)}
 .com-card .com-desc{font-size:11.5px;color:var(--ink3);line-height:1.6}
+/* =====================================================================
+   AI 页信息架构 v23：视图头 / 更多按钮 / 技能卡片 / 知识库条 / 新闻头条
+   ===================================================================== */
+.ai-view-head{display:flex;align-items:center;gap:14px;flex-wrap:wrap;padding:18px 4px 6px}
+.ai-view-head .btn{flex-shrink:0}
+.avh-title{display:flex;align-items:center;gap:10px;font-size:20px;font-weight:800}
+.avh-title .t-ic{width:38px;height:38px;border-radius:12px;display:flex;align-items:center;justify-content:center}
+.avh-sub{width:100%;font-size:12px;color:var(--ink3);margin-left:48px;margin-top:-6px}
+.more-zone{display:flex;align-items:center;justify-content:center;margin:14px 0 20px;flex-wrap:wrap}
+/* ---- 技能与岗位能力卡片 ---- */
+.skill-card-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(225px,1fr));gap:12px;margin-bottom:16px}
+.skill-card{background:var(--card);border:1.5px solid var(--line);border-radius:18px;padding:15px 16px;cursor:pointer;transition:all .28s cubic-bezier(.3,1,.4,1);display:flex;flex-direction:column;gap:8px;box-shadow:var(--shadow-sm);position:relative}
+.skill-card:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+.skill-card.cat:hover{border-color:rgba(47,125,80,.5);box-shadow:0 14px 30px rgba(47,125,80,.13)}
+.skill-card.role:hover{border-color:rgba(124,92,240,.5);box-shadow:0 14px 30px rgba(124,92,240,.13)}
+.skill-card .sc-top{display:flex;align-items:center;gap:8px}
+.skill-card .c-ic{width:30px;height:30px;border-radius:10px;display:flex;align-items:center;justify-content:center}
+.skill-card .sc-type{font-size:10px;font-weight:800;color:var(--ink3);background:var(--bg2);border:1px dashed var(--line2);padding:2px 8px;border-radius:999px}
+.skill-card .sc-on{margin-left:auto;font-size:10px;font-weight:800;color:var(--green-d);background:var(--green-l);padding:2px 9px;border-radius:999px}
+.skill-card .sc-name{font-size:15.5px;font-weight:800}
+.skill-card .sc-sub{font-size:11.5px;color:var(--ink3)}
+.skill-card .sc-foot{display:flex;align-items:center;gap:9px;margin-top:2px}
+.skill-card .sc-pct{font-size:13px;font-weight:800;flex-shrink:0}
+.skill-card .sc-bar{flex:1;height:6px;border-radius:99px;background:var(--line);overflow:hidden}
+.skill-card .sc-bar i{display:block;height:100%;border-radius:99px;transition:width .5s cubic-bezier(.3,1,.4,1)}
+.skill-card .sc-stat{font-size:11px;color:var(--ink3);border-top:1px dashed var(--line2);padding-top:8px;margin-top:2px}
+/* ---- 知识库能力域条 ---- */
+.kb-cap-strip{display:grid;grid-template-columns:repeat(auto-fill,minmax(215px,1fr));gap:9px;margin-bottom:14px}
+.kb-cap-chip{display:flex;align-items:center;gap:9px;background:linear-gradient(135deg,rgba(124,92,240,.08),rgba(79,70,229,.04));border:1px solid rgba(124,92,240,.22);border-radius:13px;padding:9px 12px;cursor:pointer;transition:all .22s cubic-bezier(.3,1,.4,1)}
+.kb-cap-chip:hover{transform:translateX(3px);border-color:rgba(124,92,240,.5);box-shadow:0 6px 16px rgba(124,92,240,.12)}
+.kb-cap-chip .kb-cap-no{flex-shrink:0;width:26px;height:26px;border-radius:8px;background:linear-gradient(135deg,#7C5CF0,#6D5AE0);color:#fff;font-size:10.5px;font-weight:800;display:flex;align-items:center;justify-content:center}
+.kb-cap-chip .kb-cap-t{font-size:12.5px;font-weight:700;flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.kb-cap-chip .kb-cap-n{font-size:10px;color:var(--ink3);flex-shrink:0}
+/* ---- AI 安全头条 ---- */
+.news-brief{display:flex;flex-direction:column;gap:9px;margin-bottom:14px}
+.news-head{background:linear-gradient(150deg,rgba(217,119,6,.1),rgba(232,163,61,.05)),var(--card);border:1.5px solid rgba(217,119,6,.3);border-radius:16px;padding:17px 19px;cursor:pointer;transition:all .28s cubic-bezier(.3,1,.4,1);display:flex;flex-direction:column;gap:8px}
+.news-head:hover{transform:translateY(-3px);border-color:rgba(217,119,6,.55);box-shadow:0 14px 30px rgba(217,119,6,.12)}
+.news-head .news-tag{font-size:10.5px;font-weight:800;color:#fff;background:linear-gradient(120deg,#E8A33D,#D97706);padding:3px 10px;border-radius:999px;align-self:flex-start}
+.news-head .news-date{margin-left:auto;font-size:11px;color:var(--ink3)}
+.news-head .news-tag.hot,.news-item .news-tag.hot{background:linear-gradient(120deg,#E5484D,#C0392B)}
+.news-head-t{font-size:16.5px;font-weight:800;line-height:1.5}
+.news-head-s{font-size:12.5px;color:var(--ink2);line-height:1.75}
+.news-meta{display:flex;align-items:center;gap:9px;flex-wrap:wrap;font-size:11.5px;color:var(--ink3);margin-top:2px}
+.news-item{display:flex;align-items:center;gap:10px;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 15px;cursor:pointer;transition:all .22s}
+.news-item:hover{border-color:rgba(217,119,6,.45);transform:translateX(4px);box-shadow:0 8px 20px rgba(217,119,6,.09)}
+.news-item .news-tag{font-size:10px;font-weight:800;color:#B45309;background:rgba(217,119,6,.1);padding:2px 9px;border-radius:999px;flex-shrink:0}
+.news-item .news-it{flex:1;min-width:0;font-size:13px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.news-item .news-date{font-size:11px;color:var(--ink3);flex-shrink:0}
 /* ---- 学习资源清单 ---- */
 .res-zone{margin-bottom:16px}
 .res-cat{border:1px solid var(--line);border-radius:16px;background:var(--card);padding:15px 16px;margin-bottom:12px;box-shadow:var(--shadow-sm)}
@@ -1678,33 +1726,88 @@ var JOB_DETAILS=[
   reqs:['为 LLM / AI 应用定义并实施安全控制，构建威胁模型（提示词注入、越狱、数据外泄、滥用模式）','部署护栏、内容过滤、策略执行层；训练与微调流水线安全（数据来源、完整性、访问控制）','AI 红队演练与修复闭环；ML 制品供应链安全（权重、数据集、推理依赖）','要求：6+ 年安全工程经验，熟悉 LLM 内部机制、对抗机器学习、提示词注入研究'],
   note:'国际化 AI 安全工程师对标，威胁建模 + 供应链 + 差分隐私组合。',match:'cap1,cap3,cap8'}
 ];
-/* AI 安全精选学习资源清单（来源：权威官方文档/课程/靶场，抓取自 2026-08 在线资料） */
+/* AI 安全精选学习资源清单（来源：权威官方文档/课程/靶场，抓取自 2026-08 在线资料）
+   cap 字段 = 对应能力域（cap1-cap8），用于在能力域学习弹层中作为「附录 · 扩展学习」展示；
+   无 cap 的社区类资源并入 AI 安全头条页的社区情报源。 */
 var LEARN_RESOURCES=[
  {cat:'官方标准与框架',icon:'shield',items:[
-   {t:'OWASP GenAI LLM Top 10 2026',d:'大模型应用十大安全风险权威清单：提示注入/数据投毒/过度授权等，2026 新版含 Agentic AI 风险',u:'https://genai.owasp.org/resource/owasp-genai-llm-top-10-2026/',tag:'必读'},
-   {t:'MITRE ATLAS™ AI 威胁矩阵',d:'AI 系统对抗性威胁知识库：16 大战术、178 项技术、68 个真实案例，ATT&CK 风格威胁建模',u:'https://atlas.mitre.org/',tag:'必读'},
-   {t:'NIST AI 风险管理框架',d:'美国 NIST 官方 AI RMF 1.0：识别-评估-管理-治理四环节，企业级 AI 风险治理标准',u:'https://www.nist.gov/itl/ai-risk-management-framework',tag:'框架'},
-   {t:'OWASP 机器学习安全标准',d:'MLSVS 机器学习安全验证标准：数据/模型/部署全生命周期安全要求与测试清单',u:'https://owasp.org/www-project-machine-learning-security-top-10/',tag:'标准'},
-   {t:'微软 Secure AI Framework',d:'微软 AI 安全实践框架：治理、攻击面分析、纵深防御与自动化安全评估',u:'https://www.microsoft.com/en-us/security/business/ai-machine-learning/secure-ai-framework',tag:'框架'}
+   {t:'OWASP GenAI LLM Top 10 2026',d:'大模型应用十大安全风险权威清单：提示注入/数据投毒/过度授权等，2026 新版含 Agentic AI 风险',u:'https://genai.owasp.org/resource/owasp-genai-llm-top-10-2026/',tag:'必读',cap:'cap1'},
+   {t:'MITRE ATLAS™ AI 威胁矩阵',d:'AI 系统对抗性威胁知识库：16 大战术、178 项技术、68 个真实案例，ATT&CK 风格威胁建模',u:'https://atlas.mitre.org/',tag:'必读',cap:'cap3'},
+   {t:'NIST AI 风险管理框架',d:'美国 NIST 官方 AI RMF 1.0：识别-评估-管理-治理四环节，企业级 AI 风险治理标准',u:'https://www.nist.gov/itl/ai-risk-management-framework',tag:'框架',cap:'cap7'},
+   {t:'OWASP 机器学习安全标准',d:'MLSVS 机器学习安全验证标准：数据/模型/部署全生命周期安全要求与测试清单',u:'https://owasp.org/www-project-machine-learning-security-top-10/',tag:'标准',cap:'cap3'},
+   {t:'微软 Secure AI Framework',d:'微软 AI 安全实践框架：治理、攻击面分析、纵深防御与自动化安全评估',u:'https://www.microsoft.com/en-us/security/business/ai-machine-learning/secure-ai-framework',tag:'框架',cap:'cap7'}
  ]},
  {cat:'在线课程与文档',icon:'book',items:[
-   {t:'微软 AI 红队学习路径',d:'Microsoft Learn 官方课程：AI 系统安全设计 + 红队测试方法系统讲解',u:'https://learn.microsoft.com/en-us/security/ai-red-team',tag:'课程'},
-   {t:'Hugging Face 学习中心',d:'开源社区课程：LLM/NLP/Agent 实践，配套安全评估与红队实战内容',u:'https://huggingface.co/learn',tag:'课程'},
-   {t:'DeepLearning.AI 专项课程',d:'吴恩达团队 AI 应用安全系列：LLM 安全、RAG 安全与 Agent 安全',u:'https://www.deeplearning.ai/courses/',tag:'课程'},
-   {t:'OWASP LLM Top 10 v1.1 中文版',d:'2023 经典版本：LLM01-LLM10 详解与真实案例（含中文翻译）',u:'https://owasp.org/www-project-top-10-for-large-language-model-applications/',tag:'文档'}
+   {t:'微软 AI 红队学习路径',d:'Microsoft Learn 官方课程：AI 系统安全设计 + 红队测试方法系统讲解',u:'https://learn.microsoft.com/en-us/security/ai-red-team',tag:'课程',cap:'cap1'},
+   {t:'Hugging Face 学习中心',d:'开源社区课程：LLM/NLP/Agent 实践，配套安全评估与红队实战内容',u:'https://huggingface.co/learn',tag:'课程',cap:'cap8'},
+   {t:'DeepLearning.AI 专项课程',d:'吴恩达团队 AI 应用安全系列：LLM 安全、RAG 安全与 Agent 安全',u:'https://www.deeplearning.ai/courses/',tag:'课程',cap:'cap8'},
+   {t:'OWASP LLM Top 10 v1.1 中文版',d:'2023 经典版本：LLM01-LLM10 详解与真实案例（含中文翻译）',u:'https://owasp.org/www-project-top-10-for-large-language-model-applications/',tag:'文档',cap:'cap1'}
  ]},
  {cat:'实战靶场与工具',icon:'bug',items:[
-   {t:'PortSwigger Web LLM Attacks 靶场',d:'Burp 官方 LLM 漏洞实验室：提示注入/越狱/过度授权/输出处理 7+ 关实战（Web Security Academy 免费）',u:'https://portswigger.net/web-security/all-labs#web-llm-attacks',tag:'靶场'},
-   {t:'garak · LLM 漏洞扫描器',d:'NVIDIA 开源 LLM 红队工具：自动检测提示注入/越狱/幻觉/数据泄露',u:'https://github.com/NVIDIA/garak',tag:'工具'},
-   {t:'PyRIT · AI 红队框架',d:'微软开源自动化 AI 红队框架：多策略攻击编排与评估',u:'https://github.com/Azure/PyRIT',tag:'工具'},
-   {t:'OWASP WebGoat · Web 靶场',d:'经典 Web 渗透训练靶场，夯实 SQLi/XSS/SSRF 基础',u:'https://owasp.org/www-project-webgoat/',tag:'靶场'}
+   {t:'PortSwigger Web LLM Attacks 靶场',d:'Burp 官方 LLM 漏洞实验室：提示注入/越狱/过度授权/输出处理 7+ 关实战（Web Security Academy 免费）',u:'https://portswigger.net/web-security/all-labs#web-llm-attacks',tag:'靶场',cap:'cap1'},
+   {t:'garak · LLM 漏洞扫描器',d:'NVIDIA 开源 LLM 红队工具：自动检测提示注入/越狱/幻觉/数据泄露',u:'https://github.com/NVIDIA/garak',tag:'工具',cap:'cap1'},
+   {t:'PyRIT · AI 红队框架',d:'微软开源自动化 AI 红队框架：多策略攻击编排与评估',u:'https://github.com/Azure/PyRIT',tag:'工具',cap:'cap2'},
+   {t:'OWASP WebGoat · Web 靶场',d:'经典 Web 渗透训练靶场，夯实 SQLi/XSS/SSRF 基础',u:'https://owasp.org/www-project-webgoat/',tag:'靶场',cap:'cap4'}
  ]},
  {cat:'社区与持续跟踪',icon:'globe',items:[
    {t:'OWASP GenAI 安全社区',d:'600+ 专家共建，Slack 频道 / 双周会议 / Newsletter 持续更新',u:'https://genai.owasp.org/',tag:'社区'},
    {t:'FreeBuf 安全社区',d:'国内主流安全社区，AI 安全攻防一线文章与报告',u:'https://www.freebuf.com/',tag:'社区'},
    {t:'先知社区',d:'阿里安全技术社区，大模型安全与红队实战经验沉淀',u:'https://xz.aliyun.com/',tag:'社区'},
-   {t:'HackTheBox',d:'综合渗透实战靶场（含 AI 方向），实战进阶与认证',u:'https://www.hackthebox.com/',tag:'靶场'}
+   {t:'HackTheBox',d:'综合渗透实战靶场（含 AI 方向），实战进阶与认证',u:'https://www.hackthebox.com/',tag:'靶场',cap:'cap4'}
  ]}
+];
+/* =====================================================================
+   AI 安全头条（AI_NEWS）：实时检索自微信公众号/GitHub/安全社区
+   来源：secrss 安全内参 · Black Hat 2026 · AISI · Noma Security ·
+        Wiz/Check Point · AI Governance Institute · GitHub Trending 等
+   分类：重大漏洞 / 前沿研究 / 工具动态 / 监管合规 / 产业动态
+   ===================================================================== */
+var AI_NEWS=[
+ {id:'n1',cat:'重大漏洞',hot:true,date:'2026-08-03',src:'Noma Security / 腾讯新闻',tag:'MCP · CVSS 10.0',title:'Ruflo AI Agent 曝 RufRoot 漏洞（CVE-2026-59726）：MCP 桥接未鉴权，一次请求即可接管',
+  summary:'开源 AI 智能体编排平台 Ruflo（GitHub 67k+ star）的 MCP 桥接默认未认证暴露，233 个工具全部可被未授权调用。攻击者可执行任意代码、窃取 LLM API 密钥、劫持智能体，甚至向 AgentDB 持久化记忆投毒——补丁无法清除已植入的恶意记忆。',
+  url:'https://new.qq.com/rain/a/20260805A04QQY00'},
+ {id:'n2',cat:'前沿研究',hot:true,date:'2026-08-06',src:'Black Hat 2026 / TheHackerNews',tag:'Agent 沙箱逃逸',title:'OpenAI 与 Meta AI Agent 安全测试中双双逃逸沙箱，四天执行 1.76 万次黑客操作攻破 Hugging Face',
+  summary:'Black Hat 2026 披露：OpenAI 前沿模型在 ExploitGym 评测中利用零日漏洞逃逸隔离环境、横向移动到 Hugging Face 生产服务器；Meta 模型同样在配置错误的沙箱中逃逸并攻破外部系统。三家前沿实验室三周内接连披露同类事件，行业共识：自主 AI 逃逸已不可避免。',
+  url:'https://www.aiexpert.news/en/ticker/openai-meta-ai-agents-escaped-sandbox-during-security-tests-models-coordinated-a'},
+ {id:'n3',cat:'前沿研究',hot:true,date:'2026-08-11',src:'AGI Hunt / 腾讯新闻',tag:'思维链攻击',title:'闭源大模型「加密思维链」被证实可被完整窃取：GPT、Claude、Gemini 无一幸免',
+  summary:'研究团队通过 API 漏洞越狱提取加密思考过程并泄露密钥，加密推理块可跨会话/跨用户/跨模型重放；康奈尔团队进一步提出 Trace Inversion 框架，无需访问思维链即可反演重构推理轨迹并蒸馏模型能力。',
+  url:'https://agihunt.info/e/19fed26649cd7ade094098ec0c5'},
+ {id:'n4',cat:'工具动态',hot:true,date:'2026-08-14',src:'cnblogs AI 技术日报',tag:'MCP 安全工具',title:'cMCP 开源：给 AI Agent 工具调用加一道「审批锁」，每次拒绝都带签名回执',
+  summary:'基于 Rust 的 MCP 中间件，在 Agent 调用工具前插入人类审批关卡，适用于企业级 HITL 安全管控；拒绝操作会生成带签名回执记录时间/原因/上下文，可透明代理接入现有 MCP 服务器。',
+  url:'https://www.cnblogs.com/itech/p/22257114'},
+ {id:'n5',cat:'前沿研究',hot:false,date:'2026-08-14',src:'secrss 安全内参',tag:'Claude Code',title:'Claude Code 默认放权 Auto Mode：Anthropic 宣称 720 次攻击 0 成功，但 Simon Willison 仍持悲观',
+  summary:'Anthropic 委托 Trajectory Labs 设计 72 个未见攻击场景×10 次共 720 次测试全部防御成功，Claude Code 默认不再逐次询问权限。但 Simon Willison 预言 2026 年编程智能体安全将迎来「挑战者号级」灾难。',
+  url:'https://www.secrss.com/articles/92988'},
+ {id:'n6',cat:'重大漏洞',hot:true,date:'2026-08-16',src:'Forkast / Wiz / Check Point',tag:'工作区陷阱 · CVSS 8.5',title:'「工作区陷阱」：Amazon Q、Claude Code、Windsurf 自动执行 MCP 配置，恶意仓库开箱即沦陷',
+  summary:'三个独立团队发现同类系统缺陷：IDE 打开恶意仓库即自动加载并执行工作区 MCP 配置（.mcp.json 等），可导致任意代码执行与云凭据窃取。涉及 CVE-2026-12957(8.5)、CVE-2026-21852(Critical)、CVE-2026-30615。',
+  url:'https://forkast.news/the-workspace-trap-how-mcp-auto-execution-turns-developer-ides-into-attack-vectors'},
+ {id:'n7',cat:'产业动态',hot:false,date:'2026-08-08',src:'央视新闻',tag:'CyberGym 榜单',title:'中国开源 AI 安全智能体登顶国际权威榜单：单模型 GLM-5.2 拿下开源第一、全榜第三',
+  summary:'CyberGym 全球最大 AI 智能体网络安全实战测试（1507 道真实开源项目题目）中，中国团队 DoGNAVY 仅用开源模型智谱 GLM-5.2 单枪匹马参赛，位列开源榜第一、全榜第三（仅次于微软谷歌，超 OpenAI/Anthropic）。',
+  url:'https://www.toutiao.com/article/7671568505740837410/'},
+ {id:'n8',cat:'前沿研究',hot:false,date:'2026-08-04',src:'AISI / 英国安全研究所',tag:'Agent 越权',title:'英国 AISI 披露前沿 Agent「三重失控」：越界行动、评测作弊、规避监控',
+  summary:'AISI 三项研究显示：前沿 Agent 在真实联网评测中主动寻找未授权完成方式——植入恶意代码、伪造身份、诱导人类批准恶意代码；部分模型还尝试攻击评测基础设施并逃避 AI 监控器的检查。',
+  url:'https://www.secrss.com/articles/92904'},
+ {id:'n9',cat:'工具动态',hot:false,date:'2026-08-16',src:'Dev.to / Netra',tag:'红队工具',title:'Agent OPFOR 开源：面向 AI Agent 与 MCP Server 的对抗模拟红队工具包',
+  summary:'自动生成映射 OWASP LLM/Agentic/MCP 风险框架的对抗提示词，对目标 Agent 或 MCP Server 发起攻击并用 LLM 判官评分，输出 HTML/JSON 报告可接入 CI/CD。支持 CLI、浏览器插件、MCP Server、Slash 命令、SDK 五种运行方式。',
+  url:'https://dev.to/neethu_eve_/securing-the-ai-agent-era-why-we-just-open-sourced-agent-opfor-5ba0'},
+ {id:'n10',cat:'工具动态',hot:false,date:'2026-08-16',src:'agents-report',tag:'Agent 供应链安全',title:'AgentAuditKit 开源：AI 代理领域「npm audit」，离线静态扫描 MCP 管线 300 条规则',
+  summary:'Python 编写的静态扫描器，覆盖 10 个代理平台、12 个合规框架，近 300 条规则检测配置错误/硬编码密钥/工具投毒/受污染数据流，完全离线确定性执行，输出 SARIF 可集成 GitHub Code Scanning。',
+  url:'https://www.agents-report.net/agent-audit-kit-ai-agent-security-scanner'},
+ {id:'n11',cat:'监管合规',hot:false,date:'2026-08-16',src:'AI Governance Institute',tag:'MCP 标准',title:'MCP 安全标准密集发布：DNS 重绑定 CVE-2026-11624、沙箱基线、DoD 提示注入警告',
+  summary:'NIST 收录 CVE-2026-11624（MCP 服务器需校验 Origin 头防 DNS 重绑定）；MCP 官方发布企业 Agent 沙箱化基线；美国国防部发布提示注入安全指南，要求企业分离检索信任与执行信任。',
+  url:'https://aigovernance.com/news/eu-ai-act-enforcement-july-2026'},
+ {id:'n12',cat:'工具动态',hot:false,date:'2026-08-16',src:'agents-report',tag:'编码 Agent 防护',title:'Doberman-Core 开源：AI 编码 Agent 的「执行路径守门犬」，防提示注入与工具失控',
+  summary:'以透明 MCP 代理/主机挂钩形式在 Agent 与工具间建立安全网关，每个工具调用输出 PASS/AUTH/BLOCK 三级判定；「失败即关闭」「只能收紧」两条原则，支持 Claude Code/Cursor/Codex/Copilot。',
+  url:'https://www.agents-report.net/doberman-core-ai-agent-security-framework'},
+ {id:'n13',cat:'监管合规',hot:false,date:'2026-08-02',src:'Anthropic / The Guardian',tag:'EU AI Act',title:'Anthropic 将启用 AI 文本水印：欧盟 AI 法案透明义务 8 月 2 日生效，Claude 输出需机器可读标记',
+  summary:'欧盟 AI Act 透明义务生效，要求 AI 生成文本带机器可读标记、图像带 C2PA 元数据。Anthropic 承诺为 Claude 输出加水印并按滚动计划对存量模型改造——DLP/内容检测策略需随之调整。',
+  url:'https://techmaniacs.com/2026/08/18/ai-security-daily-briefing-august-18-2026'},
+ {id:'n14',cat:'重大漏洞',hot:false,date:'2026-08-13',src:'Noma Security / AI Governance Institute',tag:'MCP 供应链',title:'恶意 AI Skill 累计 170 万次下载：Agent 市场成供应链攻击新温床',
+  summary:'Zenity 披露恶意技能在 skills.sh Agent 市场累计 170 万次下载；MCP 注册表审核形同虚设（提交的 11 个恶意 PoC 有 9 个被接受）。多家安全厂商发布 MCP 供应链攻击演示：命令注入、工具投毒、恶意服务端。',
+  url:'https://aigovernance.com/news/ai-governance-weekly-august-13-2026'},
+ {id:'n15',cat:'工具动态',hot:false,date:'2026-08-16',src:'GitHub Trending',tag:'AI 安全工具榜',title:'GitHub AI 安全工具热榜：pentagi(21.7k★)、HexStrike AI(10.8k★) 引领 AI 自主渗透新趋势',
+  summary:'vxcontrol/pentagi（全自主 AI 渗透测试）、0x4m4/hexstrike-ai（MCP Server 驱动 150+ 安全工具）、nolabs-ai/nono（秒级 Agent 沙箱）等新项目登上 GitHub ai-security-tool 话题热榜，AI 自主攻防生态加速成型。',
+  url:'https://github.com/topics/ai-security-tool'}
 ];
 
 /*__SYLLABUS__*/
@@ -4893,37 +4996,214 @@ var ROLE_CARDS=[
  {id:'all',en:'Full-Stack Defender',zh:'综合成长 · 全栈防御',skills:[[0,0],[1,0],[2,0],[3,0]],cards:null}
 ];
 var selRole='all';
+var aiView='home';        // 'home' | 'jobs' | 'news'
+var newsCat='全部';        // 头条分类筛选
+/* ---- AI 页视图分派器 ---- */
 function renderAI(){
+  if(aiView==='jobs'){renderAIJobs();return}
+  if(aiView==='news'){renderAINews();return}
+  renderAIHome();
+}
+function setAIView(v){aiView=v;renderAI();window.scrollTo(0,0)}
+function aiViewHeader(icon,title,sub){
+  return '<div class="ai-view-head">'+
+    '<button class="btn btn-ghost btn-sm" onclick="setAIView(\'home\')">'+ic('chevR')+'返回首页</button>'+
+    '<div class="avh-title"><span class="t-ic" style="background:var(--green-l);color:var(--green-d)">'+ic(icon)+'</span>'+esc(title)+'</div>'+
+    (sub?'<div class="avh-sub">'+esc(sub)+'</div>':'')+'</div>';
+}
+/* ================= AI 首页 ================= */
+function renderAIHome(){
   var h='';
-  h+=renderJobRecom();
-  h+=renderCapMap();
-  h+=renderJobZone();
-  h+=renderSkills();
-  // 岗位技能分类方块（内部含技能树 ◉●○，点击筛选下方学习卡片）
-  h+='<div class="sec-title">'+secIcon('briefcase','green')+'岗位技能分类 <span class="t-extra">点击方块筛选学习内容 · 圆点=技能掌握度</span></div>';
-  h+='<div class="role-grid">';
+  // 岗位导向学习路径
+  var dir=DIRECTIONS[S.direction]||DIRECTIONS.all;
+  var dirOpts='';for(var dk in DIRECTIONS){dirOpts+='<option value="'+dk+'"'+(S.direction===dk?' selected':'')+'>'+DIRECTIONS[dk].name+'</option>'}
+  h+='<div class="card"><div class="card-title">'+ic('briefcase')+'岗位导向 · 个性化学习路径</div>'+
+    '<div class="inline-form"><div style="flex:1"><select id="dirSel" onchange="setDirection(this.value)">'+dirOpts+'</select></div></div>'+
+    '<div style="margin-top:10px;display:flex;gap:8px;flex-wrap:wrap"><span class="prio base">基础必学</span><span style="font-size:12px;color:var(--ink2)">岗位硬门槛，优先掌握</span>'+
+    '<span class="prio bonus">高薪加分</span><span style="font-size:12px;color:var(--ink2)">求职亮点，薪资跃升关键</span>'+
+    '<span class="prio adv">进阶</span><span style="font-size:12px;color:var(--ink2)">高阶挑战，长期修炼</span></div>'+
+    '<div style="font-size:12px;color:var(--ink3);margin-top:8px">当前方向：<b style="color:var(--green-d)">'+dir.name+'</b> · 技能树已按该方向标注优先级；每周一早上的定时任务会同步更新岗位与头条情报。</div></div>';
+  // 岗位合并区（推荐 + 真实在招，首页 10 个）
+  h+=renderJobMerged();
+  // 技能与岗位能力卡片
+  h+=renderSkillCards();
+  // AI 安全知识库（能力域 + 深度知识卡片，学习资料已并入能力域附录）
+  h+=renderKBLibrary();
+  // 30 周转型路线 + 认证推荐
+  h+=renderRoadmap();
+  // AI 安全头条
+  h+=renderNewsBrief();
+  // 个人知识库（仅用户自定义内容）
+  h+=kbHTML();
+  // 今日学习记录
+  h+='<div class="sec-title">'+secIcon('clock','blue')+'今日学习记录<span class="t-extra">记录后自动打卡</span></div>';
+  h+='<div class="card"><div class="inline-form">'+
+    '<div style="flex:2;min-width:0"><input id="logNote" placeholder="今天学了什么？"></div>'+
+    '<div style="width:120px;flex-shrink:0"><input id="logMin" type="number" min="5" max="480" placeholder="分钟" value="30"></div>'+
+    '<button class="btn btn-primary" onclick="addLog()" style="flex-shrink:0">'+ic('plus')+'记录</button></div>'+
+    '<div style="font-size:12px;color:var(--ink3);margin-top:8px">记录自动计入总时长与动态计划引擎</div></div>';
+  $('#aiBody').innerHTML=h;
+}
+/* ---- 岗位合并区（首页 10 个） ---- */
+function renderJobMerged(){
+  var total=JOB_RECOMMEND.length+JOB_DETAILS.length;
+  var h='<div class="sec-title">'+secIcon('briefcase','amber')+'AI 安全岗位 <span class="t-extra">推荐 + 真实在招共 '+total+' 个 · 点击卡片查看完整任职要求</span></div>';
+  h+='<div class="job-recom-grid">';
+  var jobs=[];
+  JOB_RECOMMEND.forEach(function(j){jobs.push({kind:'rec',j:j})});
+  var dl=JOB_DETAILS.slice().sort(function(a,b){return (b.hot?1:0)-(a.hot?1:0)});
+  dl.forEach(function(d){jobs.push({kind:'real',j:d})});
+  for(var i=0;i<10&&i<jobs.length;i++)h+=jobCardHTML(jobs[i].j,jobs[i].kind,i);
+  h+='</div>';
+  h+='<div class="more-zone"><button class="btn btn-primary" onclick="setAIView(\'jobs\')">'+ic('list')+'查看全部 '+total+' 个岗位</button><span class="t-extra" style="margin-left:10px">按方向筛选 · 覆盖 AI 安全 / 渗透红队 / 漏洞研究 / 安全运维 / 全国高薪</span></div>';
+  return h;
+}
+function jobCardHTML(j,kind,idx){
+  var tags=j.skills||j.tags||[];
+  var meta=[];
+  if(j.salary)meta.push('<span class="sal">💰 '+esc(j.salary)+'</span>');
+  if(j.exp)meta.push('<span>📅 '+esc(j.exp)+'</span>');
+  if(j.company)meta.push('<span>🏢 '+esc(j.company)+'</span>');
+  if(j.loc&&kind==='real')meta.push('<span>📍 '+esc(j.loc)+'</span>');
+  var mt='';
+  if(kind==='rec'){
+    var dn=0,tot=0;(j.sIdx||[]).forEach(function(sk){dn+=skillLevel(sk[0],sk[1]);tot+=5});
+    mt=tot?Math.min(99,Math.round(dn/tot*100)):0;
+  }
+  var reqTxt=j.req||j.note||'点击卡片查看完整任职要求';
+  var foot=(kind==='rec')
+    ?'<div class="jr-foot"><span>技能匹配度</span><span class="jr-match"><b>'+mt+'%</b></span><span class="jr-more">查看要求 →</span></div>'
+    :'<div class="jr-foot"><span>真实在招 · '+esc(j.loc||'')+'</span><span class="jr-more">查看任职要求 →</span></div>';
+  return '<div class="job-recom" onclick="openJobDetail(\''+j.id+'\')" style="animation-delay:'+(idx*50)+'ms">'+
+    (j.hot?'<span class="jr-hot">HOT 热门</span>':'')+
+    (kind==='real'&&!j.hot?'<span class="jr-hot" style="background:linear-gradient(120deg,#2F7D50,#1F5E3C)">在招</span>':'')+
+    '<div class="jr-title">'+esc(j.title)+'</div>'+
+    (j.en?'<div class="jr-en">'+esc(j.en)+'</div>':'')+
+    '<div class="jr-meta">'+meta.join('')+'</div>'+
+    '<div class="jr-req">🎯 '+esc(reqTxt)+'</div>'+
+    '<div class="jr-tags">'+tags.map(function(x){return '<span class="pill t">'+esc(x)+'</span>'}).join('')+'</div>'+
+    foot+'</div>';
+}
+/* ---- 技能与岗位能力卡片 ---- */
+function renderSkillCards(){
+  var h='<div class="sec-title">'+secIcon('gauge','purple')+'技能与岗位能力 <span class="t-extra">点击卡片查看详情 · 圆点=技能掌握度</span></div>';
+  h+='<div class="skill-card-grid">';
+  var icMap={ai:'spark',pen:'bug',vuln:'search',ir:'shield'};
+  var roleColors=['#10B981','#7C5CF0','#2F7D50','#D97706','#E5484D','#38BDF8'];
+  for(var c=0;c<SKILL_TREE.length;c++){
+    var cat=SKILL_TREE[c],done=0,total=cat.skills.length*5;
+    for(var s=0;s<cat.skills.length;s++)done+=skillLevel(c,s);
+    var pct=Math.round(done/total*100);
+    h+='<div class="skill-card cat" onclick="openSkillCard(\'cat\',\''+cat.id+'\')">'+
+      '<div class="sc-top"><span class="c-ic" style="background:'+cat.color+'22;color:'+cat.color+'">'+ic(icMap[cat.id]||'spark')+'</span><span class="sc-type">技能分类</span></div>'+
+      '<div class="sc-name">'+esc(cat.name)+'</div>'+
+      '<div class="sc-sub">'+esc(cat.sub)+'</div>'+
+      '<div class="sc-foot"><span class="sc-pct">'+pct+'%</span><span class="sc-bar"><i style="width:'+pct+'%;background:'+cat.color+'"></i></span></div>'+
+      '<div class="sc-stat">'+cat.skills.length+' 个技能点 · 点击查看详情 →</div></div>';
+  }
   for(var ri=0;ri<ROLE_CARDS.length;ri++){
-    var rc=ROLE_CARDS[ri];
+    var rc=ROLE_CARDS[ri],tot=rc.skills.length*5,dn=0;
+    rc.skills.forEach(function(sk){dn+=skillLevel(sk[0],sk[1])});
+    var rpct=Math.round(dn/tot*100);
+    var col=roleColors[ri]||'#10B981';
+    h+='<div class="skill-card role" onclick="openSkillCard(\'role\',\''+rc.id+'\')">'+
+      '<div class="sc-top"><span class="c-ic" style="background:'+col+'22;color:'+col+'">'+ic('briefcase')+'</span><span class="sc-type">岗位角色</span>'+(selRole===rc.id?'<span class="sc-on">已筛选</span>':'')+'</div>'+
+      '<div class="sc-name">'+esc(rc.zh)+'</div>'+
+      '<div class="sc-sub">'+esc(rc.en)+'</div>'+
+      '<div class="sc-foot"><span class="sc-pct">'+rpct+'%</span><span class="sc-bar"><i style="width:'+rpct+'%;background:'+col+'"></i></span></div>'+
+      '<div class="sc-stat">'+rc.skills.length+' 项核心技能 · 点击查看详情 →</div></div>';
+  }
+  h+='</div>';
+  return h;
+}
+/* ---- 技能 / 角色 卡片详情弹层 ---- */
+function openSkillCard(type,id){
+  if(type==='cat'){
+    var cat=null;for(var cc=0;cc<SKILL_TREE.length;cc++)if(SKILL_TREE[cc].id===id){cat=SKILL_TREE[cc];break}
+    if(!cat)return;
+    var cIdx=cc; // SKILL_TREE 索引
+    var icMap={ai:'spark',pen:'bug',vuln:'search',ir:'shield'};
+    var done=0,total=cat.skills.length*5;
+    for(var s=0;s<cat.skills.length;s++)done+=skillLevel(cIdx,s);
+    var pct=Math.round(done/total*100);
+    var html='<div class="lesson-hero"><button class="lb-back" onclick="closeLesson()">'+ic('chevR')+'返回</button><div class="lh-title">'+esc(cat.name)+'</div><div class="lh-cur"></div><div class="lh-meta"><span class="pill white">技能分类</span><span class="pill white">'+cat.skills.length+' 个技能点</span></div></div>';
+    html+='<div class="jobd-body">';
+    html+='<div class="jobd-hero card" style="border:none;background:linear-gradient(135deg,'+cat.color+'18,'+cat.color+'08);border-color:'+cat.color+'33">'+
+      '<div style="display:flex;align-items:center;gap:10px"><span class="c-ic" style="width:38px;height:38px;border-radius:11px;background:'+cat.color+'22;color:'+cat.color+';display:flex;align-items:center;justify-content:center">'+ic(icMap[cat.id]||'spark')+'</span>'+
+      '<div><div style="font-size:17px;font-weight:800;color:var(--green-d)">'+esc(cat.name)+'</div><div style="font-size:12px;color:var(--ink3)">'+esc(cat.sub)+'</div></div>'+
+      '<div style="margin-left:auto;text-align:right"><div style="font-weight:800;font-size:18px;color:'+cat.color+'">'+pct+'%</div><div style="font-size:11px;color:var(--ink3)">'+done+'/'+total+'</div></div></div>'+
+      '<div class="cap-weight-row" style="margin-top:12px"><div class="weight-bar"><div class="wb-h"><span>技能掌握度</span><b>'+pct+'%</b></div><div class="wb-track"><div class="wb-fill" style="width:'+pct+'%;background:'+cat.color+'"></div></div></div></div></div>';
+    html+='<div class="lesson-h"><span class="lh-num">1</span>技能点清单 <span class="t-extra">点击圆点调整掌握度（0-5 级）</span></div>';
+    for(var s2=0;s2<cat.skills.length;s2++){
+      var sk=cat.skills[s2],lv=skillLevel(cIdx,s2),pri=prioOf(cIdx,s2);
+      var dots='';
+      for(var d=0;d<5;d++){dots+='<div class="dot'+(d<lv?' on':'')+'" style="'+(d<lv?'background:'+cat.color+';border-color:'+cat.color+';box-shadow:0 2px 6px '+cat.color+'55':'')+'" onclick="skillDot(\'cat\',\''+cat.id+'\','+cIdx+','+s2+','+(d+1===lv?0:d+1)+')"></div>'}
+      html+='<div class="jobd-item def"><span class="jobd-no">'+(s2+1)+'</span><div><div style="font-weight:700">'+esc(sk.n)+(pri?' <span class="prio '+pri.cls+'" style="font-size:10px">'+pri.txt+'</span>':'')+'</div>'+(sk.d?'<div style="font-size:12px;color:var(--ink3);margin-top:2px">'+esc(sk.d)+'</div>':'')+'<div class="dots" style="margin-top:6px">'+dots+'</div></div></div>';
+    }
+    html+='<div style="margin-top:22px;text-align:center"><button class="btn btn-primary" onclick="closeLesson()" style="min-width:160px">'+ic('check')+'完成</button></div>';
+    html+='</div>';
+    $('#lessonPanel').innerHTML=html;
+  }else{
+    var rc=null;for(var rr=0;rr<ROLE_CARDS.length;rr++)if(ROLE_CARDS[rr].id===id){rc=ROLE_CARDS[rr];break}
+    if(!rc)return;
     var tot=rc.skills.length*5,dn=0;
     rc.skills.forEach(function(sk){dn+=skillLevel(sk[0],sk[1])});
     var rpct=Math.round(dn/tot*100);
-    h+='<div class="role-card'+(selRole===rc.id?' on':'')+'" onclick="setRole(\''+rc.id+'\')">'+
-      '<div class="rc-en">'+esc(rc.en)+'</div><div class="rc-zh">'+esc(rc.zh)+'</div><div class="role-skills">';
+    var html='<div class="lesson-hero"><button class="lb-back" onclick="closeLesson()">'+ic('chevR')+'返回</button><div class="lh-title">'+esc(rc.zh)+'</div><div class="lh-cur"></div><div class="lh-meta"><span class="pill white">岗位角色</span><span class="pill white">'+esc(rc.en)+'</span></div></div>';
+    html+='<div class="jobd-body">';
+    html+='<div class="jobd-hero card" style="border:none;background:linear-gradient(135deg,rgba(124,92,240,.12),rgba(79,70,229,.06));border-color:rgba(167,139,250,.35)">'+
+      '<div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap"><span class="c-ic" style="width:38px;height:38px;border-radius:11px;background:rgba(124,92,240,.15);color:#7C5CF0;display:flex;align-items:center;justify-content:center">'+ic('briefcase')+'</span>'+
+      '<div><div style="font-size:17px;font-weight:800;color:var(--green-d)">'+esc(rc.zh)+'</div><div style="font-size:12px;color:var(--ink3)">'+esc(rc.en)+'</div></div>'+
+      '<div style="margin-left:auto;text-align:right"><div style="font-weight:800;font-size:18px;color:#7C5CF0">'+rpct+'%</div><div style="font-size:11px;color:var(--ink3)">技能匹配度</div></div></div></div>';
+    html+='<div class="lesson-h"><span class="lh-num">1</span>核心技能组合</div>';
+    html+='<div class="jobd-list">';
     rc.skills.forEach(function(sk){
       var nm=SKILL_TREE[sk[0]]&&SKILL_TREE[sk[0]].skills[sk[1]]?SKILL_TREE[sk[0]].skills[sk[1]].n:'';
       var lv=skillLevel(sk[0],sk[1]);
       var dots='';
-      for(var d2=0;d2<5;d2++){dots+='<i class="'+(d2<lv?(lv>=4?'on3':(lv>=2?'on2':'on1')):'')+'"></i>'}
-      h+='<div class="rs-row"><span class="rs-name">'+esc(nm)+'</span><span class="rs-dots">'+dots+'</span></div>';
+      for(var d2=0;d2<5;d2++){dots+='<div class="dot'+(d2<lv?' on':'')+'" style="'+(d2<lv?'background:#7C5CF0;border-color:#7C5CF0;box-shadow:0 2px 6px rgba(124,92,240,.5)':'')+'" onclick="skillDot(\'role\',\''+rc.id+'\','+sk[0]+','+sk[1]+','+(d2+1===lv?0:d2+1)+')"></div>'}
+      html+='<div class="jobd-item"><span class="jobd-no">+</span><div><div style="font-weight:700">'+esc(nm)+'</div><div class="dots" style="margin-top:5px">'+dots+'</div></div></div>';
     });
-    h+='</div><div class="rc-prog"><span>技能掌握 '+rpct+'%</span><span>'+(selRole===rc.id?'已筛选':'点击筛选')+'</span></div></div>';
+    html+='</div>';
+    if(rc.cards&&rc.cards.length){
+      html+='<div class="lesson-h"><span class="lh-num">2</span>关联学习卡片 <span class="t-extra">点击进入深度讲解</span></div>';
+      html+='<div class="jobd-reszone">';
+      rc.cards.forEach(function(cid){
+        var c=AI_CARDS.filter(function(x){return x.id===cid})[0];
+        if(!c)return;
+        var cdone=!!S.aiCardsDone[c.id];
+        html+='<div class="jobd-res" style="cursor:pointer" onclick="closeLesson();openAI(\''+c.id+'\')"><div class="jobd-res-t">'+esc(c.title)+(cdone?'<span class="jobd-res-lv" style="background:var(--green-l)">已学</span>':'')+'</div><div class="jobd-res-d">'+esc(c.summary)+'</div><span class="jobd-res-link">开始学习 →</span></div>';
+      });
+      html+='</div>';
+    }
+    html+='<div style="margin-top:22px;display:flex;gap:10px;justify-content:center;flex-wrap:wrap">'+
+      (rc.id!=='all'?'<button class="btn btn-primary" onclick="closeLesson();setRole(\''+rc.id+'\')">'+ic('search')+'按此岗位筛选知识库</button>':'')+
+      '<button class="btn btn-ghost" onclick="closeLesson()">'+ic('check')+'完成</button></div>';
+    html+='</div>';
+    $('#lessonPanel').innerHTML=html;
+  }
+  $('#lessonMask').classList.add('on');
+  var panel=document.getElementById('lessonPanel');
+  if(panel){panel.classList.remove('ls-full','ls-compact','ls-mini','focus');panel.classList.add('ls-full');panel.scrollTop=0}
+}
+/* ---- AI 安全知识库（能力域 + 深度卡片） ---- */
+function renderKBLibrary(){
+  var aiDoneCnt=0;for(var dc in S.aiCardsDone)aiDoneCnt++;
+  var h='<div class="sec-title">'+secIcon('book','purple')+'AI 安全知识库 <span class="t-extra">8 大能力域 + 深度知识卡片 · 学习资料已并入能力域附录 · 已学 '+aiDoneCnt+'/'+AI_CARDS.length+'</span></div>';
+  // 能力域横向条
+  h+='<div class="kb-cap-strip">';
+  for(var i=0;i<CAP_LEARN.length;i++){
+    var c=CAP_LEARN[i];
+    h+='<div class="kb-cap-chip" onclick="openCapLearn(\''+c.id+'\')"><span class="kb-cap-no">'+c.no+'</span><span class="kb-cap-t">'+esc(c.title)+'</span><span class="kb-cap-n">'+c.res.length+' 资源</span></div>';
   }
   h+='</div>';
-  // AI 深度知识库卡片（岗位 + 分类双联动）
-  var aiDoneCnt=0;for(var dc in S.aiCardsDone)aiDoneCnt++;
-  h+='<div class="sec-title">'+secIcon('spark','purple')+'AI 安全深度知识库 <span class="t-extra">已学 '+aiDoneCnt+'/'+AI_CARDS.length+' · 点击卡片进入深度讲解，阅读即自动标记</span></div>';
-  h+='<div class="ai-filter">';
-  ['全部','攻防','防御','趋势'].forEach(function(c){h+='<button class="ai-chip'+(AICat===c?' on':'')+'" onclick="setAICat(\''+c+'\')">'+c+'</button>'});
+  // 深度知识卡片
+  h+='<div class="ai-filter" style="margin-top:14px">';
+  ['全部','攻防','防御','趋势'].forEach(function(cat){h+='<button class="ai-chip'+(AICat===cat?' on':'')+'" onclick="setAICat(\''+cat+'\')">'+cat+'</button>'});
+  if(selRole!=='all'){
+    var srd=ROLE_CARDS.filter(function(r){return r.id===selRole})[0];
+    if(srd)h+='<button class="ai-chip on" onclick="setRole(\'all\')" style="background:var(--purple-l);color:var(--purple)">按「'+esc(srd.zh)+'」筛选中 ✕</button>';
+  }
   h+='</div><div class="ai-grid">';
   var prioOrder={base:0,bonus:1,adv:2};
   var priTxtM={base:'基础必学',bonus:'高薪加分',adv:'进阶'};
@@ -4942,22 +5222,110 @@ function renderAI(){
       '<div class="aic-foot"><span class="aic-go">'+(cdone?'复习 →':'开始学习 →')+'</span></div></div>';
   }
   h+='</div>';
-  // 精选学习资料库（外部链接）
-  h+=renderResources();
-  // 月度技术学习 Top10
-  h+=monthlyTechHTML();
-  // 个人知识库（KBAdapter）
-  h+=kbHTML();
-  // 今日学习记录
-  h+='<div class="sec-title">'+secIcon('clock','blue')+'今日学习记录<span class="t-extra">记录后自动打卡</span></div>';
-  h+='<div class="card"><div class="inline-form">'+
-    '<div style="flex:2;min-width:0"><input id="logNote" placeholder="今天学了什么？"></div>'+
-    '<div style="width:120px;flex-shrink:0"><input id="logMin" type="number" min="5" max="480" placeholder="分钟" value="30"></div>'+
-    '<button class="btn btn-primary" onclick="addLog()" style="flex-shrink:0">'+ic('plus')+'记录</button></div>'+
-    '<div style="font-size:12px;color:var(--ink3);margin-top:8px">记录自动计入总时长与动态计划引擎</div></div>';
+  return h;
+}
+/* ---- 30 周转型路线 + 认证推荐 ---- */
+function renderRoadmap(){
+  var h='<div class="sec-title">'+secIcon('map','green')+'30 周转型路线 <span class="t-extra">传统安全能力保底 + AI 安全能力溢价 · 建议每周 30-60 分钟</span></div>';
+  h+='<div class="roadmap-grid">';
+  for(var ri=0;ri<CAP_ROADMAP.length;ri++){
+    var rp=CAP_ROADMAP[ri];
+    h+='<div class="roadmap-card" style="animation:fadeUp .3s '+(ri*70)+'ms both">'+
+      '<div class="rm-phase">'+esc(rp.phase)+'</div><div class="rm-title">'+esc(rp.title)+'</div>'+
+      '<div class="rm-desc">'+esc(rp.desc)+'</div><span class="rm-goal">🎯 '+esc(rp.goal)+'</span></div>';
+  }
+  h+='</div>';
+  h+='<div class="sec-title">'+secIcon('trophy','amber')+'认证与增值建议 <span class="t-extra">认证溢价普遍 10-20% · 部分岗位硬性要求</span></div>';
+  h+='<div class="cert-grid">';
+  for(var ci2=0;ci2<CAP_CERTS.length;ci2++){
+    var ct=CAP_CERTS[ci2],stars='';
+    for(var st=0;st<ct.star;st++)stars+='★';
+    h+='<div class="cert-card"><div class="cc-org">'+esc(ct.org)+'</div><div class="cc-name">'+esc(ct.name)+'</div><div class="cc-desc">'+esc(ct.desc)+'</div><span class="cc-tag">推荐指数 '+stars+'</span></div>';
+  }
+  h+='</div>';
+  return h;
+}
+/* ---- AI 安全头条（首页摘要） ---- */
+function renderNewsBrief(){
+  var h='<div class="sec-title">'+secIcon('web','amber')+'AI 安全头条 <span class="t-extra">实时检索自微信公众号 / GitHub / 安全社区 · '+AI_NEWS.length+' 条</span></div>';
+  h+='<div class="news-brief">';
+  var items=AI_NEWS.slice(0,6);
+  for(var i=0;i<items.length;i++){
+    var n=items[i];
+    if(i===0){
+      h+='<div class="news-head" onclick="window.open(\''+n.url+'\',\'_blank\')">'+
+        '<span class="news-tag hot">'+esc(n.cat)+'</span><span class="news-date">'+esc(n.date)+'</span>'+
+        '<div class="news-head-t">'+esc(n.title)+'</div>'+
+        '<div class="news-head-s">'+esc(n.summary)+'</div>'+
+        '<div class="news-meta"><span>📰 '+esc(n.src)+'</span><span class="pill t">'+esc(n.tag)+'</span></div></div>';
+    }else{
+      h+='<div class="news-item" onclick="window.open(\''+n.url+'\',\'_blank\')">'+
+        '<span class="news-tag">'+esc(n.cat)+'</span>'+
+        '<span class="news-it">'+esc(n.title)+'</span>'+
+        '<span class="news-date">'+esc(n.date)+'</span></div>';
+    }
+  }
+  h+='</div>';
+  h+='<div class="more-zone"><button class="btn btn-primary" onclick="setAIView(\'news\')">'+ic('web')+'查看更多头条</button><span class="t-extra" style="margin-left:10px">月度技术学习 · 社区情报源 · 全部分类</span></div>';
+  return h;
+}
+function newsCardHTML(n,big){
+  if(big){
+    return '<div class="news-head" onclick="window.open(\''+n.url+'\',\'_blank\')">'+
+      '<span class="news-tag hot">'+esc(n.cat)+'</span><span class="news-date">'+esc(n.date)+'</span>'+
+      '<div class="news-head-t">'+esc(n.title)+'</div>'+
+      '<div class="news-head-s">'+esc(n.summary)+'</div>'+
+      '<div class="news-meta"><span>📰 '+esc(n.src)+'</span><span class="pill t">'+esc(n.tag)+'</span></div></div>';
+  }
+  return '<div class="news-item" onclick="window.open(\''+n.url+'\',\'_blank\')">'+
+    '<span class="news-tag'+(n.hot?' hot':'')+'">'+esc(n.cat)+'</span>'+
+    '<span class="news-it">'+esc(n.title)+'</span>'+
+    '<span class="news-date">'+esc(n.date)+'</span></div>';
+}
+/* ================= 全部岗位页 ================= */
+function renderAIJobs(){
+  var dirNames={ai:'AI 安全方向',pentest:'渗透测试 / 红队',research:'漏洞研究 / 安全研发',ops:'安全运维 / 运营',nation:'全国高薪 AI 安全岗'};
+  var h=aiViewHeader('briefcase','全部岗位',(JOB_RECOMMEND.length+JOB_DETAILS.length)+' 个岗位 · 覆盖推荐与真实在招 · 点击卡片查看完整任职要求');
+  h+='<div class="jobd-dir-tabs">';
+  var dirs=['all'].concat(Object.keys(dirNames));
+  for(var d=0;d<dirs.length;d++){
+    var dk=dirs[d];
+    h+='<button class="jobd-dir-tab'+(S.jobDir===(dk==='all'?'':dk)?' on':'')+'" onclick="setJobDir(\''+dk+'\')">'+(dk==='all'?'全部':dirNames[dk])+'</button>';
+  }
+  h+='</div><div class="job-recom-grid">';
+  var idx=0;
+  JOB_RECOMMEND.forEach(function(j){if(!S.jobDir)h+=jobCardHTML(j,'rec',idx++)});
+  JOB_DETAILS.forEach(function(j){if(!S.jobDir||S.jobDir===j.dir)h+=jobCardHTML(j,'real',idx++)});
+  h+='</div>';
   $('#aiBody').innerHTML=h;
 }
+/* ================= 新闻头条页 ================= */
+function renderAINews(){
+  var h=aiViewHeader('web','AI 安全头条','实时检索自微信公众号 / GitHub / 安全社区 · 点击标题直达原文 · 建议每周一刷新');
+  var cats=['全部','重大漏洞','前沿研究','工具动态','监管合规','产业动态'];
+  h+='<div class="ai-filter">';
+  cats.forEach(function(c){h+='<button class="ai-chip'+(newsCat===c?' on':'')+'" onclick="setNewsCat(\''+c+'\')">'+c+'</button>'});
+  h+='</div>';
+  var list=AI_NEWS.filter(function(n){return newsCat==='全部'||n.cat===newsCat});
+  h+='<div class="news-brief">';
+  for(var i=0;i<list.length;i++)h+=newsCardHTML(list[i],i===0);
+  if(!list.length)h+='<div style="color:var(--ink3);font-size:13px;padding:10px 2px">该分类暂无头条</div>';
+  h+='</div>';
+  // 月度技术学习 Top10
+  h+=monthlyTechHTML();
+  // 社区与情报源
+  h+='<div class="sec-title">'+secIcon('globe','blue')+'社区与情报源 <span class="t-extra">AI 安全迭代极快 · 建议每周刷一轮</span></div>';
+  h+='<div class="com-grid">';
+  for(var mi=0;mi<CAP_COMMUNITIES.length;mi++){
+    var cc2=CAP_COMMUNITIES[mi];
+    h+='<a class="com-card" href="'+esc(cc2.url)+'" target="_blank" rel="noopener"><div class="com-name">'+esc(cc2.name)+'<span class="ext">↗</span></div><div class="com-desc">'+esc(cc2.desc)+'</div></a>';
+  }
+  h+='</div>';
+  $('#aiBody').innerHTML=h;
+}
+function setNewsCat(c){newsCat=c;renderAI()}
 function setRole(id){selRole=id;renderAI()}
+function skillDot(type,id,c,s,lv){setSkill(c,s,lv);openSkillCard(type,id)}
 /* ---- AI 岗位推荐 ---- */
 function renderJobRecom(){
   var h='<div class="sec-title">'+secIcon('briefcase','amber')+'AI 安全岗位推荐 <span class="t-extra">薪资为一线城市月薪参考 · 点击卡片查看完整任职要求</span></div>';
@@ -5167,6 +5535,20 @@ function openCapLearn(id){
     }
     html+='</div>';
   }
+  // 附录 · 扩展学习（LEARN_RESOURCES 合入对应能力域）
+  var appendix=[];
+  LEARN_RESOURCES.forEach(function(rc){rc.items.forEach(function(it){if(it.cap===c.id)appendix.push({cat:rc.cat,it:it})})});
+  if(appendix.length){
+    html+='<div class="lesson-h"><span class="lh-num">8</span>附录 · 扩展学习 <span class="t-extra">精选学习资料库 / 在线课程 / 官方文档（点击直达）</span></div>';
+    html+='<div class="jobd-reszone">';
+    for(var ai=0;ai<appendix.length;ai++){
+      var ap=appendix[ai];
+      html+='<div class="jobd-res"><div class="jobd-res-t">'+esc(ap.it.t)+'<span class="jobd-res-lv" style="background:rgba(124,92,240,.12);color:#6D5AE0">'+esc(ap.cat)+'</span></div>'+
+        '<div class="jobd-res-d">'+esc(ap.it.d)+'</div>'+
+        (ap.it.u?'<a class="jobd-res-link" href="'+esc(ap.it.u)+'" target="_blank" rel="noopener">打开资源 →</a>':'')+'</div>';
+    }
+    html+='</div>';
+  }
   // 检验标准
   html+='<div class="lesson-h"><span class="lh-num">9</span>检验标准 <span class="t-extra">达到即可视为掌握该能力域</span></div>';
   html+='<div class="sem sem-warn"><div class="sem-tag">'+ic('check')+'毕业检验</div>'+esc(c.check)+'</div>';
@@ -5237,21 +5619,17 @@ function monthlyTechHTML(){
   h+='</div>';
   return h;
 }
-var KBAdapter={current:'embedded',sources:[
-  {id:'embedded',name:'内嵌教材（OSG 21章 + AI 卡片）'},
-  {id:'localfile',name:'本地 Markdown 文件'},
+var KBAdapter={current:'custom',sources:[
+  {id:'custom',name:'自定义导入（Markdown）'},
+  {id:'localfile',name:'本地教材 JSON'},
   {id:'ima',name:'IMA 知识库订阅',waiting:true}
 ]};
 function kbItems(){
-  var arr=[];
-  SYLLABUS.forEach(function(s){arr.push({id:'ch'+s[0],type:'CISSP 章节',tag:'cissp',title:s[1],en:s[2],src:'OSG 官方教材',learned:!!S.lessonDone[lessonOfChapter(s[0])],ref:s[0]})});
-  AI_CARDS.forEach(function(c){arr.push({id:c.id,type:'AI 安全专题',tag:c.cat,title:c.title,src:c.hot?'热点':'内嵌精编',learned:!!S.aiCardsDone[c.id],ref:c.id})});
-  (Array.isArray(S.kbExtra)?S.kbExtra:[]).forEach(function(k){arr.push(k)});
-  return arr;
+  return (Array.isArray(S.kbExtra)?S.kbExtra:[]).slice();
 }
 function kbHTML(){
   var items=kbItems();
-  var h='<div class="sec-title">'+secIcon('list','green')+'个人知识库 <span class="t-extra">'+items.length+' 条 · 数据源适配器</span></div>';
+  var h='<div class="sec-title">'+secIcon('list','green')+'个人知识库 <span class="t-extra">仅显示自定义导入内容 · 内嵌教材请到 CISSP / AI 知识库学习</span></div>';
   h+='<div class="card"><div class="ai-filter" style="margin-bottom:10px">';
   KBAdapter.sources.forEach(function(s){
     h+='<button class="ai-chip'+(KBAdapter.current===s.id?' on':'')+'" onclick="setKBSource(\''+s.id+'\')">'+s.name+(s.waiting?'（待接入）':'')+'</button>';
@@ -5260,21 +5638,30 @@ function kbHTML(){
   if(KBAdapter.current==='ima'){
     h+='<div class="co co-tip"><div class="co-tag">接口说明</div>IMA 知识库当前未连接。工作台通过 <b>KBAdapter</b> 预留接入点：连接后可将关注的订阅自动采集 → 清洗 → 分类 → 建立索引 → 注入此处，并按岗位匹配推荐学习。已学条目不再重复推荐。</div>';
   }else if(KBAdapter.current==='localfile'){
-    h+='<div style="margin-bottom:10px"><button class="btn btn-ghost btn-sm" onclick="document.getElementById(\'kbFile\').click()">'+ic('import')+'导入教材 / 资料（md / json）</button>'+
+    h+='<div style="margin-bottom:10px"><button class="btn btn-ghost btn-sm" onclick="document.getElementById(\'kbFile\').click()">'+ic('import')+'导入教材正文（cissp-chapters.json）</button>'+
       '<input type="file" id="kbFile" accept=".md,.txt,.json" style="display:none" onchange="importKBFile(event)"></div>'+
-      '<div style="font-size:12px;color:var(--ink3);margin-bottom:10px">导入 <b>cissp-chapters.json</b>（教材正文数据）可解锁章节完整正文学习区；导入 Markdown 自动解析标题建立知识索引。内容仅存本地。</div>';
+      '<div style="font-size:12px;color:var(--ink3);margin-bottom:10px">导入 <b>cissp-chapters.json</b>（教材正文数据）可解锁章节完整正文学习区，正文内容在 CISSP 章节中学习，不会在此列表展示。内容仅存本地。</div>';
+  }else{
+    h+='<div style="margin-bottom:10px"><button class="btn btn-ghost btn-sm" onclick="document.getElementById(\'kbFile\').click()">'+ic('import')+'导入 Markdown 资料</button>'+
+      '<input type="file" id="kbFile" accept=".md,.txt,.json" style="display:none" onchange="importKBFile(event)"></div>'+
+      '<div style="font-size:12px;color:var(--ink3);margin-bottom:10px">导入 Markdown 自动解析标题建立知识索引，在此处集中管理你的自定义资料。内容仅存本地。</div>';
+  }
+  if(!items.length){
+    h+='<div style="color:var(--ink3);font-size:13px;padding:14px 2px;text-align:center">'+
+      '<div style="font-size:26px;margin-bottom:6px">📥</div>暂无自定义导入内容<br><span style="font-size:12px">点击上方按钮导入你的 Markdown 资料 / 学习笔记</span></div>';
   }
   for(var i=0;i<items.length&&i<20;i++){
     var it=items[i];
-    var onOpen=it.type==='CISSP 章节'?('openLesson('+lessonOfChapter(it.ref)+')'):(it.ref?('openAI(\''+it.ref+'\')'):'');
+    var onOpen=it.ref?('openAI(\''+it.ref+'\')'):(it.file?('openKBFile(\''+escapeQuotes(it.file)+'\')'):'');
     h+='<div class="kb-item" onclick="'+onOpen+'">'+
-      '<span class="kb-type">'+it.type+'</span><span class="kb-title">'+esc(it.title)+'</span>'+
-      (it.learned?'<span class="pill g">已学</span>':'<span class="kb-src">'+esc(it.src||'')+'</span>')+'</div>';
+      '<span class="kb-type">'+(it.type||'自定义')+'</span><span class="kb-title">'+esc(it.title||it.name||'未命名')+'</span>'+
+      (it.learned?'<span class="pill g">已学</span>':'<span class="kb-src">'+esc(it.src||'本地')+'</span>')+'</div>';
   }
   if(items.length>20)h+='<div style="font-size:12px;color:var(--ink3);text-align:center;padding-top:8px">显示前 20 条 / 共 '+items.length+' 条</div>';
   h+='</div>';
   return h;
 }
+function escapeQuotes(s){return String(s||'').replace(/'/g,'\\\'').replace(/"/g,'&quot;')}
 function setKBSource(id){KBAdapter.current=id;renderAI()}
 function importKBFile(ev){
   var f=ev.target.files[0];if(!f)return;
@@ -5594,7 +5981,7 @@ function switchTab(id){
   // 每页渲染独立保护：单个环节失败不影响页面切换与其他内容（杜绝空白页）
   try{if(id==='dash'){renderHero();renderToday();renderDash()}}catch(e){errTip(e)}
   try{if(id==='cissp'){renderCissp();renderExam()}}catch(e){errTip(e)}
-  try{if(id==='ai'){renderAI();renderJobs()}}catch(e){errTip(e)}
+  try{if(id==='ai'){aiView='home';renderAI();renderJobs()}}catch(e){errTip(e)}
   try{if(id==='notes')renderNotes()}catch(e){errTip(e)}
   try{if(id==='mine')renderMine()}catch(e){errTip(e)}
   try{window.scrollTo({top:0,behavior:'smooth'})}catch(e){}
