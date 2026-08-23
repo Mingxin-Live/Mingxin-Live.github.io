@@ -1044,28 +1044,40 @@ body.dark .ai-case{background:rgba(208,154,69,.08);border-color:rgba(208,154,69,
 body.dark .md-quote{border-left-color:var(--green)}
 body.dark .lesson-bar{background:rgba(16,24,18,.94)}
 /* --- 精美成长树 FAB --- */
-#treeBtn{position:fixed;right:22px;bottom:92px;z-index:96;width:92px;height:108px;border-radius:30px;background:radial-gradient(circle at 50% 16%,rgba(224,239,204,.92),transparent 38%),linear-gradient(160deg,#FBFCF7,#EAF2E3);border:1px solid rgba(47,125,80,.22);box-shadow:0 18px 48px rgba(28,42,32,.18),inset 0 1px 0 rgba(255,255,255,.84);display:flex;flex-direction:column;align-items:center;justify-content:flex-end;padding:5px 8px 8px;opacity:0;pointer-events:none;transform:translateY(16px) scale(.9);transition:opacity var(--m-slow) var(--ease),transform var(--m-slow) var(--ease),box-shadow var(--m-normal) var(--ease);cursor:pointer;overflow:hidden}
+/* --- 精美成长树 FAB v2（高仿真 · 自然过渡 · 仿真开花） --- */
+#treeBtn{position:fixed;right:22px;bottom:92px;z-index:96;width:96px;height:112px;border-radius:32px;background:radial-gradient(circle at 50% 14%,rgba(224,239,204,.92),transparent 40%),linear-gradient(160deg,#FBFCF7,#EAF2E3);border:1px solid rgba(47,125,80,.22);box-shadow:0 18px 48px rgba(28,42,32,.18),inset 0 1px 0 rgba(255,255,255,.84);display:flex;flex-direction:column;align-items:center;justify-content:flex-end;padding:5px 8px 8px;opacity:0;pointer-events:none;transform:translateY(16px) scale(.9);transition:opacity var(--m-slow) var(--ease),transform var(--m-slow) var(--ease),box-shadow var(--m-normal) var(--ease);cursor:pointer;overflow:hidden;--bloom:0}
 #treeBtn.show{opacity:1;pointer-events:auto;transform:none}
 #treeBtn:hover{box-shadow:0 22px 52px rgba(47,125,80,.27),inset 0 1px 0 rgba(255,255,255,.8);transform:translateY(-5px)}
 #treeBtn:active{transform:scale(.96)}
-#treeBtn svg{width:72px;height:82px;display:block;filter:drop-shadow(0 5px 7px rgba(31,94,60,.16))}
+#treeBtn svg{width:76px;height:86px;display:block;filter:drop-shadow(0 5px 7px rgba(31,94,60,.16))}
 #treeBtn .tree-pct{font-size:10px;font-weight:800;color:var(--green-d);letter-spacing:.45px;margin-top:-2px}
-#treeBtn::before{content:'本章进度 · 回到顶部';position:absolute;right:102px;bottom:29px;white-space:nowrap;background:rgba(25,48,32,.92);color:#F6F3E9;padding:8px 10px;border-radius:9px;font-size:11px;font-weight:700;letter-spacing:.2px;opacity:0;pointer-events:none;transform:translateX(6px);transition:opacity var(--m-fast),transform var(--m-fast)}
+#treeBtn::before{content:'本章进度 · 回到顶部';position:absolute;right:106px;bottom:29px;white-space:nowrap;background:rgba(25,48,32,.92);color:#F6F3E9;padding:8px 10px;border-radius:9px;font-size:11px;font-weight:700;letter-spacing:.2px;opacity:0;pointer-events:none;transform:translateX(6px);transition:opacity var(--m-fast),transform var(--m-fast)}
 #treeBtn:hover::before{opacity:1;transform:none}
 body.dark #treeBtn{background:linear-gradient(160deg,#1B2A1F,#17221A);border-color:rgba(76,175,120,.2)}
-/* 树形态过渡 */
-.tree-part{transition:opacity .6s cubic-bezier(.3,1,.4,1),transform .6s cubic-bezier(.3,1,.4,1);transform-origin:50% 95%}
-.tree-s1 .p-sprout{opacity:1}
-.tree-s1 .p-sapling,.tree-s1 .p-tree,.tree-s1 .p-bloom,.tree-s1 .p-full{opacity:0;transform:scale(.3)}
-.tree-s2 .p-sprout,.tree-s2 .p-tree,.tree-s2 .p-bloom,.tree-s2 .p-full{opacity:0}
+/* --- 形态自然过渡（根部为锚点，弹性生长） --- */
+#treeBtn .tree-part{transform-origin:50% 96%;transition:opacity .95s cubic-bezier(.4,0,.2,1),transform 1.05s cubic-bezier(.34,1.56,.64,1),filter 1s}
+.tree-s1 .p-sprout{opacity:1;transform:scale(1)}
+.tree-s1 .p-sapling,.tree-s1 .p-tree,.tree-s1 .p-bloom,.tree-s1 .p-full{opacity:0;transform:scale(.3) translateY(8px)}
 .tree-s2 .p-sapling{opacity:1;transform:scale(1)}
-.tree-s3 .p-sprout,.tree-s3 .p-sapling,.tree-s3 .p-bloom,.tree-s3 .p-full{opacity:0}
+.tree-s2 .p-sprout,.tree-s2 .p-tree,.tree-s2 .p-bloom,.tree-s2 .p-full{opacity:0;transform:scale(.32) translateY(8px)}
 .tree-s3 .p-tree{opacity:1;transform:scale(1)}
-.tree-s4 .p-sprout,.tree-s4 .p-sapling,.tree-s4 .p-tree,.tree-s4 .p-full{opacity:0}
+.tree-s3 .p-sprout,.tree-s3 .p-sapling,.tree-s3 .p-bloom,.tree-s3 .p-full{opacity:0;transform:scale(.34) translateY(8px)}
 .tree-s4 .p-bloom{opacity:1;transform:scale(1)}
-.tree-s5 .p-sprout,.tree-s5 .p-sapling,.tree-s5 .p-tree,.tree-s5 .p-bloom{opacity:0}
+.tree-s4 .p-sprout,.tree-s4 .p-sapling,.tree-s4 .p-tree,.tree-s4 .p-full{opacity:0;transform:scale(.36) translateY(8px)}
 .tree-s5 .p-full{opacity:1;transform:scale(1)}
-.tree-s4 .p-bloom .p-tree{opacity:1;transform:scale(1)}
+.tree-s5 .p-sprout,.tree-s5 .p-sapling,.tree-s5 .p-tree,.tree-s5 .p-bloom{opacity:0;transform:scale(.38) translateY(8px)}
+/* 内部细分形态：p-tree 作为 p-bloom/p-full 的树干复用 */
+.tree-s4 .p-bloom .p-tree,.tree-s5 .p-full .p-tree{opacity:1;transform:scale(1)}
+/* --- 仿真开花：花朵 scale 由 --bloom 驱动（随滚动连续绽放） --- */
+#treeBtn .fl-open{transform:scale(calc(var(--bloom,0)*var(--bs,1)));transform-origin:center;transition:transform 1.15s cubic-bezier(.34,1.56,.64,1);transition-delay:var(--fd,0s)}
+#treeBtn .bl-bud{opacity:1;transition:opacity 1s;transform-origin:center;transform:scale(calc(.4 + var(--bloom,0)*.6))}
+#treeBtn .fl-fall{opacity:calc(var(--bloom,0));transition:opacity 1.2s}
+/* 阶段切换时的生长脉冲（整树轻微放大再回弹） */
+#treeBtn.grow{animation:treeGrow .9s cubic-bezier(.34,1.56,.64,1)}
+@keyframes treeGrow{0%{transform:scale(.86) translateY(5px)}55%{transform:scale(1.06) translateY(-2px)}100%{transform:scale(1) translateY(0)}}
+/* --- 回顶动效：整树弹跳 + 摇摆 --- */
+#treeBtn.t-spring{animation:treeSpring 1s cubic-bezier(.36,.07,.19,.97)}
+@keyframes treeSpring{0%{transform:translateY(0) rotate(0)}18%{transform:translateY(-7px) rotate(-2.5deg)}36%{transform:translateY(3px) rotate(2deg)}55%{transform:translateY(-4px) rotate(-1.2deg)}72%{transform:translateY(1.5px) rotate(.6deg)}100%{transform:translateY(0) rotate(0)}}
 /* --- 进度条固定轨道：sticky 贴 hero 底部（hero 三态恒 48px），避免 absolute 定位到内容底部漂到屏幕中间 --- */
 .read-prog{position:sticky;top:48px;left:0;right:0;z-index:9;height:3px;background:rgba(229,235,224,.86);width:100%;max-width:100%;overflow:hidden;contain:paint}
 .read-prog::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#1F5E3C,#2F7D50 50%,#8FAE8B);transform-origin:left;transform:scaleX(var(--read-progress,0));transition:transform .15s linear}
@@ -4027,18 +4039,129 @@ function closeTocDrawer(){var dr=document.getElementById('tocDrawer');if(dr)dr.c
    ===================================================================== */
 var RS={chapterId:-1,contentStart:0,contentEnd:0,currentSection:-1,scrollDirection:1,chapterProgress:0,headerState:0,completed:false,enteredAt:0,lastSecInViewAt:0,lastY:0,raf:null,lastTreeStage:0,secCache:null,secCacheKey:''};
 function treeSVG(){
-  return '<svg viewBox="0 0 100 112" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs><linearGradient id="trunk" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#5B3925"/><stop offset=".55" stop-color="#9A6B3B"/><stop offset="1" stop-color="#4A2E20"/></linearGradient><radialGradient id="leaf"><stop stop-color="#B7D88E"/><stop offset=".55" stop-color="#5E9A59"/><stop offset="1" stop-color="#245B3D"/></radialGradient><radialGradient id="flower"><stop stop-color="#FFF4C9"/><stop offset=".45" stop-color="#E9C06A"/><stop offset="1" stop-color="#B76D79"/></radialGradient></defs><ellipse cx="50" cy="103" rx="34" ry="5" fill="#234B35" opacity=".12"/><g class="tree-part p-sprout"><path d="M50 99 C49 85 51 74 50 61" stroke="url(#trunk)" stroke-width="5" fill="none" stroke-linecap="round"/><path d="M49 76 C36 71 32 62 36 55 C45 57 49 65 49 76M51 70 C61 60 69 59 73 65 C67 74 60 76 51 76" fill="url(#leaf)"/></g><g class="tree-part p-sapling"><path d="M50 100 C48 81 53 65 49 44" stroke="url(#trunk)" stroke-width="7" fill="none" stroke-linecap="round"/><path d="M50 74 C38 67 30 62 27 50M50 66 C62 59 69 52 72 40" stroke="url(#trunk)" stroke-width="4" fill="none" stroke-linecap="round"/><g fill="url(#leaf)"><ellipse cx="31" cy="47" rx="13" ry="10" transform="rotate(-28 31 47)"/><ellipse cx="73" cy="37" rx="14" ry="10" transform="rotate(28 73 37)"/><ellipse cx="47" cy="37" rx="16" ry="13"/></g></g><g class="tree-part p-tree"><path d="M50 101 C47 79 54 59 49 31" stroke="url(#trunk)" stroke-width="9" fill="none" stroke-linecap="round"/><path d="M50 73 C37 63 26 58 21 45M51 66 C64 57 75 49 78 34M49 51 C40 43 34 35 34 24" stroke="url(#trunk)" stroke-width="4.5" fill="none" stroke-linecap="round"/><g fill="url(#leaf)"><circle cx="25" cy="41" r="16"/><circle cx="43" cy="29" r="20"/><circle cx="63" cy="27" r="20"/><circle cx="78" cy="34" r="15"/><circle cx="37" cy="50" r="18"/><circle cx="64" cy="50" r="19"/></g></g><g class="tree-part p-bloom"><use href="#none"/><g class="p-tree"><path d="M50 101 C47 79 54 59 49 31" stroke="url(#trunk)" stroke-width="9" fill="none" stroke-linecap="round"/><g fill="url(#leaf)"><circle cx="25" cy="41" r="16"/><circle cx="43" cy="29" r="20"/><circle cx="63" cy="27" r="20"/><circle cx="78" cy="34" r="15"/><circle cx="37" cy="50" r="18"/><circle cx="64" cy="50" r="19"/></g></g><g fill="url(#flower)"><circle cx="31" cy="31" r="5"/><circle cx="53" cy="17" r="5.5"/><circle cx="72" cy="28" r="5"/><circle cx="48" cy="44" r="4.5"/></g></g><g class="tree-part p-full"><path d="M50 101 C47 79 54 59 49 28" stroke="url(#trunk)" stroke-width="10" fill="none" stroke-linecap="round"/><g fill="url(#leaf)"><circle cx="20" cy="42" r="17"/><circle cx="34" cy="27" r="19"/><circle cx="51" cy="20" r="21"/><circle cx="69" cy="25" r="20"/><circle cx="82" cy="42" r="17"/><circle cx="35" cy="51" r="19"/><circle cx="63" cy="51" r="20"/></g><g fill="url(#flower)"><circle cx="21" cy="34" r="5"/><circle cx="37" cy="19" r="5.5"/><circle cx="54" cy="11" r="6"/><circle cx="73" cy="21" r="5.5"/><circle cx="82" cy="38" r="5"/><circle cx="47" cy="39" r="5"/><circle cx="65" cy="46" r="4.8"/></g></g></svg>';
+  return '<svg viewBox="0 0 100 112" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">'+
+  '<defs>'+
+  '<linearGradient id="trunkG" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#3E2414"/><stop offset=".4" stop-color="#8A5630"/><stop offset=".62" stop-color="#A9753F"/><stop offset=".85" stop-color="#6B4426"/><stop offset="1" stop-color="#3A2112"/></linearGradient>'+
+  '<linearGradient id="branchG" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#7A4C2B"/><stop offset="1" stop-color="#5A3221"/></linearGradient>'+
+  '<radialGradient id="leafA"><stop stop-color="#CFE8A8"/><stop offset=".5" stop-color="#7CB45E"/><stop offset="1" stop-color="#2E6B46"/></radialGradient>'+
+  '<radialGradient id="leafB"><stop stop-color="#B7DB92"/><stop offset=".55" stop-color="#5E9A59"/><stop offset="1" stop-color="#1F5438"/></radialGradient>'+
+  '<radialGradient id="leafC"><stop stop-color="#A8D37E"/><stop offset=".5" stop-color="#4C8A4E"/><stop offset="1" stop-color="#174531"/></radialGradient>'+
+  '<radialGradient id="petalG"><stop stop-color="#FFFFFF"/><stop offset=".55" stop-color="#FFE9E3"/><stop offset="1" stop-color="#F2A6B5"/></radialGradient>'+
+  '<radialGradient id="petalP"><stop stop-color="#FFF7FB"/><stop offset=".6" stop-color="#F3C9E0"/><stop offset="1" stop-color="#D98BB0"/></radialGradient>'+
+  '<radialGradient id="coreG"><stop stop-color="#FFF3B0"/><stop offset="1" stop-color="#E8A93C"/></radialGradient>'+
+  '<radialGradient id="fruitG"><stop stop-color="#FF8A5C"/><stop offset="1" stop-color="#C94F3A"/></radialGradient>'+
+  '</defs>'+
+  /* 地面 */
+  '<ellipse cx="50" cy="104" rx="36" ry="5.5" fill="#234B35" opacity=".14"/>'+
+  /* ---- 阶段1：破土嫩芽 ---- */
+  '<g class="tree-part p-sprout">'+
+    '<path d="M30 103 Q50 99 70 103 Q50 95 30 103Z" fill="#8A5A35" opacity=".9"/>'+
+    '<path d="M50 99 C49.4 88 50.6 78 50 66" stroke="#6E9E4E" stroke-width="3.2" fill="none" stroke-linecap="round"/>'+
+    '<path d="M50 72 C39 70 33 65 32 57 C43 59 49 64 50 72Z" fill="url(#leafA)"/>'+
+    '<path d="M50 66 C60 63 66 57 67 49 C57 52 51 58 50 66Z" fill="url(#leafB)"/>'+
+  '</g>'+
+  /* ---- 阶段2：小树苗 ---- */
+  '<g class="tree-part p-sapling">'+
+    '<path d="M50 101 C48.5 84 52 68 48.5 47" stroke="url(#trunkG)" stroke-width="6.5" fill="none" stroke-linecap="round"/>'+
+    '<path d="M49 75 C38 69 31 64 28 53 M50.5 67 C62 61 69 54 72 42" stroke="url(#branchG)" stroke-width="3.6" fill="none" stroke-linecap="round"/>'+
+    '<ellipse cx="30" cy="49" rx="12" ry="9.5" transform="rotate(-30 30 49)" fill="url(#leafA)"/>'+
+    '<ellipse cx="73" cy="38" rx="13" ry="10" transform="rotate(26 73 38)" fill="url(#leafB)"/>'+
+    '<ellipse cx="48" cy="40" rx="14.5" ry="12" fill="url(#leafC)"/>'+
+    '<ellipse cx="49" cy="59" rx="11" ry="8.5" fill="url(#leafB)" opacity=".9"/>'+
+  '</g>'+
+  /* ---- 阶段3：枝繁叶茂 ---- */
+  '<g class="tree-part p-tree">'+
+    '<path d="M50 101 C47 80 54 61 49 34" stroke="url(#trunkG)" stroke-width="9.5" fill="none" stroke-linecap="round"/>'+
+    '<path d="M49.5 74 C38 65 27 60 21 47 M50.5 67 C63 58 74 51 78 36 M49 54 C41 46 35 37 34 26 M50 50 C57 41 62 33 64 23" stroke="url(#branchG)" stroke-width="4.4" fill="none" stroke-linecap="round"/>'+
+    '<path d="M49.5 88 C44 84 42 80 42.5 77 M50 95 C45 91.5 43.5 88.5 44 86" stroke="#5E3A1F" stroke-width="1.6" fill="none" stroke-linecap="round" opacity=".55"/>'+
+    '<ellipse cx="24" cy="43" rx="15" ry="13" fill="url(#leafA)"/>'+
+    '<ellipse cx="44" cy="29" rx="20" ry="16" fill="url(#leafB)"/>'+
+    '<ellipse cx="66" cy="27" rx="20" ry="15" fill="url(#leafC)"/>'+
+    '<ellipse cx="80" cy="36" rx="14" ry="12" fill="url(#leafA)"/>'+
+    '<ellipse cx="35" cy="50" rx="17" ry="14" fill="url(#leafC)"/>'+
+    '<ellipse cx="65" cy="50" rx="18" ry="14" fill="url(#leafB)"/>'+
+    '<ellipse cx="50" cy="62" rx="15" ry="11" fill="url(#leafA)" opacity=".85"/>'+
+    '<circle cx="27" cy="42" r="4.5" fill="#CFE8A8" opacity=".55"/>'+
+    '<circle cx="47" cy="24" r="5.5" fill="#CFE8A8" opacity=".5"/>'+
+    '<circle cx="70" cy="22" r="5" fill="#CFE8A8" opacity=".5"/>'+
+  '</g>'+
+  /* ---- 阶段4：含苞待放（花苞 + 初开） ---- */
+  '<g class="tree-part p-bloom">'+
+    
+    '<g class="p-tree">'+
+    '<path d="M50 101 C47 80 54 61 49 34" stroke="url(#trunkG)" stroke-width="9.5" fill="none" stroke-linecap="round"/>'+
+    '<path d="M49.5 74 C38 65 27 60 21 47 M50.5 67 C63 58 74 51 78 36 M49 54 C41 46 35 37 34 26 M50 50 C57 41 62 33 64 23" stroke="url(#branchG)" stroke-width="4.4" fill="none" stroke-linecap="round"/>'+
+    '<ellipse cx="24" cy="43" rx="15" ry="13" fill="url(#leafA)"/>'+
+    '<ellipse cx="44" cy="29" rx="20" ry="16" fill="url(#leafB)"/>'+
+    '<ellipse cx="66" cy="27" rx="20" ry="15" fill="url(#leafC)"/>'+
+    '<ellipse cx="80" cy="36" rx="14" ry="12" fill="url(#leafA)"/>'+
+    '<ellipse cx="35" cy="50" rx="17" ry="14" fill="url(#leafC)"/>'+
+    '<ellipse cx="65" cy="50" rx="18" ry="14" fill="url(#leafB)"/>'+
+    '</g>'+
+    '<g class="p-blossom">'+
+      '<g class="bl-f" style="--fd:.05s;--bs:1"><g class="fl-open"><ellipse cx="30" cy="36" rx="3.4" ry="5.4" transform="rotate(0 30 36)"/><ellipse cx="30" cy="36" rx="3.4" ry="5.4" transform="rotate(72 30 36)"/><ellipse cx="30" cy="36" rx="3.4" ry="5.4" transform="rotate(144 30 36)"/><ellipse cx="30" cy="36" rx="3.4" ry="5.4" transform="rotate(216 30 36)"/><ellipse cx="30" cy="36" rx="3.4" ry="5.4" transform="rotate(288 30 36)"/><circle cx="30" cy="36" r="1.7" fill="url(#coreG)"/></g></g>'+
+      '<g class="bl-f" style="--fd:.5s;--bs:.9"><g class="fl-open"><ellipse cx="72" cy="30" rx="3.8" ry="6" transform="rotate(0 72 30)"/><ellipse cx="72" cy="30" rx="3.8" ry="6" transform="rotate(72 72 30)"/><ellipse cx="72" cy="30" rx="3.8" ry="6" transform="rotate(144 72 30)"/><ellipse cx="72" cy="30" rx="3.8" ry="6" transform="rotate(216 72 30)"/><ellipse cx="72" cy="30" rx="3.8" ry="6" transform="rotate(288 72 30)"/><circle cx="72" cy="30" r="1.9" fill="url(#coreG)"/></g></g>'+
+      '<g class="bl-f" style="--fd:.95s;--bs:1.08"><g class="fl-open"><ellipse cx="47" cy="20" rx="3.2" ry="5" transform="rotate(0 47 20)"/><ellipse cx="47" cy="20" rx="3.2" ry="5" transform="rotate(72 47 20)"/><ellipse cx="47" cy="20" rx="3.2" ry="5" transform="rotate(144 47 20)"/><ellipse cx="47" cy="20" rx="3.2" ry="5" transform="rotate(216 47 20)"/><ellipse cx="47" cy="20" rx="3.2" ry="5" transform="rotate(288 47 20)"/><circle cx="47" cy="20" r="1.6" fill="url(#coreG)"/></g></g>'+
+      '<g class="bl-bud"><circle cx="60" cy="24" r="3" fill="#E9C6A8"/><path d="M60 22 Q62 20 61 18" stroke="#C98B6A" stroke-width="1.2" fill="none"/></g>'+
+      '<g class="bl-bud"><circle cx="37" cy="43" r="2.7" fill="#E9C6A8"/><path d="M37 41.5 Q38.6 40 38 38.4" stroke="#C98B6A" stroke-width="1.1" fill="none"/></g>'+
+      '<g class="bl-bud"><circle cx="79" cy="40" r="2.6" fill="#EFD3B8"/></g>'+
+    '</g>'+
+  '</g>'+
+  /* ---- 阶段5：繁花盛开 ---- */
+  '<g class="tree-part p-full">'+
+    
+    '<g class="p-tree">'+
+    '<path d="M50 101 C47 80 54 61 49 34" stroke="url(#trunkG)" stroke-width="9.5" fill="none" stroke-linecap="round"/>'+
+    '<path d="M49.5 74 C38 65 27 60 21 47 M50.5 67 C63 58 74 51 78 36 M49 54 C41 46 35 37 34 26 M50 50 C57 41 62 33 64 23" stroke="url(#branchG)" stroke-width="4.4" fill="none" stroke-linecap="round"/>'+
+    '<ellipse cx="24" cy="43" rx="15" ry="13" fill="url(#leafA)"/>'+
+    '<ellipse cx="44" cy="29" rx="20" ry="16" fill="url(#leafB)"/>'+
+    '<ellipse cx="66" cy="27" rx="20" ry="15" fill="url(#leafC)"/>'+
+    '<ellipse cx="80" cy="36" rx="14" ry="12" fill="url(#leafA)"/>'+
+    '<ellipse cx="35" cy="50" rx="17" ry="14" fill="url(#leafC)"/>'+
+    '<ellipse cx="65" cy="50" rx="18" ry="14" fill="url(#leafB)"/>'+
+    '</g>'+
+    '<g class="p-blossom">'+
+      '<g class="bl-f" style="--fd:.05s;--bs:1"><g class="fl-open"><ellipse cx="30" cy="36" rx="3.4" ry="5.4" transform="rotate(0 30 36)"/><ellipse cx="30" cy="36" rx="3.4" ry="5.4" transform="rotate(72 30 36)"/><ellipse cx="30" cy="36" rx="3.4" ry="5.4" transform="rotate(144 30 36)"/><ellipse cx="30" cy="36" rx="3.4" ry="5.4" transform="rotate(216 30 36)"/><ellipse cx="30" cy="36" rx="3.4" ry="5.4" transform="rotate(288 30 36)"/><circle cx="30" cy="36" r="1.7" fill="url(#coreG)"/></g></g>'+
+      '<g class="bl-f" style="--fd:.5s;--bs:.9"><g class="fl-open"><ellipse cx="72" cy="30" rx="3.8" ry="6" transform="rotate(0 72 30)"/><ellipse cx="72" cy="30" rx="3.8" ry="6" transform="rotate(72 72 30)"/><ellipse cx="72" cy="30" rx="3.8" ry="6" transform="rotate(144 72 30)"/><ellipse cx="72" cy="30" rx="3.8" ry="6" transform="rotate(216 72 30)"/><ellipse cx="72" cy="30" rx="3.8" ry="6" transform="rotate(288 72 30)"/><circle cx="72" cy="30" r="1.9" fill="url(#coreG)"/></g></g>'+
+      '<g class="bl-f" style="--fd:.95s;--bs:1.08"><g class="fl-open"><ellipse cx="47" cy="20" rx="3.2" ry="5" transform="rotate(0 47 20)"/><ellipse cx="47" cy="20" rx="3.2" ry="5" transform="rotate(72 47 20)"/><ellipse cx="47" cy="20" rx="3.2" ry="5" transform="rotate(144 47 20)"/><ellipse cx="47" cy="20" rx="3.2" ry="5" transform="rotate(216 47 20)"/><ellipse cx="47" cy="20" rx="3.2" ry="5" transform="rotate(288 47 20)"/><circle cx="47" cy="20" r="1.6" fill="url(#coreG)"/></g></g>'+
+      '<g class="bl-f" style="--fd:1.4s;--bs:1"><g class="fl-open"><ellipse cx="57" cy="46" rx="3.3" ry="5.2" transform="rotate(0 57 46)"/><ellipse cx="57" cy="46" rx="3.3" ry="5.2" transform="rotate(72 57 46)"/><ellipse cx="57" cy="46" rx="3.3" ry="5.2" transform="rotate(144 57 46)"/><ellipse cx="57" cy="46" rx="3.3" ry="5.2" transform="rotate(216 57 46)"/><ellipse cx="57" cy="46" rx="3.3" ry="5.2" transform="rotate(288 57 46)"/><circle cx="57" cy="46" r="1.7" fill="url(#coreG)"/></g></g>'+
+      '<g class="bl-f" style="--fd:1.9s;--bs:.92"><g class="fl-open"><ellipse cx="42" cy="52" rx="3.6" ry="5.6" transform="rotate(0 42 52)"/><ellipse cx="42" cy="52" rx="3.6" ry="5.6" transform="rotate(72 42 52)"/><ellipse cx="42" cy="52" rx="3.6" ry="5.6" transform="rotate(144 42 52)"/><ellipse cx="42" cy="52" rx="3.6" ry="5.6" transform="rotate(216 42 52)"/><ellipse cx="42" cy="52" rx="3.6" ry="5.6" transform="rotate(288 42 52)"/><circle cx="42" cy="52" r="1.8" fill="url(#coreG)"/></g></g>'+
+      '<g class="bl-f" style="--fd:2.4s;--bs:1.05"><g class="fl-open"><ellipse cx="23" cy="47" rx="3" ry="4.8" transform="rotate(0 23 47)"/><ellipse cx="23" cy="47" rx="3" ry="4.8" transform="rotate(72 23 47)"/><ellipse cx="23" cy="47" rx="3" ry="4.8" transform="rotate(144 23 47)"/><ellipse cx="23" cy="47" rx="3" ry="4.8" transform="rotate(216 23 47)"/><ellipse cx="23" cy="47" rx="3" ry="4.8" transform="rotate(288 23 47)"/><circle cx="23" cy="47" r="1.5" fill="url(#coreG)"/></g></g>'+
+      '<g class="bl-f" style="--fd:2.9s;--bs:.95"><g class="fl-open"><ellipse cx="66" cy="20" rx="3" ry="4.7" transform="rotate(0 66 20)"/><ellipse cx="66" cy="20" rx="3" ry="4.7" transform="rotate(72 66 20)"/><ellipse cx="66" cy="20" rx="3" ry="4.7" transform="rotate(144 66 20)"/><ellipse cx="66" cy="20" rx="3" ry="4.7" transform="rotate(216 66 20)"/><ellipse cx="66" cy="20" rx="3" ry="4.7" transform="rotate(288 66 20)"/><circle cx="66" cy="20" r="1.5" fill="url(#coreG)"/></g></g>'+
+      '<g class="bl-f" style="--fd:3.4s;--bs:1.1"><g class="fl-open"><ellipse cx="79" cy="40" rx="3.2" ry="5" transform="rotate(0 79 40)"/><ellipse cx="79" cy="40" rx="3.2" ry="5" transform="rotate(72 79 40)"/><ellipse cx="79" cy="40" rx="3.2" ry="5" transform="rotate(144 79 40)"/><ellipse cx="79" cy="40" rx="3.2" ry="5" transform="rotate(216 79 40)"/><ellipse cx="79" cy="40" rx="3.2" ry="5" transform="rotate(288 79 40)"/><circle cx="79" cy="40" r="1.6" fill="url(#coreG)"/></g></g>'+
+      '<g class="bl-f" style="--fd:3.9s;--bs:.88"><g class="fl-open"><ellipse cx="34" cy="26" rx="2.9" ry="4.5" transform="rotate(0 34 26)"/><ellipse cx="34" cy="26" rx="2.9" ry="4.5" transform="rotate(72 34 26)"/><ellipse cx="34" cy="26" rx="2.9" ry="4.5" transform="rotate(144 34 26)"/><ellipse cx="34" cy="26" rx="2.9" ry="4.5" transform="rotate(216 34 26)"/><ellipse cx="34" cy="26" rx="2.9" ry="4.5" transform="rotate(288 34 26)"/><circle cx="34" cy="26" r="1.4" fill="url(#coreG)"/></g></g>'+
+      '<g class="bl-bud"><circle cx="60" cy="24" r="3" fill="#E9C6A8"/></g>'+
+      '<circle cx="40" cy="60" r="1.7" fill="url(#fruitG)"/>'+
+      '<circle cx="69" cy="52" r="1.5" fill="url(#fruitG)"/>'+
+      '<g class="fl-fall"><ellipse cx="22" cy="66" rx="1.6" ry="2.6" transform="rotate(24 22 66)" fill="url(#petalG)"/><ellipse cx="76" cy="72" rx="1.5" ry="2.4" transform="rotate(-18 76 72)" fill="url(#petalP)"/></g>'+
+    '</g>'+
+  '</g>'+
+  '</svg>';
 }
 function renderTree(pct){
   var btn=document.getElementById('treeBtn');
   if(!btn)return;
   var stage=pct<10?1:(pct<30?2:(pct<50?3:(pct<75?4:5)));
-  if(RS.lastTreeStage!==stage){RS.lastTreeStage=stage;btn.className='show tree-s'+stage}
+  if(RS.lastTreeStage!==stage){
+    RS.lastTreeStage=stage;
+    btn.className='show tree-s'+stage;
+    /* 阶段切换：触发生长脉冲（重启动画） */
+    btn.classList.remove('grow');void btn.offsetWidth;btn.classList.add('grow');
+  }
   else if(!btn.className||btn.className.indexOf('show')===-1){btn.className='show tree-s'+stage}
+  /* 开花阶段：花朵随滚动进度连续绽放（75%→100% 映射 0→1） */
+  if(stage>=4){
+    var bloom=Math.max(0,Math.min(1,(pct-75)/25));
+    btn.style.setProperty('--bloom',String(bloom));
+  }else{
+    btn.style.setProperty('--bloom','0');
+  }
   var pctEl=btn.querySelector('.tree-pct');
   if(pctEl)pctEl.textContent=pct+'%';
 }
 function treeGoTop(){
+  var btn=document.getElementById('treeBtn');
+  if(btn){btn.classList.remove('t-spring');void btn.offsetWidth;btn.classList.add('t-spring');}
   var panel=document.getElementById('lessonPanel')||document.getElementById('aiPanel');
   if(panel){smoothScroll(panel,0,620);return}
   smoothScroll(document.documentElement,0,620);
