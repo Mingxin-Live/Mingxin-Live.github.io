@@ -1,0 +1,46 @@
+{
+  "version": "v3-rebuild-2026-08-22",
+  "file": "data/ai-kb.js",
+  "structure": "AI_KB_MODULES(m01-m10 壳+lessons) + AI_KB_JOBS(原样保留) + aijobById/kbRender(原样保留) + var ART(文章库,按模块id分组) + 运行时合并IIFE",
+  "standard": "docs/KB_STANDARD.md",
+  "included": [
+    {"id":"b1-1","mod":"m02","title":"Web LLM 攻击方法论：像 SSRF 一样打 LLM（PortSwigger）","url":"https://portswigger.net/web-security/llm-attacks","platform":"PortSwigger Web Security Academy","verified":"WebFetch 全文核验"},
+    {"id":"b1-2","mod":"m02","title":"OWASP LLM Top 10 (2025) 全景与 LLM01 深度解析","url":"https://genai.owasp.org/llm-top-10/ + /llmrisk/llm01-prompt-injection/","platform":"OWASP","verified":"WebFetch 全文核验（两个页面）"},
+    {"id":"b1-3","mod":"m02","title":"Many-Shot Jailbreaking（Anthropic）","url":"https://www.anthropic.com/research/many-shot-jailbreaking","platform":"Anthropic Research","verified":"WebFetch 全文核验"},
+    {"id":"b1-4","mod":"m03","title":"MCP 新规范所带来的安全漏洞（2026-07-28 版协议前瞻）","url":"https://mp.weixin.qq.com/s/JsKUFbdw5NRNaNlFRzom4A","platform":"微信公众号","verified":"webReader 全文核验"},
+    {"id":"b1-5","mod":"m03","title":"AI Agent 安全真实场景推演：从 Prompt 到副作用","url":"file:///D:/学习/学习笔记/AI_Security-main/.../07A_AI_Agent安全案例推演_从Prompt到副作用.md","platform":"本地笔记（AI_Security 项目）","verified":"本地文件全文读取"},
+    {"id":"b2-1","mod":"m02","title":"OWASP LLM06 深度解析：过度代理","url":"https://genai.owasp.org/llmrisk/llm06-sensitive-information-disclosure/","platform":"OWASP","verified":"WebFetch 全文核验"},
+    {"id":"b2-2","mod":"m03","title":"MCP 协议的七种安全风险解析与防护","url":"https://www.secrss.com/articles/80884","platform":"安全客（SecRSS）","verified":"WebFetch 全文核验"},
+    {"id":"b2-3","mod":"m07","title":"AI 能否做原创安全研究？HTTP Terminator 项目复盘","url":"https://portswigger.net/research/can-ai-do-novel-security-research","platform":"PortSwigger Research","verified":"WebFetch 全文核验"},
+    {"id":"b2-4","mod":"m10","title":"CSS：你收件箱里的炸弹（PortSwigger）","url":"https://portswigger.net/research/css-the-bomb-inside-your-inbox","platform":"PortSwigger Research","verified":"WebFetch 全文核验"},
+    {"id":"b2-5","mod":"m10","title":"GitHub Copilot 提示注入到 RCE（CVE-2025-53773）","url":"https://embracethered.com/blog/posts/2025/github-copilot-remote-code-execution-via-prompt-injection/","platform":"Embrace The Red","verified":"WebFetch 全文核验"},
+    {"id":"b2-6","mod":"m10","title":"Claude Code DNS 外带漏洞（CVE-2025-55284）","url":"https://embracethered.com/blog/posts/2025/claude-code-exfiltration-via-dns-requests/","platform":"Embrace The Red","verified":"WebFetch 全文核验"},
+    {"id":"b3-1","mod":"m03","title":"2025 年十大 MCP 漏洞（腾讯朱雀实验室）","url":"https://matrix.tencent.com/zh/2025/09/25/top-10-mcp-vulnerabilities-of-2025-risks-cases-and-detection","platform":"腾讯玄武/朱雀实验室","verified":"WebFetch 全文核验"},
+    {"id":"b3-2","mod":"m10","title":"Cursor IDE 经 Mermaid 图零点击外带（CVE-2025-54132）","url":"https://embracethered.com/blog/posts/2025/cursor-data-exfiltration-with-mermaid/","platform":"Embrace The Red","verified":"WebFetch 全文核验"},
+    {"id":"b3-3","mod":"m10","title":"Windsurf SpAIware：记忆持久化的提示注入","url":"https://embracethered.com/blog/posts/2025/windsurf-spaiware-exploit-persistent-prompt-injection/","platform":"Embrace The Red","verified":"WebFetch 全文核验"},
+    {"id":"b4-1","mod":"m03","title":"MCPXKIT：MCP 安全统一攻击工具包（IEEE TDSC 论文）","url":"https://arxiv.org/abs/2508.12538","platform":"arXiv","verified":"WebFetch 摘要+发现核验"},
+    {"id":"b4-2","mod":"m05","title":"Never a Dill Moment：ML pickle 模型文件利用全解析","url":"https://blog.trailofbits.com/2021/03/15/never-a-dill-moment-exploiting-machine-learning-pickle-files/","platform":"Trail of Bits","verified":"WebFetch 全文核验"},
+    {"id":"b4-3","mod":"m10","title":"深度伪造（Deepfake）原理分析和实战","url":"https://www.anquanke.com/post/id/249632","platform":"安全客","verified":"WebFetch 全文核验"},
+    {"id":"b5-1","mod":"m03","title":"RAG 投毒的六个影响因素与防御框架","url":"https://www.secrss.com/articles/91491","platform":"安全内参（SecRSS）","verified":"WebFetch 全文核验"},
+    {"id":"b5-2","mod":"m03","title":"RAG 架构攻击面全景（PoisonedRAG 深读）","url":"https://yeasy.gitbook.io/ai_security_guide/di-er-bu-fen-gong-ji-pian/07_agent_rag_security/7.2_rag_attacks","platform":"大模型安全权威指南","verified":"WebFetch 全文核验"},
+    {"id":"b5-3","mod":"m02","title":"Crescendo 多轮越狱（USENIX Security 2025）","url":"https://arxiv.org/html/2404.01833v3","platform":"arXiv（Microsoft）","verified":"检索结果含 arXiv 原文内容提取"}
+  ],
+  "rejected": [
+    {"url":"https://invariantlabs.ai/blog/*（含 prompt-injection-via-mcp-tool-poisoning）","reason":"Snyk 收购后站点迁移为 SPA 首页，WebFetch/webReader 均无法获取正文；web.archive.org 连接超时"},
+    {"url":"https://www.lakera.ai/blog/what-is-prompt-injection","reason":"404（Lakera 博客改版）"},
+    {"url":"https://simonwillison.net/2023/Apr/14/worst-thing-about-ai/ 及 2023/Apr/27/prompt-injection/","reason":"WebFetch 404；webReader 抓取结果被截断，内容不足以忠实入库"},
+    {"url":"https://hiddenlayer.com/research","reason":"页面仅团队介绍，无正文可抓；2026 威胁报告为 PDF 未取"},
+    {"url":"https://portswigger.net/web-security/llm-attacks/prompt-injection（子页）","reason":"404；已用主页面 /web-security/llm-attacks 全文替代入库（b1-1）"},
+    {"url":"OWASP LLM02/03/04/05/07/08/09/10 详情页","reason":"本批次时间预算内未逐条抓取；LLM01/LLM06 已核验入库，其余留待下一批次"},
+    {"url":"先知社区/FreeBuf 站内文章","reason":"搜索请求超时或触发内容过滤，未获得可核验的具体文章 URL"}
+  ],
+  "stats": {"included": 20, "rejected_or_deferred": 7, "target": 200},
+  "validation": {
+    "node_check": "通过（node --check data/ai-kb.js）",
+    "fields": "全部 20 篇具备 id/title/mins/tag/desc/url/platform/tags/lv/secs；secs>=3；正文非空；id 无重复",
+    "frontend_compat": "模块 m01-m10 壳与 AI_KB_JOBS/aijobById/kbRender 结构原样保留；ART 运行时合并进 m.articles；AI_KB_MODULES_2 兼容钩子保留"
+  },
+  "rebuild_note": "旧教程内容按用户要求全部删除；模块壳的 lessons 为精简导学（每模块 3 节）。备份：data/_ai-kb-old-backup.js",
+  "batch_files": ["data/_kb_parts/b1.js","data/_kb_parts/b2.js","data/_kb_parts/b3.js","data/_kb_parts/b4.js","data/_kb_parts/b5.js"],
+  "build": "node data/build_kb.js（组装 head+mid+ART+批次+merge 为 data/ai-kb.js）"
+}
