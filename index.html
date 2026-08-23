@@ -9939,53 +9939,5 @@ body.dark .kb-imgph{color:#9FB3A4}
 .kb-note-card .km-no{letter-spacing:.3px}
 .kb-note-card:hover .km-no{animation:wbPulse 1.4s ease-in-out infinite}
 </style>
-
-<!-- ===== 全局浮动全屏/深色按钮（所有界面右上角可用） ===== -->
-<div id="wbFloatTools">
-  <button class="wbft-btn" id="wbFT" title="全屏模式" aria-label="全屏模式"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M8 3H5a2 2 0 0 0-2 2v3M16 3h3a2 2 0 0 1 2 2v3M8 21H5a2 2 0 0 1-2-2v-3M16 21h3a2 2 0 0 0 2-2v-3"/></svg></button>
-  <button class="wbft-btn" id="wbDT" title="深色护眼模式" aria-label="深色护眼模式"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button>
-</div>
-<style>
-#wbFloatTools{position:fixed;top:14px;right:18px;z-index:8000;display:flex;gap:8px;align-items:center;padding:6px;border-radius:14px;background:rgba(255,255,255,.72);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid rgba(15,44,30,.10);box-shadow:0 2px 12px rgba(15,44,30,.10);transition:opacity .3s}
-#wbFloatTools .wbft-btn{width:36px;height:36px;border-radius:10px;border:none;background:transparent;color:#2F7D50;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:background .2s,color .2s}
-#wbFloatTools .wbft-btn svg{width:18px;height:18px}
-#wbFloatTools .wbft-btn:hover{background:rgba(47,125,80,.12)}
-#wbFloatTools .wbft-btn.on{background:rgba(47,125,80,.16);color:#1F5A38}
-#wbFloatTools.dark-on{background:rgba(18,30,24,.78);border-color:rgba(255,255,255,.12)}
-#wbFloatTools.dark-on .wbft-btn{color:#A8CDAF}
-#wbFloatTools.dark-on .wbft-btn:hover,#wbFloatTools.dark-on .wbft-btn.on{background:rgba(168,205,175,.18);color:#DCE9E3}
-#wbFloatTools.wb-hidden{opacity:0;pointer-events:none}
-@media(max-width:768px){#wbFloatTools{top:auto;bottom:18px;right:14px}}
-</style>
-<script>
-(function(){
-  function initFloatTools(){
-    var ft=document.getElementById('wbFloatTools');if(!ft)return;
-    ft.querySelector('#wbFT').addEventListener('click',function(e){e.stopPropagation();toggleFullscreen();});
-    ft.querySelector('#wbDT').addEventListener('click',function(e){e.stopPropagation();toggleDarkMode();});
-    ft.classList.toggle('dark-on',!!(window.S&&window.S.darkMode)||document.body.classList.contains('dark'));
-    var d=document.getElementById('wbDT');if(d)d.classList.toggle('on',(window.S&&window.S.darkMode)||document.body.classList.contains('dark'));
-  }
-  function placeFloatTools(){
-    var ft=document.getElementById('wbFloatTools');if(!ft)return;
-    /* 阅读面板/弹窗打开时顶栏被遮挡 → 必须显示浮动组；顶栏按钮真正可见时隐藏避免重复 */
-    var lm=document.getElementById('lessonMask');
-    var reading=!!(lm&&lm.classList.contains('on'));
-    var mk=document.getElementById('mask');
-    var modal=!!(mk&&mk.classList.contains('on'));
-    var tb=document.getElementById('tbFull');
-    var vis=false;
-    if(tb&&!reading&&!modal){var r=tb.getBoundingClientRect();vis=r.width>0&&r.height>0&&r.bottom>0&&r.top<innerHeight;}
-    ft.classList.toggle('wb-hidden',vis);
-  }
-  try{new MutationObserver(placeFloatTools).observe(document.getElementById('lessonMask'),{attributes:true,attributeFilter:['class']});}catch(e){}
-  try{new MutationObserver(placeFloatTools).observe(document.getElementById('mask'),{attributes:true,attributeFilter:['class']});}catch(e){}
-  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',function(){initFloatTools();placeFloatTools();});
-  else{initFloatTools();placeFloatTools();}
-  window.addEventListener('resize',placeFloatTools);
-  window.addEventListener('scroll',placeFloatTools,{passive:true});
-  setInterval(placeFloatTools,2000);
-})();
-</script>
 </body>
 </html>
