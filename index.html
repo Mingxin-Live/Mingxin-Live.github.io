@@ -12090,5 +12090,62 @@ Expecting `+Qe.join(", ")+", got '"+(this.terminals_[Ne]||Ne)+"'":Dt="Parse erro
 
 (function(){try{mermaid.initialize({startOnLoad:false,securityLevel:'loose',theme:'neutral'})}catch(e){}})();
 </script>
+<script>
+/* ============ 图片点击放大查看器（Lightbox · 占屏 90% · 再点还原） ============ */
+(function(){
+  if(window.__kbLightboxInit)return;window.__kbLightboxInit=true;
+  var st=document.createElement('style');st.textContent=
+  '#kbLightbox{position:fixed;inset:0;z-index:2147483000;background:rgba(7,13,10,.93);display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .3s cubic-bezier(.25,.1,.25,1);cursor:zoom-out}'+
+  '#kbLightbox.open{opacity:1;pointer-events:auto}'+
+  '#kbLightbox .kb-lb-media{width:90vw;height:90vh;display:flex;align-items:center;justify-content:center}'+
+  '#kbLightbox .kb-lb-media img,#kbLightbox .kb-lb-media svg{max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain;border-radius:12px;box-shadow:0 30px 90px rgba(0,0,0,.6);transform:scale(.93) translateY(8px);transition:transform .32s cubic-bezier(.34,1.56,.64,1);cursor:zoom-out}'+
+  '#kbLightbox.open .kb-lb-media img,#kbLightbox.open .kb-lb-media svg{transform:scale(1) translateY(0)}'+
+  '#kbLightbox .kb-lb-cap{position:fixed;bottom:28px;left:50%;transform:translateX(-50%);max-width:82vw;color:rgba(255,255,255,.88);font-size:13px;line-height:1.6;background:rgba(0,0,0,.5);padding:7px 18px;border-radius:999px;text-align:center;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}'+
+  '#kbLightbox .kb-lb-hint{position:fixed;top:20px;right:22px;color:rgba(255,255,255,.55);font-size:12px;background:rgba(0,0,0,.35);padding:4px 14px;border-radius:999px;letter-spacing:.3px}'+
+  'body.kb-lb-lock{overflow:hidden}';
+  document.head.appendChild(st);
+  var lb=document.createElement('div');lb.id='kbLightbox';
+  lb.innerHTML='<div class="kb-lb-media" id="kbLightboxMedia"></div><div class="kb-lb-cap" id="kbLightboxCap"></div><div class="kb-lb-hint">点击任意处还原</div>';
+  document.body.appendChild(lb);
+  var mediaEl=lb.querySelector('.kb-lb-media'),capEl=lb.querySelector('.kb-lb-cap');
+  function openMedia(node,cap){
+    mediaEl.innerHTML='';
+    if(node.tagName==='IMG'){
+      var c=node.cloneNode(false);c.removeAttribute('id');c.className='';
+      mediaEl.appendChild(c);
+    }else{
+      /* mermaid SVG → dataURL 图片展示（矢量放大依然清晰） */
+      var svgText=new XMLSerializer().serializeToString(node);
+      var im=document.createElement('img');
+      im.src='data:image/svg+xml;charset=utf-8,'+encodeURIComponent(svgText);
+      mediaEl.appendChild(im);
+    }
+    capEl.textContent=cap||'';capEl.style.display=cap?'':'none';
+    lb.classList.add('open');document.body.classList.add('kb-lb-lock');
+  }
+  function close(){
+    lb.classList.remove('open');document.body.classList.remove('kb-lb-lock');
+    mediaEl.innerHTML='';
+  }
+  lb.addEventListener('click',function(e){e.stopPropagation();close()});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')close()});
+  /* 事件委托：知识库正文图片（.kb-img）与 mermaid 图（.mermaid svg）点击放大（捕获阶段拦截，兼容动态渲染） */
+  document.addEventListener('click',function(e){
+    var t=e.target;
+    if(!t||!t.closest||t.closest('#kbLightbox'))return;
+    var img=null,svg=null;
+    if(t.tagName==='IMG'&&t.classList&&t.classList.contains('kb-img')){img=t;}
+    else if(t.closest('.mermaid')){
+      var s=t.tagName==='svg'?t:t.closest('svg');
+      if(s&&s.closest('.mermaid'))svg=s;
+    }
+    if(img||svg){
+      e.preventDefault();e.stopPropagation();
+      var cap=img? (img.alt||'') : (svg.getAttribute('aria-roledescription')||svg.getAttribute('data-name')||'结构图');
+      openMedia(img||svg,cap);
+    }
+  },true);
+})();
+</script>
 </body>
 </html>
