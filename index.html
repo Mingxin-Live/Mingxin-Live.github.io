@@ -1048,7 +1048,7 @@ body.dark .lesson-bar{background:rgba(16,24,18,.94)}
 /* --- 精美成长树 FAB v3（写实仿真 · 延时摄影式生长 · 全页面统一） --- */
 /* --- 精美成长树 FAB v3（写实仿真 · 延时摄影式生长 · 全页面统一） --- */
 /* --- 成长树 v4：正方形圆角矩形 + 10 帧延时摄影序列（按进度 10% 步进丝滑切换） --- */
-#treeBtn{position:fixed;right:20px;bottom:52px;z-index:9999;width:104px;height:104px;background:transparent;border:none;box-shadow:none;display:flex;align-items:center;justify-content:center;padding:0;opacity:0;pointer-events:none;transform:translateY(16px) scale(.9);transition:opacity var(--m-slow) var(--ease),transform var(--m-slow) var(--ease);cursor:pointer;overflow:visible}
+#treeBtn{position:fixed;right:20px;bottom:52px;z-index:9999;width:135px;height:135px;background:transparent;border:none;box-shadow:none;display:flex;align-items:center;justify-content:center;padding:0;opacity:0;pointer-events:none;transform:translateY(16px) scale(.9);transition:opacity var(--m-slow) var(--ease),transform var(--m-slow) var(--ease);cursor:pointer;overflow:visible}
 #treeBtn.show{opacity:1;pointer-events:auto;transform:none}
 #treeBtn:hover{transform:translateY(-4px)}
 #treeBtn:active{transform:scale(.96)}
@@ -1058,7 +1058,7 @@ body.dark .lesson-bar{background:rgba(16,24,18,.94)}
 #treeBtn .tree-img.on{opacity:1;transform:scale(1)}
 /* 进度文字 */
 
-#treeBtn::before{content:'本章进度 · 回到顶部';position:absolute;right:116px;bottom:22px;white-space:nowrap;background:rgba(25,48,32,.92);color:#F6F3E9;padding:7px 9px;border-radius:9px;font-size:11px;font-weight:700;letter-spacing:.2px;opacity:0;pointer-events:none;transform:translateX(6px);transition:opacity var(--m-fast),transform var(--m-fast)}
+#treeBtn::before{content:'本章进度 · 回到顶部';position:absolute;right:148px;bottom:22px;white-space:nowrap;background:rgba(25,48,32,.92);color:#F6F3E9;padding:7px 9px;border-radius:9px;font-size:11px;font-weight:700;letter-spacing:.2px;opacity:0;pointer-events:none;transform:translateX(6px);transition:opacity var(--m-fast),transform var(--m-fast)}
 #treeBtn:hover::before{opacity:1;transform:none}
 /* 深色模式：树本身无框，仅保持透明 */
 body.dark #treeBtn{background:transparent;border-color:transparent;box-shadow:none}
@@ -4090,9 +4090,6 @@ function renderTree(pct){
     RS.lastTreeFrame=fIdx;
     btn.classList.remove('grow');void btn.offsetWidth;btn.classList.add('grow');
   }
-  /* 进度文字 */
-  var pctEl=btn.querySelector('.tree-pct');
-  if(pctEl)pctEl.textContent=pct+'%';
 }
 function treeGoTop(){
   var btn=document.getElementById('treeBtn');
@@ -4149,7 +4146,7 @@ function initLessonScroll(panel){
   panel.addEventListener('scroll',function(){spySection(panel,panel.scrollTop)});
   // 初始化大树
   var tb=document.getElementById('treeBtn');
-  if(tb){tb.innerHTML=treeSVG()+'<span class="tree-pct">0%</span>';tb.className='show tree-s1';RS.lastTreeFrame=0;RS.lastTreeStage=1;}
+  if(tb){tb.innerHTML=treeSVG();tb.className='show tree-s1';RS.lastTreeFrame=0;RS.lastTreeStage=1;}
 }
 function readingStep(){
   RS.raf=null;
@@ -4367,7 +4364,7 @@ function openLesson(w){
   },60);
   // 初始化树
   var tb=document.getElementById('treeBtn');
-  if(tb){tb.innerHTML=treeSVG()+'<span class="tree-pct">0%</span>';tb.className='show tree-s1';RS.lastTreeFrame=0;RS.lastTreeStage=1}
+  if(tb){tb.innerHTML=treeSVG();tb.className='show tree-s1';RS.lastTreeFrame=0;RS.lastTreeStage=1}
 }
 function buildToc(w,hasBody){
   var box=document.getElementById('tocItems');if(!box)return;
@@ -4843,7 +4840,7 @@ function openAI(id,silent){
   panel.addEventListener('scroll',function(){onLessonScroll(panel)});
   // 初始化树
   var tb=document.getElementById('treeBtn');
-  if(tb){tb.innerHTML=treeSVG()+'<span class="tree-pct">0%</span>';tb.className='show tree-s1';RS.lastTreeFrame=0;RS.lastTreeStage=1}
+  if(tb){tb.innerHTML=treeSVG();tb.className='show tree-s1';RS.lastTreeFrame=0;RS.lastTreeStage=1}
 }
 function markAICard(id){
   if(S.aiCardsDone[id]){toast('本卡片已学完 ✓');return}
@@ -5212,7 +5209,7 @@ function renderExam(){
     var wl=wrongList(),due=dueReviews();
     h+='<div style="display:flex;gap:12px;flex-wrap:wrap;align-items:center;justify-content:center;padding:6px 0 2px">';
     // 统计环
-    h+='<div style="text-align:center"><div class="score-ring" style="width:104px;height:104px">'+
+    h+='<div style="text-align:center"><div class="score-ring" style="width:135px;height:135px">'+
       '<svg width="104" height="104" viewBox="0 0 104 104"><circle cx="52" cy="52" r="45" fill="none" stroke="#E8EDE2" stroke-width="11"/>'+
       '<circle cx="52" cy="52" r="45" fill="none" stroke="#10B981" stroke-width="11" stroke-linecap="round" stroke-dasharray="282.7" stroke-dashoffset="'+(282.7*(1-(last?last.score:0)/100)).toFixed(1)+'" transform="rotate(-90 52 52)"/></svg>'+
       '<div class="sval" style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center"><b style="font-size:22px">'+(last?last.score:'-')+'</b><span style="font-size:10px">最近模考</span></div></div></div>';
