@@ -1048,22 +1048,21 @@ body.dark .lesson-bar{background:rgba(16,24,18,.94)}
 /* --- 精美成长树 FAB v3（写实仿真 · 延时摄影式生长 · 全页面统一） --- */
 /* --- 精美成长树 FAB v3（写实仿真 · 延时摄影式生长 · 全页面统一） --- */
 /* --- 成长树 v4：正方形圆角矩形 + 10 帧延时摄影序列（按进度 10% 步进丝滑切换） --- */
-#treeBtn{position:fixed;right:22px;bottom:80px;z-index:96;width:82px;height:82px;border-radius:22px;background:#EAF2E3;border:1px solid rgba(47,125,80,.22);box-shadow:0 16px 40px rgba(28,42,32,.16),inset 0 1px 0 rgba(255,255,255,.84);display:flex;flex-direction:column;align-items:center;justify-content:flex-end;padding:0;opacity:0;pointer-events:none;transform:translateY(16px) scale(.9);transition:opacity var(--m-slow) var(--ease),transform var(--m-slow) var(--ease),box-shadow var(--m-normal) var(--ease);cursor:pointer;overflow:hidden}
+#treeBtn{position:fixed;right:20px;bottom:52px;z-index:9999;width:104px;height:104px;background:transparent;border:none;box-shadow:none;display:flex;align-items:center;justify-content:center;padding:0;opacity:0;pointer-events:none;transform:translateY(16px) scale(.9);transition:opacity var(--m-slow) var(--ease),transform var(--m-slow) var(--ease);cursor:pointer;overflow:visible}
 #treeBtn.show{opacity:1;pointer-events:auto;transform:none}
-#treeBtn:hover{box-shadow:0 20px 46px rgba(47,125,80,.26),inset 0 1px 0 rgba(255,255,255,.8);transform:translateY(-4px)}
+#treeBtn:hover{transform:translateY(-4px)}
 #treeBtn:active{transform:scale(.96)}
-/* 10 帧图片层叠（按 .on 切换 opacity，丝滑过渡） */
-#treeBtn .tree-img-wrap{position:absolute;inset:0;border-radius:22px;overflow:hidden;background:transparent}
+/* 7 帧图片层叠（按 .on 切换 opacity，丝滑过渡；无框透明，树单独浮于顶层） */
+#treeBtn .tree-img-wrap{position:absolute;inset:0;border-radius:0;overflow:visible;background:transparent}
 #treeBtn .tree-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 92%;opacity:0;transform:scale(1.04);transition:opacity .8s cubic-bezier(.25,.1,.25,1),transform 1s cubic-bezier(.25,.1,.25,1);pointer-events:none;will-change:opacity,transform}
 #treeBtn .tree-img.on{opacity:1;transform:scale(1)}
 /* 进度文字 */
 
-#treeBtn::before{content:'本章进度 · 回到顶部';position:absolute;right:92px;bottom:22px;white-space:nowrap;background:rgba(25,48,32,.92);color:#F6F3E9;padding:7px 9px;border-radius:9px;font-size:11px;font-weight:700;letter-spacing:.2px;opacity:0;pointer-events:none;transform:translateX(6px);transition:opacity var(--m-fast),transform var(--m-fast)}
+#treeBtn::before{content:'本章进度 · 回到顶部';position:absolute;right:116px;bottom:22px;white-space:nowrap;background:rgba(25,48,32,.92);color:#F6F3E9;padding:7px 9px;border-radius:9px;font-size:11px;font-weight:700;letter-spacing:.2px;opacity:0;pointer-events:none;transform:translateX(6px);transition:opacity var(--m-fast),transform var(--m-fast)}
 #treeBtn:hover::before{opacity:1;transform:none}
-/* 深色模式：浅绿底变深绿，inset 高光改暗 */
-body.dark #treeBtn{background:#1B2A1F;border-color:rgba(76,175,120,.25);box-shadow:0 16px 40px rgba(0,0,0,.42),inset 0 1px 0 rgba(255,255,255,.05)}
-body.dark #treeBtn .tree-img-wrap{background:#1B2A1F}
-body.dark 
+/* 深色模式：树本身无框，仅保持透明 */
+body.dark #treeBtn{background:transparent;border-color:transparent;box-shadow:none}
+body.dark #treeBtn .tree-img-wrap{background:transparent}
 /* 阶段切换生长脉冲（轻微缩放回弹） */
 #treeBtn.grow{animation:treeGrow 1.1s cubic-bezier(.25,.1,.25,1)}
 @keyframes treeGrow{0%{transform:scale(.94) translateY(4px)}45%{transform:scale(1.04) translateY(-1px)}100%{transform:scale(1) translateY(0)}}
