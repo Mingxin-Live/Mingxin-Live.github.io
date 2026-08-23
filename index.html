@@ -4140,16 +4140,17 @@ function initLessonScroll(panel){
       else hero.insertAdjacentHTML('beforeend','<div class="hero-tools">'+HT_BTN+'</div>');
     }
   }catch(e){}
-  /* 滚动监听/大树初始化只绑一次（panel 元素复用，__wbScrollBound 防重复绑定） */
+  /* 初始化大树：每次打开面板都执行——hero/进度每次都是新 DOM，若放在 __wbScrollBound
+     防重之后，第二次打开面板会跳过初始化导致小树消失（与全屏按钮同一教训） */
+  var tb=document.getElementById('treeBtn');
+  if(tb){tb.innerHTML=treeSVG();tb.className='show tree-s1';RS.lastTreeFrame=0;RS.lastTreeStage=1;}
+  /* 滚动监听只绑一次（panel 元素复用，__wbScrollBound 防重复绑定） */
   if(panel.__wbScrollBound)return;
   panel.__wbScrollBound=true;
   if(!RS)RS={chapterId:-1,aiCardId:null,contentStart:0,contentEnd:0,currentSection:-1,scrollDirection:1,chapterProgress:0,headerState:0,completed:false,enteredAt:Date.now(),lastSecInViewAt:0,lastY:0,raf:null,lastTreeStage:0,secCache:null,secCacheKey:''};
   if(RS.chapterId==null&&!RS.aiCardId)RS.chapterId=-2; // 非章节/卡片视图：进度按通用算法
   panel.addEventListener('scroll',function(){onLessonScroll(panel)});
   panel.addEventListener('scroll',function(){spySection(panel,panel.scrollTop)});
-  // 初始化大树
-  var tb=document.getElementById('treeBtn');
-  if(tb){tb.innerHTML=treeSVG();tb.className='show tree-s1';RS.lastTreeFrame=0;RS.lastTreeStage=1;}
 }
 function readingStep(){
   RS.raf=null;
