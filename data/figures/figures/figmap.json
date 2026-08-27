@@ -1,0 +1,125 @@
+{
+ "1": {
+  "1.1": "figures/ch01\\fig_1_1.png",
+  "1.2": "figures/ch01\\fig_1_2.png",
+  "1.3": "figures/ch01\\fig_1_3.png",
+  "1.4": "figures/ch01\\fig_1_4.png"
+ },
+ "2": {
+  "2.1": "figures/ch02\\fig_2_1.png",
+  "2.2": "figures/ch02\\fig_2_2.png",
+  "2.3": "figures/ch02\\fig_2_3.png",
+  "2.4": "figures/ch02\\fig_2_4.png",
+  "2.5": "figures/ch02\\fig_2_5.png"
+ },
+ "5": {
+  "5.1": "figures/ch05\\fig_5_1.png",
+  "5.2": "figures/ch05\\fig_5_2.png"
+ },
+ "6": {
+  "6.2": "figures/ch06\\fig_6_2.png",
+  "6.3": "figures/ch06\\fig_6_3.png",
+  "6.4": "figures/ch06\\fig_6_4.png",
+  "6.5": "figures/ch06\\fig_6_5.png"
+ },
+ "7": {
+  "7.1": "figures/ch07\\fig_7_1.png",
+  "7.2": "figures/ch07\\fig_7_2.png",
+  "7.3": "figures/ch07\\fig_7_3.png"
+ },
+ "8": {
+  "8.2": "figures/ch08\\fig_8_2.png",
+  "8.3": "figures/ch08\\fig_8_3.png",
+  "8.4": "figures/ch08\\fig_8_4.png",
+  "8.5": "figures/ch08\\fig_8_5.png",
+  "8.6": "figures/ch08\\fig_8_6.png",
+  "8.7": "figures/ch08\\fig_8_7.png"
+ },
+ "9": {
+  "9.1": "figures/ch09\\fig_9_1.png",
+  "9.3": "figures/ch09\\fig_9_3.png",
+  "9.4": "figures/ch09\\fig_9_4.png"
+ },
+ "10": {
+  "10.1": "figures/ch10\\fig_10_1.png",
+  "10.2": "figures/ch10\\fig_10_2.png",
+  "10.3": "figures/ch10\\fig_10_3.png",
+  "10.4": "figures/ch10\\fig_10_4.png",
+  "10.5": "figures/ch10\\fig_10_5.png"
+ },
+ "11": {
+  "11.1": "figures/ch11\\fig_11_1.png",
+  "11.2": "figures/ch11\\fig_11_2.png",
+  "11.3": "figures/ch11\\fig_11_3.png",
+  "11.4": "figures/ch11\\fig_11_4.png",
+  "11.5": "figures/ch11\\fig_11_5.png",
+  "11.6": "figures/ch11\\fig_11_6.png",
+  "11.7": "figures/ch11\\fig_11_7.png",
+  "11.8": "figures/ch11\\fig_11_8.png",
+  "11.9": "figures/ch11\\fig_11_9.png",
+  "11.10": "figures/ch11\\fig_11_10.png",
+  "11.11": "figures/ch11\\fig_11_11.png",
+  "11.12": "figures/ch11\\fig_11_12.png"
+ },
+ "12": {
+  "12.1": "figures/ch12\\fig_12_1.png",
+  "12.2": "figures/ch12\\fig_12_2.png",
+  "12.3": "figures/ch12\\fig_12_3.png",
+  "12.4": "figures/ch12\\fig_12_4.png"
+ },
+ "13": {
+  "13.1": "figures/ch13\\fig_13_1.png"
+ },
+ "14": {
+  "14.2": "figures/ch14\\fig_14_2.png",
+  "14.3": "figures/ch14\\fig_14_3.png",
+  "14.1": "figures/ch14/fig_14_1.png"
+ },
+ "15": {
+  "15.1": "figures/ch15\\fig_15_1.png",
+  "15.2": "figures/ch15\\fig_15_2.png",
+  "15.3": "figures/ch15\\fig_15_3.png",
+  "15.4": "figures/ch15\\fig_15_4.png",
+  "15.5": "figures/ch15\\fig_15_5.png",
+  "15.6": "figures/ch15\\fig_15_6.png",
+  "15.7": "figures/ch15\\fig_15_7.png",
+  "15.8": "figures/ch15\\fig_15_8.png",
+  "15.9": "figures/ch15\\fig_15_9.png",
+  "15.10": "figures/ch15\\fig_15_10.png",
+  "15.11": "figures/ch15\\fig_15_11.png"
+ },
+ "16": {
+  "16.2": "figures/ch16\\fig_16_2.png",
+  "16.3": "figures/ch16\\fig_16_3.png"
+ },
+ "17": {
+  "17.1": "figures/ch17\\fig_17_1.png",
+  "17.2": "figures/ch17\\fig_17_2.png",
+  "17.3": "figures/ch17\\fig_17_3.png",
+  "17.4": "figures/ch17\\fig_17_4.png",
+  "17.5": "figures/ch17\\fig_17_5.png"
+ },
+ "18": {
+  "18.1": "figures/ch18\\fig_18_1.png"
+ },
+ "20": {
+  "20.2": "figures/ch20\\fig_20_2.png",
+  "20.3": "figures/ch20\\fig_20_3.png",
+  "20.4": "figures/ch20\\fig_20_4.png",
+  "20.5": "figures/ch20\\fig_20_5.png",
+  "20.6": "figures/ch20\\fig_20_6.png",
+  "20.7": "figures/ch20\\fig_20_7.png",
+  "20.8": "figures/ch20\\fig_20_8.png",
+  "20.9": "figures/ch20\\fig_20_9.png",
+  "20.10": "figures/ch20\\fig_20_10.png",
+  "20.11": "figures/ch20\\fig_20_11.png"
+ },
+ "21": {
+  "21.2": "figures/ch21\\fig_21_2.png",
+  "21.3": "figures/ch21\\fig_21_3.png",
+  "21.4": "figures/ch21\\fig_21_4.png",
+  "21.5": "figures/ch21\\fig_21_5.png",
+  "21.6": "figures/ch21\\fig_21_6.png",
+  "21.7": "figures/ch21\\fig_21_7.png"
+ }
+}
