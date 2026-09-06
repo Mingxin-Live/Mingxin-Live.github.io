@@ -1,0 +1,325 @@
+{
+  "generated": "2026-09-02",
+  "items": [
+    {
+      "rank": 1,
+      "name": "usestrix/strix",
+      "intro": "开源 AI 渗透测试 Agent，能自动发现并修复应用漏洞",
+      "lang": "Python",
+      "stars": 59968,
+      "url": "https://github.com/usestrix/strix",
+      "updated": "2026-09-01",
+      "reasons": [
+        "一年内从零涨到约 6 万 Star，是当前最火的 AI 渗透测试 Agent",
+        "自动化执行扫描、漏洞验证与修复建议，覆盖 Web/API 攻击面",
+        "将传统 pentest 流程（recon→exploit→report）交给 LLM Agent 编排，降低门槛",
+        "近两周持续高频更新（2026-09-01 仍有 push），社区活跃"
+      ],
+      "direction": "渗透测试"
+    },
+    {
+      "rank": 2,
+      "name": "KeygraphHQ/shannon",
+      "intro": "面向 Web 应用与 API 的 AI 渗透测试工具，从源码出发识别攻击面",
+      "lang": "TypeScript",
+      "stars": 47521,
+      "url": "https://github.com/KeygraphHQ/shannon",
+      "updated": "2026-09-01",
+      "reasons": [
+        "创建仅一年（2025-09）Star 已约 4.75 万，增速极快",
+        "以源码分析为切入点识别攻击向量，比纯黑盒扫描覆盖更全",
+        "支持 Web 应用与 API 双场景，可集成进 CI 安全门禁",
+        "近两周保持每日更新节奏"
+      ],
+      "direction": "渗透测试"
+    },
+    {
+      "rank": 3,
+      "name": "aquasecurity/trivy",
+      "intro": "一体化安全扫描器：容器、K8s、代码仓库、云环境的漏洞/错误配置/密钥/SBOM 扫描",
+      "lang": "Go",
+      "stars": 37735,
+      "url": "https://github.com/aquasecurity/trivy",
+      "updated": "2026-09-01",
+      "reasons": [
+        "云原生安全事实标准工具，Star 约 3.77 万且持续增长",
+        "一个二进制覆盖漏洞扫描、IaC 错误配置、密钥泄露与 SBOM 生成",
+        "CI/CD 集成生态完善（GitHub Actions、Harbor、K8s Operator 等）",
+        "维护极其活跃，几乎每天有提交"
+      ],
+      "direction": "漏洞管理"
+    },
+    {
+      "rank": 4,
+      "name": "projectdiscovery/nuclei",
+      "intro": "基于社区模板的高速可定制漏洞扫描引擎",
+      "lang": "Go",
+      "stars": 30972,
+      "url": "https://github.com/projectdiscovery/nuclei",
+      "updated": "2026-09-01",
+      "reasons": [
+        "YAML 模板驱动，安全社区维护上万条 PoC 模板（nuclei-templates 同步更新）",
+        "扫描速度快、误报低，是红队与 SRC 挖洞的标配工具",
+        "支持工作流编排与与 subfinder/httpx 等 toolchain 无缝联动",
+        "近两周持续发版，模板库每日更新"
+      ],
+      "direction": "漏洞挖掘"
+    },
+    {
+      "rank": 5,
+      "name": "promptfoo/promptfoo",
+      "intro": "AI 应用红队与评测平台：对提示词、Agent、RAG 做红队攻击与漏洞扫描",
+      "lang": "TypeScript",
+      "stars": 24733,
+      "url": "https://github.com/promptfoo/promptfoo",
+      "updated": "2026-09-02",
+      "reasons": [
+        "LLM 安全红队方向最主流的开源方案，Star 约 2.47 万",
+        "内置提示注入、越狱、数据泄露等大量攻击用例，自动生成红队报告",
+        "同时是成熟的 LLM 评测框架，安全与效果评测一体",
+        "更新频繁（2026-09-02 仍有 push），企业级落地案例多"
+      ],
+      "direction": "红蓝对抗"
+    },
+    {
+      "rank": 6,
+      "name": "chaitin/SafeLine",
+      "intro": "长亭开源的自托管 WAF / 反向代理，基于语义分析引擎防护 Web 攻击",
+      "lang": "Go",
+      "stars": 22477,
+      "url": "https://github.com/chaitin/SafeLine",
+      "updated": "2026-08-26",
+      "reasons": [
+        "国内最受关注的开源 WAF，Star 约 2.25 万",
+        "语义分析检测引擎对 0day 类攻击泛化能力优于传统规则匹配",
+        "Docker 一键部署，自带可视化管理面板，适合中小企业与个人站长",
+        "近两周持续维护更新"
+      ],
+      "direction": "安全运营"
+    },
+    {
+      "rank": 7,
+      "name": "NVIDIA/SkillSpector",
+      "intro": "NVIDIA 出品的 AI Agent 技能（Skills）安全扫描器，检测恶意模式与提示注入风险",
+      "lang": "Python",
+      "stars": 15547,
+      "url": "https://github.com/NVIDIA/SkillSpector",
+      "updated": "2026-09-01",
+      "reasons": [
+        "创建仅 5 个月（2026-03）Star 约 1.55 万，是 Agent 安全赛道的爆发项目",
+        "针对 Agent Skills 供应链投毒、恶意指令、提示注入等新型威胁做静态检测",
+        "填补了 AI Agent 生态快速扩张下的技能包安全审计空白",
+        "大厂（NVIDIA）背书，近两周保持每日更新"
+      ],
+      "direction": "漏洞挖掘"
+    },
+    {
+      "rank": 8,
+      "name": "openai/codex-security",
+      "intro": "OpenAI 官方 Codex Security CLI 与 TypeScript SDK，用于发现、验证并修复安全漏洞",
+      "lang": "TypeScript",
+      "stars": 10321,
+      "url": "https://github.com/openai/codex-security",
+      "updated": "2026-09-02",
+      "reasons": [
+        "2026-07-13 才创建，约 7 周 Star 破万，是本期增速最快的项目",
+        "OpenAI 官方出品，将 Codex 编码 Agent 用于代码安全审计与自动化修复",
+        "支持漏洞发现→验证→修复闭环，可直接嵌入现有 Codex 工作流",
+        "每天仍在密集迭代，值得持续关注"
+      ],
+      "direction": "漏洞挖掘"
+    },
+    {
+      "rank": 9,
+      "name": "shadow1ng/fscan",
+      "intro": "一键式内网综合扫描工具，覆盖主机存活、端口、漏洞、弱口令等",
+      "lang": "Go",
+      "stars": 14486,
+      "url": "https://github.com/shadow1ng/fscan",
+      "updated": "2026-09-01",
+      "reasons": [
+        "国内红队内网渗透事实标准工具，Star 约 1.45 万",
+        "单文件免安装，一条命令完成存活探测、服务识别、MS17010 等漏洞检测与爆破",
+        "Go 编写跨平台，适配授权渗透与应急响应场景",
+        "2026-09-01 仍有更新，长期活跃"
+      ],
+      "direction": "渗透测试"
+    },
+    {
+      "rank": 10,
+      "name": "BishopFox/sliver",
+      "intro": "BishopFox 开源的对手模拟（C2）框架，支持多协议 implants 与多阶段投放",
+      "lang": "Go",
+      "stars": 11768,
+      "url": "https://github.com/BishopFox/sliver",
+      "updated": "2026-09-01",
+      "reasons": [
+        "开源 Red Team C2 中最成熟的项目，Star 约 1.18 万",
+        "支持 mTLS/WireGuard/HTTP(S) 多协议 C2 通道、动态编译 implants、会话复用",
+        "多玩家协作与 DNS/命名管道等隐蔽通道，贴近真实红队作战需求",
+        "持续高频更新，社区文档完善"
+      ],
+      "direction": "红蓝对抗"
+    },
+    {
+      "rank": 11,
+      "name": "google/osv-scanner",
+      "intro": "Google 出品的开源漏洞扫描器，基于 OSV.dev 数据库扫描依赖与锁文件",
+      "lang": "Go",
+      "stars": 10960,
+      "url": "https://github.com/google/osv-scanner",
+      "updated": "2026-09-01",
+      "reasons": [
+        "依托 Google OSV.dev 漏洞数据库，数据覆盖广且误报可控",
+        "支持多语言锁文件/SBOM/容器镜像扫描，天然适配 SCA 流程",
+        "可生成 SARIF 报告接入 GitHub Code Scanning，CI 友好",
+        "Google 官方维护，几乎每日有提交"
+      ],
+      "direction": "漏洞管理"
+    },
+    {
+      "rank": 12,
+      "name": "anchore/syft",
+      "intro": "Anchore 开源的 SBOM 生成工具，从容器镜像与文件系统构建软件物料清单",
+      "lang": "Go",
+      "stars": 9499,
+      "url": "https://github.com/anchore/syft",
+      "updated": "2026-08-31",
+      "reasons": [
+        "SBOM 生成的事实标准之一，原生支持 SPDX 与 CycloneDX 格式",
+        "目录、镜像、OCI 归档等多输入源，目录发现能力强",
+        "与同厂 grype 组成 SBOM+漏洞扫描完整供应链安全方案",
+        "近两周持续发版更新"
+      ],
+      "direction": "漏洞管理"
+    },
+    {
+      "rank": 13,
+      "name": "NVIDIA/garak",
+      "intro": "NVIDIA 开源的 LLM 漏洞扫描器，系统化探测大模型弱点",
+      "lang": "Python",
+      "stars": 9091,
+      "url": "https://github.com/NVIDIA/garak",
+      "updated": "2026-08-25",
+      "reasons": [
+        "LLM 安全评测领域参考级工具，探测器覆盖提示注入、越狱、幻觉、数据泄露等",
+        "插件化 probe/harness/detector 架构，方便自定义攻击模块",
+        "NVIDIA 官方维护，是模型安全审计与合规测试的常用底座",
+        "近两周保持更新"
+      ],
+      "direction": "漏洞挖掘"
+    },
+    {
+      "rank": 14,
+      "name": "vercel-labs/deepsec",
+      "intro": "Vercel 实验室出品的安全测试 Harness，驱动编码 Agent 在代码库中挖漏洞",
+      "lang": "TypeScript",
+      "stars": 7889,
+      "url": "https://github.com/vercel-labs/deepsec",
+      "updated": "2026-08-26",
+      "reasons": [
+        "2026-04 创建，4 个月 Star 近 8000，是 Agent 化代码安全审计的黑马",
+        "以 harness 形式编排通用编码 Agent（Claude/Codex 等）执行深度安全审计",
+        "聚焦真实代码库漏洞发现，补齐传统 SAST 语义理解不足的短板",
+        "近两周持续更新"
+      ],
+      "direction": "漏洞挖掘"
+    },
+    {
+      "rank": 15,
+      "name": "yaklang/yakit",
+      "intro": "基于 yak 引擎的网络安全 ALL-IN-ONE 平台（类 Burp 增强版）",
+      "lang": "TypeScript",
+      "stars": 7713,
+      "url": "https://github.com/yaklang/yakit",
+      "updated": "2026-09-01",
+      "reasons": [
+        "国产一体化安全平台：MITM 抓包、模糊测试、反连检测、知识库一体",
+        "可视化编排 yak 脚本，把渗透测试常用动作工程化",
+        "对中文用户友好，社区教程与插件生态丰富",
+        "近两周保持每日更新"
+      ],
+      "direction": "渗透测试"
+    },
+    {
+      "rank": 16,
+      "name": "netalertx/NetAlertX",
+      "intro": "集中式网络可视性与持续资产发现工具，监控设备变化并及时告警",
+      "lang": "Python",
+      "stars": 7003,
+      "url": "https://github.com/netalertx/NetAlertX",
+      "updated": "2026-09-01",
+      "reasons": [
+        "面向家庭/中小企业网络的自托管资产管理方案，部署简单（Docker/树莓派）",
+        "持续扫描发现新设备、跟踪变更并推送告警，覆盖资产管理基础盘",
+        "支持 80+ 通知渠道与多种扫描后端（nmap 等）集成",
+        "近两周持续更新，社区活跃"
+      ],
+      "direction": "安全运营"
+    },
+    {
+      "rank": 17,
+      "name": "MISP/MISP",
+      "intro": "开源威胁情报共享平台（核心软件），用于 IOC 收集、共享与关联分析",
+      "lang": "PHP",
+      "stars": 6496,
+      "url": "https://github.com/MISP/MISP",
+      "updated": "2026-09-01",
+      "reasons": [
+        "威胁情报领域事实标准，政府/CERT/企业 SOC 广泛部署",
+        "支持 STIX/TAXII 等标准、社区间 IOC 自动同步与关联",
+        "事件/网状分类体系与 Galaxy 集群（ATT&CK 映射）成熟",
+        "13 年持续维护，2026-09-01 仍有提交"
+      ],
+      "direction": "威胁情报"
+    },
+    {
+      "rank": 18,
+      "name": "intelowlproject/IntelOwl",
+      "intro": "规模化管理威胁情报的开源平台，一键对 IOC 做多引擎情报分析",
+      "lang": "Python",
+      "stars": 4691,
+      "url": "https://github.com/intelowlproject/IntelOwl",
+      "updated": "2026-09-01",
+      "reasons": [
+        "聚合数十个 OSINT 情报源与分析器，对 IP/域名/哈希等 IOC 一次查询批量出结果",
+        "提供 REST API 与 Django 可视化界面，可嵌入 SOC 工单与自动化剧本",
+        "支持 Playbook 编排与自定义分析器扩展，适合中小团队自建 TIP",
+        "近两周持续更新"
+      ],
+      "direction": "威胁情报"
+    },
+    {
+      "rank": 19,
+      "name": "aquasecurity/tracee",
+      "intro": "基于 eBPF 的 Linux 运行时安全与取证工具，实时追踪系统行为并检测恶意活动",
+      "lang": "Go",
+      "stars": 4598,
+      "url": "https://github.com/aquasecurity/tracee",
+      "updated": "2026-09-01",
+      "reasons": [
+        "eBPF 运行时检测代表项目，低开销捕获系统调用/文件/网络事件",
+        "内置大量检测规则（RE2/Lambda 策略）可发现容器逃逸、无文件攻击等",
+        "取证与检测双用途：既能做事件溯源也能做持续监控",
+        "近两周持续发版"
+      ],
+      "direction": "取证分析"
+    },
+    {
+      "rank": 20,
+      "name": "Yamato-Security/hayabusa",
+      "intro": "基于 Sigma 规则的 Windows 事件日志快速威胁狩猎与取证时间线生成工具",
+      "lang": "Rust",
+      "stars": 3331,
+      "url": "https://github.com/Yamato-Security/hayabusa",
+      "updated": "2026-08-28",
+      "reasons": [
+        "Rust 编写，Windows 日志分析速度远超同类工具（单机秒级处理 .evtx）",
+        "内置数千条 Sigma 规则，自动生成 ATT&CK 覆盖度与取证时间线报告",
+        "免安装单文件运行，适合应急响应与 DFIR 现场快速取证",
+        "规则库与主程序近两周持续更新"
+      ],
+      "direction": "取证分析"
+    }
+  ]
+}

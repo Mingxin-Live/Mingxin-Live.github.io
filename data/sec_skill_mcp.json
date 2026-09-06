@@ -1,0 +1,297 @@
+{
+  "generated": "2026-09-02",
+  "skills": [
+    {
+      "name": "AboutSecurity",
+      "intro": "渗透测试知识库，以 AI Agent 可执行的格式沉淀安全方法论，覆盖 Web/内网/免杀等方向，可直接作为 Claude Code 等 Agent 的 Skill 加载。GitHub 1.7k+ stars，2026-08 仍在活跃更新。",
+      "source": "https://github.com/wgpsec/AboutSecurity（克隆后按仓库说明挂载到 Agent 的 skills 目录）",
+      "scenario": "渗透测试全流程：信息收集、漏洞利用、后渗透的方法论引导"
+    },
+    {
+      "name": "HACK.SKILLS (yaklang)",
+      "intro": "面向 Agent 的黑客技能知识库，覆盖 Web 安全、API 安全、提权、Active Directory 攻击、Pwn 二进制利用、逆向、密码学、区块链安全、LLM 安全与数字取证，服务于漏洞赏金、渗透测试与 CTF。",
+      "source": "https://github.com/yaklang/hack-skills",
+      "scenario": "漏洞赏金 / 渗透测试 / CTF / 授权安全研究的综合知识底座"
+    },
+    {
+      "name": "Transilience Community Tools",
+      "intro": "开源的 Claude Code Skills、Agents 与 Slash Commands 集合，专为 AI 驱动的渗透测试、Bug Bounty 与安全研究设计（498 stars，2026-07 更新）。",
+      "source": "https://github.com/transilienceai/communitytools",
+      "scenario": "用 Claude Code 开展授权渗透测试与漏洞赏金自动化"
+    },
+    {
+      "name": "awesome-skills-security",
+      "intro": "安全测试工具箱型 Skill 包：整合 SecLists 字典、注入 payload 库与专家 Agent，面向授权渗透测试、CTF 与 Bug Bounty（373 stars）。",
+      "source": "https://github.com/Eyadkelleh/awesome-skills-security",
+      "scenario": " fuzzing 字典调用、注入 payload 构造、自动化安全测试"
+    },
+    {
+      "name": "forefy/.context",
+      "intro": "为安全审计、渗透测试与研究设计的 AI Agent Skills、Goals 与动态工作流集合，2026-09 仍在更新。",
+      "source": "https://github.com/forefy/.context",
+      "scenario": "安全审计与渗透测试的 Agent 工作流编排"
+    },
+    {
+      "name": "ctf-skills (ljagiello)",
+      "intro": "解决 CTF 挑战的 Agent 技能集：网页漏洞利用、二进制破解、密码学、逆向工程、取证与 OSINT 分类题解流程。",
+      "source": "https://github.com/ljagiello/ctf-skills",
+      "scenario": "CTF 竞赛各分类题目的 Agent 辅助解题"
+    },
+    {
+      "name": "java-audit-skills",
+      "intro": "专注 Java 代码审计的 Claude Skills 集合，提供自动化源码分析、路由提取、参数映射，辅助 Java Web 应用白盒审计。",
+      "source": "https://github.com/RuoJi6/java-audit-skills",
+      "scenario": "Java Web 应用白盒代码审计与漏洞挖掘"
+    },
+    {
+      "name": "PHP-Code-Audit-Skill",
+      "intro": "面向 PHP Web 的白盒代码审计 Skill 集合，覆盖「路由枚举→鉴权建模→数据流追踪→分类漏洞审计→证据校验→报告汇总」全流程，在 Cursor 等 Agent 中按 SKILL 文档执行。",
+      "source": "https://github.com/0xShe/PHP-Code-Audit-Skill",
+      "scenario": "PHP 源码安全审计、漏洞挖掘"
+    },
+    {
+      "name": "secknowledge-skill",
+      "intro": "将 88,636 个真实漏洞案例、5,600+ 篇安全研究文档、150 条 AI 安全风险、OWASP LLM/ASI/WSTG 与 200+ 安全测试用例浓缩为可即时调用的渗透测试知识库 Skill。",
+      "source": "https://github.com/Pa55w0rd/secknowledge-skill",
+      "scenario": "渗透测试知识检索、漏洞模式匹配、AI 安全风险评估"
+    },
+    {
+      "name": "IDA-Skill",
+      "intro": "让 AI Agent 像安全分析师一样使用 IDA 分析恶意样本与二进制的 Skill，驱动逆向分析工作流。",
+      "source": "https://github.com/miunasu/IDA-Skill",
+      "scenario": "恶意样本分析、二进制逆向"
+    },
+    {
+      "name": "LinuxGun-skill",
+      "intro": "Linux 安全应急响应 AI 检查 Skill：按应急响应 checklist 对 Linux 主机进行入侵排查（进程、账户、持久化、日志等）。",
+      "source": "https://github.com/sun977/LinuxGun-skill",
+      "scenario": "Linux 主机应急响应与入侵排查"
+    },
+    {
+      "name": "reverse-skills",
+      "intro": "逆向工程技能集，为 Claude Code 提供逆向工程分析技能的插件市场，覆盖静态/动态分析常用方法论。",
+      "source": "https://github.com/P4nda0s/reverse-skills",
+      "scenario": "软件逆向、二进制分析"
+    },
+    {
+      "name": "dfyx_skills_lab (security_reporter)",
+      "intro": "安全报告编写助手：基于漏洞编号、名称或扫描工具报告，自动生成含漏洞背景、原理、利用条件与修复要求的标准漏洞分析报告。",
+      "source": "https://github.com/EastSword/dfyx_skills_lab",
+      "scenario": "渗透测试/漏扫报告的标准化生成"
+    },
+    {
+      "name": "ghsa-skill-builder",
+      "intro": "让 Claude 自动将 GitHub 公开漏洞数据库（GHSA）与 HackerOne 报告转化为代码审计/渗透测试专用的结构化安全 Skill。",
+      "source": "https://github.com/yhy0/ghsa-skill-builder",
+      "scenario": "漏洞情报沉淀为可复用审计知识"
+    },
+    {
+      "name": "FlowDroidSkill",
+      "intro": "基于 FlowDroid 与 Jadx 的自动化 APK 安全分析 Skill，对 APK 做静态污点分析、检测数据泄露路径，并生成含真实源码上下文的安全报告。",
+      "source": "https://github.com/Tr0e/FlowDroidSkill",
+      "scenario": "Android APK 隐私合规与漏洞挖掘"
+    },
+    {
+      "name": "android-h1",
+      "intro": "移动安全漏洞挖掘专家 Skill，基于 HackerOne 真实报告构建 Android/iOS 漏洞挖掘手法、技术细节与代码模式知识库。",
+      "source": "https://github.com/s7safe/android-h1",
+      "scenario": "移动 App 漏洞挖掘 / 移动端 Bug Bounty"
+    },
+    {
+      "name": "SecSkills（安全 Skills/MCP 汇总清单）",
+      "intro": "中文社区维护的网络安全 Skills 与 MCP 汇总（955 stars），分代码审计、渗透测试、JS 逆向、应急响应、CTF、逆向、报告编写等 54 个分类、数百条条目，是发现新 Skill 的优质索引。",
+      "source": "https://github.com/DaoYiSec/SecSkills",
+      "scenario": "检索与发现各方向安全 Skill/MCP 的导航清单"
+    }
+  ],
+  "mcp": [
+    {
+      "name": "HexStrike AI",
+      "intro": "最流行的进攻性安全 MCP Server（11.4k+ stars），让 AI Agent 自主调度 150+ 网络安全工具，实现自动化渗透测试、漏洞发现与 Bug Bounty 自动化，桥接 LLM 与真实攻击面工具链。",
+      "url": "https://github.com/0x4m4/hexstrike-ai",
+      "highlights": "150+ 安全工具集成；nmap/nuclei/sqlmap 等自主调用；2026-08 仍活跃维护"
+    },
+    {
+      "name": "Semgrep MCP（官方）",
+      "intro": "Semgrep 官方 MCP Server，用 Semgrep 引擎扫描代码中的安全漏洞，支持在 IDE/Agent 中直接执行 SAST 规则。",
+      "url": "https://github.com/semgrep/mcp",
+      "highlights": "官方维护；SAST 静态扫描；与 Semgrep 规则生态互通"
+    },
+    {
+      "name": "cve-mcp-server",
+      "intro": "生产级漏洞情报 MCP（1.3k+ stars），为 Claude 提供 27 个安全情报工具、对接 21 个 API：CVE 查询、EPSS 评分、CISA KEV、MITRE ATT&CK、Shodan、VirusTotal 等。",
+      "url": "https://github.com/mukul975/cve-mcp-server",
+      "highlights": "CVE/EPSS/KEV/ATT&CK 一站式；适合漏洞 triage 与情报聚合"
+    },
+    {
+      "name": "Vulners API + 内置 MCP（官方）",
+      "intro": "Vulners 漏洞情报 API 官方 Python SDK，可搜索 CVE、exploit 与安全公告（含 CVSS/EPSS/KEV），审计软件与主机 SBOM，并内置 MCP Server 供 AI Agent 调用。",
+      "url": "https://github.com/vulnersCom/api",
+      "highlights": "官方 SDK；CVE/exploit 全图谱检索；sync/async 双客户端"
+    },
+    {
+      "name": "cve-mcp (badchars)",
+      "intro": "23 工具的 CVE 与漏洞情报 MCP Server，统一聚合 NVD、EPSS、CISA KEV、GitHub Advisory、OSV，支持风险评分、批量 triage 与 exploit 搜索，npx 即可运行。",
+      "url": "https://github.com/badchars/cve-mcp",
+      "highlights": "五大漏洞库聚合；轻量（2 依赖）；漏洞管理批量分诊"
+    },
+    {
+      "name": "Wazuh MCP Server",
+      "intro": "生产级 Wazuh SIEM MCP Server（229 stars），提供 55 个安全工具：告警分诊、威胁狩猎、漏洞管理、合规（PCI DSS/GDPR/HIPAA/NIST CSF/ISO 27001）与主动响应，把 Claude 等接入 SOC。",
+      "url": "https://github.com/gensecaihq/Wazuh-MCP-Server",
+      "highlights": "SIEM 集成；OAuth 2.1 + RBAC；多集群与离线环境支持"
+    },
+    {
+      "name": "Reversecore MCP",
+      "intro": "安全优先的 MCP Server，赋能 AI Agent 执行自动化逆向工程、恶意软件分析、取证、漏洞研究与 SAST，底层集成 Radare2、YARA、LIEF、Capstone 等。",
+      "url": "https://github.com/sjkim1127/Reversecore_MCP",
+      "highlights": "逆向/恶意样本/取证一体化；RE 工具链全家桶"
+    },
+    {
+      "name": "mcp-shodan",
+      "intro": "Shodan MCP Server：搜索互联网暴露设备、IP 侦察、DNS 解析与 CVE/CPE 漏洞情报，兼容 Claude Code、Codex、Gemini CLI 等客户端。",
+      "url": "https://github.com/w0h1v/mcp-shodan",
+      "highlights": "资产测绘 + 暴露面管理；外部侦察自动化"
+    },
+    {
+      "name": "Metasploit MCP",
+      "intro": "连接 LLM（Claude 等）与 Metasploit Framework 渗透平台的 MCP Server；Rapid7 官方现也内置 msfmcpd MCP Server，提供对 MSF 数据与执行能力的结构化访问。",
+      "url": "https://github.com/GH05TCREW/MetasploitMCP",
+      "highlights": "漏洞利用执行、payload 生成、会话管理；另有官方 msfmcpd（docs: rapid7.github.io/metasploit-framework）"
+    },
+    {
+      "name": "Snyk Studio MCP（官方）",
+      "intro": "Snyk 官方 MCP 实现，把 Snyk 的 SCA/SAST/容器扫描能力暴露给 AI 编码工具；也可通过 Snyk CLI 的 `snyk mcp -t stdio` 直接启用。",
+      "url": "https://github.com/snyk/studio-mcp",
+      "highlights": "厂商官方；依赖漏洞/代码安全扫描；IDE 与 Agent 集成"
+    },
+    {
+      "name": "GitHub MCP Server（官方）",
+      "intro": "GitHub 官方 MCP Server，除仓库/Issue/PR 操作外，具备安全能力：Secret Scanning、Push Protection、X-MCP-Lockdown 内容过滤与 OAuth scope 过滤，可从 Copilot/Agent 直接扫密钥泄漏。",
+      "url": "https://github.com/github/github-mcp-server",
+      "highlights": "官方维护；密钥扫描与推送保护；toolsets 细粒度权限控制"
+    },
+    {
+      "name": "opencti-mcp",
+      "intro": "对接 OpenCTI 威胁情报平台的 MCP Server，可从 AI 客户端按需查询与检索网络威胁情报数据（事件、指标、关系）。",
+      "url": "https://github.com/Spathodea-Network/opencti-mcp",
+      "highlights": "威胁情报平台 LLM 化查询；IOC/ATT&CK 关联分析"
+    },
+    {
+      "name": "velociraptor-forensic-mcp",
+      "intro": "统一 MCP Server：将 Velociraptor DFIR 远程勘测（部署 Agent、运行 VQL 猎杀、采集工件）与本地取证分析工具结合，接入 Claude Desktop 做应急响应调查。",
+      "url": "https://github.com/Hackerobi/velociraptor-forensic-mcp",
+      "highlights": "DFIR 远程 + 本地取证二合一；端点应急响应自动化"
+    },
+    {
+      "name": "WireMCP",
+      "intro": "基于 tshark（Wireshark CLI）的 MCP Server，赋予 LLM 实时网络流量分析能力，用于网络取证与异常检测。",
+      "url": "https://github.com/0xKoda/WireMCP",
+      "highlights": "pcap/实时流量分析；网络侧应急响应"
+    },
+    {
+      "name": "nuclei-mcp",
+      "intro": "将 Nuclei 漏洞扫描器接入 MCP 生态的 Server，让 AI Agent 用自然语言驱动 YAML 模板化的漏洞扫描并解读结果。",
+      "url": "https://github.com/addcontent/nuclei-mcp",
+      "highlights": "Nuclei 模板扫描；结果聚合与 Agent 解读"
+    },
+    {
+      "name": "BurpMCP",
+      "intro": "Burp Suite 扩展形式的 MCP Server，将 Burp 的代理/Repeater/Scanner 能力暴露给 AI Agent，增强手动 Web 应用安全测试。",
+      "url": "https://github.com/swgee/BurpMCP",
+      "highlights": "与 Burp Suite 原生集成；半自动 Web 渗透"
+    },
+    {
+      "name": "deptrust",
+      "intro": "本地运行的依赖安全 CLI + MCP Server（含 Skill 与 Hook），检查 npm、PyPI、crates.io、Go、RubyGems、Maven、GitHub Actions 等包版本中的已知漏洞。",
+      "url": "https://github.com/clidey/deptrust",
+      "highlights": "多语言生态 SCA；CLI/MCP/Skill/Hook 四形态；本地执行不出网"
+    },
+    {
+      "name": "mcp-security-audit",
+      "intro": "审计 npm 包依赖安全漏洞的 MCP Server，对接 npm 远程 registry 做实时安全检查。",
+      "url": "https://github.com/qianniuspace/mcp-security-audit",
+      "highlights": "npm 供应链检查；实时 registry 查询"
+    },
+    {
+      "name": "ramparts",
+      "intro": "MCP/Skill 自身安全扫描器：扫描任意 MCP Server 或 Skill 包中的间接攻击向量与配置漏洞，对齐 OWASP MCP Top 10 与 SKILL Top 10，适合做 Agent 供应链准入。",
+      "url": "https://github.com/highflame-ai/ramparts",
+      "highlights": "MCP/Skill 供应链安全治理；2026-08 活跃维护"
+    }
+  ],
+  "others": [
+    {
+      "name": "OpenCTI",
+      "intro": "开源网络威胁情报平台（Filigran 主导），管理 CTI 知识与 observable，支持 STIX 2.1、ATT&CK 映射与连接器生态，社区版持续高频发版。",
+      "url": "https://github.com/OpenCTI-Platform/opencti",
+      "type": "开源平台"
+    },
+    {
+      "name": "MISP",
+      "intro": "老牌开源威胁情报共享平台，支持 IOC 分享、事件关联、feed 同步与 taxonomy 标签，是 CERT/SOC 情报共享的事实标准。",
+      "url": "https://github.com/MISP/MISP",
+      "type": "开源平台"
+    },
+    {
+      "name": "Wazuh",
+      "intro": "开源 SIEM/XDR 平台，提供主机入侵检测、日志分析、合规与主动响应，可配合上述 Wazuh MCP Server 接入 AI SOC 工作流。",
+      "url": "https://github.com/wazuh/wazuh",
+      "type": "开源平台"
+    },
+    {
+      "name": "Velociraptor",
+      "intro": "CISA 收录的开源端点取证与应急响应（DFIR）平台，用 VQL 语言大规模采集与猎杀终端工件，可搭配 velociraptor-forensic-mcp 使用。",
+      "url": "https://github.com/Velocidex/velociraptor",
+      "type": "开源平台"
+    },
+    {
+      "name": "Shuffle",
+      "intro": "开源 SOAR 自动化编排平台，数百个集成 App 与工作流引擎，可将 MCP/Agent 输出接入告警分诊与响应剧本。",
+      "url": "https://github.com/Shuffle/Shuffle",
+      "type": "工具链"
+    },
+    {
+      "name": "CISA KEV Catalog",
+      "intro": "美国 CISA 已知被在野利用漏洞目录（Known Exploited Vulnerabilities），提供官方 JSON/RSS 订阅（known_exploited_vulnerabilities.json），含修复期限（due date），是漏洞优先级排序的权威信号。",
+      "url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog",
+      "type": "情报源"
+    },
+    {
+      "name": "NVD Data Feeds / API",
+      "intro": "NIST 国家漏洞库官方数据源，提供 CVE 详情、CVSS 评分、CPE 匹配的 REST API 与数据订阅，是漏洞情报自动化的基础源。",
+      "url": "https://nvd.nist.gov/vuln/data-feeds",
+      "type": "情报源"
+    },
+    {
+      "name": "Exploit-DB",
+      "intro": "Offensive Security 维护的公开 exploit/POC 存档（含 Google GHDB），可检索利用代码与漏洞论文，配有 git 镜像便于本地同步。",
+      "url": "https://www.exploit-db.com/",
+      "type": "情报源"
+    },
+    {
+      "name": "Chinese-Security-RSS",
+      "intro": "国内安全资讯 RSS 订阅汇总，覆盖安全媒体、团队博客与公众号，提供 OPML 一键导入，适合搭建每日中文情报流。",
+      "url": "https://github.com/zhengjim/Chinese-Security-RSS",
+      "type": "情报源"
+    },
+    {
+      "name": "SecurityRSS (arch3rPro)",
+      "intro": "分类完善的安全资讯订阅源集合：安全资讯、博客论坛、官网文章、国外博客、漏洞库、漏洞预警等目录，兼顾中英文源。",
+      "url": "https://github.com/arch3rPro/SecurityRSS",
+      "type": "情报源"
+    },
+    {
+      "name": "CNVD 国家信息安全漏洞共享平台",
+      "intro": "国内官方漏洞信息与补丁预警平台，提供漏洞详情、预警与报送通道，国内漏洞管理的合规必备源。",
+      "url": "https://www.cnvd.org.cn/",
+      "type": "情报源"
+    },
+    {
+      "name": "agentshield",
+      "intro": "AI Agent 安全扫描器（1.1k+ stars）：检测 Agent 配置、MCP Server 与工具权限中的漏洞，提供 CLI、GitHub Action 与 GitHub App 集成，属于 Agent 安全治理工具链。",
+      "url": "https://github.com/affaan-m/agentshield",
+      "type": "工具链"
+    }
+  ]
+}
